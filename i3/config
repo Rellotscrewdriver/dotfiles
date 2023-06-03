@@ -57,7 +57,8 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindcode $mod+40 exec "sh ~/.config/rofi/launcher.sh"
+bindcode $mod+42  exec "sh ~/.config/rofi/powermenu.sh"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -155,6 +156,41 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+#move Softwares to their own workspaces
+assign [class="firefox"] 2
+assign [class="discord"] 4
+assign [class="nemo"] 3
+
+
+######################################
+# color settings for bar and windows #
+######################################
+
+# Define colors variables:
+set $darkbluetrans	#08052be6
+set $darkblue		#08052b
+set $lightblue		#5294e2
+set $urgentred		#e53935
+set $white		#ffffff
+set $black		#000000
+set $purple		#e345ff
+set $darkgrey		#383c4a
+set $grey		#b0b5bd
+set $mediumgrey		#8b8b8b
+set $yellowbrown	#e1b700
+set $deeppurple         #261f32c0
+set $primary_synthwave84            #f625a3
+set $secondary_synthwave84          #03edf9
+
+# define colors for windows:
+#class		        	border		bground		text		indicator	child_border
+client.focused		    $lightblue $darkblue	$white		$purple		$primary_synthwave84
+# client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
+client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
+client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
+client.urgent		    $urgentred	$urgentred	$white		$purple		$secondary_synthwave84
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -193,5 +229,16 @@ bar {
   status_command polybar
 	mode hide
 }
+
+# Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/screenshots/$(date).png"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/screenshots/$(date).png"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/screenshots/$(date).png"
+
 default_border pixel 1
 default_floating_border pixel 1
+
+exec nitrogen --set-zoom-fill --random /wallpapers 
+# compositor 
+#exec --no-startup-id killall -q picom
+#exec picom --config ~/.config/picom/picom.conf

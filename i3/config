@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVuSansMono Nerd Font 8
+font pango:DejaVuSansMono Nerd Font 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -240,5 +240,5 @@ default_floating_border pixel 1
 
 exec nitrogen --set-zoom-fill --random /wallpapers 
 # compositor 
-#exec --no-startup-id killall -q picom
-#exec picom --config ~/.config/picom/picom.conf
+exec picom
+exec --no-startup-id dunst

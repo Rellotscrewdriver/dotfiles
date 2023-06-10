@@ -1,124 +1,169 @@
-/*
- * Author  : Aditya Shakya
- * Mail    : adi1090x@gmail.com
- * Github  : @adi1090x
- * Twitter : @adi1090x
- */
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
 
+/*****----- Configuration -----*****/
 configuration {
-	font:                      		"Comfortaa 12";
-    disable-history:                false;
-    fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    show-icons:                 false;
 }
 
-@import "pcolors.rasi"
+/*****----- Global Properties -----*****/
+@import                          "pcolors.rasi"
 
-* {
-    background-color:               @background;
-    text-color:                     @foreground;
-}
+/*
+USE_BUTTONS=YES
+*/
 
+/*****----- Main Window -----*****/
 window {
-    transparency:                   "real";
-    border-radius:                  0px;
-    location:                       southeast;
-	width:							420px;
-    x-offset:                       -15px;
-    y-offset:                       -45px;
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       420px;
+    x-offset:                    500px;
+    y-offset:                    -330px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               20px;
+    border-color:                @selected;
+    cursor:                      "default";
+    background-color:            @background;
 }
 
-prompt {
-    enabled: 						true;
-    padding:                        10px;
-	background-color: 				@background-light;
-	text-color: 					@accent;
-    border:                  		2px 2px 2px 2px;
-    border-radius:                  0px;
-    border-color:                  	@accent;
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     30px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    children:                    [ "textbox-prompt-colon", "prompt"];
+}
+
+dummy {
+    background-color:            transparent;
 }
 
 textbox-prompt-colon {
-	expand: 						false;
-	str: 							" System ";
-	background-color: 				@accent;
-	text-color: 					@background;
-    padding:                        12px 10px 0px 10px;
+    enabled:                     true;
+    expand:                      false;
+    str:                         "SYSTEM";
+    padding:                     12px 16px;
+    border-radius:               100%;
+    background-color:            @urgent;
+    text-color:                  @background;
+}
+prompt {
+    enabled:                     true;
+    padding:                     12px;
+    border-radius:               100%;
+    background-color:            @active;
+    text-color:                  @background;
 }
 
-inputbar {
-	children: 						[ textbox-prompt-colon, prompt ];
-    spacing:                        0px;
-    background-color:               @background;
-    text-color:                     @foreground;
-    expand:                         false;
-    border:                  		0px;
-    border-radius:                  0px;
-    border-color:                  	@accent;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+/*****----- Message -----*****/
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     2px;
+    border:                      0px solid;
+    border-radius:               100%;
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+textbox {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    placeholder-color:           @foreground;
+    blink:                       true;
+    markup:                      true;
+}
+error-message {
+    padding:                     12px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @foreground;
 }
 
+/*****----- Listview -----*****/
 listview {
-    columns:						5;
-    lines:							1;
-    spacing:                        12px;
-    cycle:                          true;
-    dynamic:                        true;
-    layout:                         vertical;
+    enabled:                     true;
+    columns:                     5;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
 }
 
-mainbox {
-    background-color:               @background;
-    children:                       [ inputbar, listview ];
-    spacing:                        12px;
-    margin:                         12px;
-}
-
+/*****----- Elements -----*****/
 element {
-    background-color:               @background-light;
-    text-color:                     @foreground;
-    orientation:                    vertical;
-    border-radius:                  0px;
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     15px;
+    border:                      0px solid;
+    border-radius:               100%;
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    cursor:                      pointer;
 }
-
 element-text {
-	font:							"feather 20";
-    expand:                         true;
-    horizontal-align:               0.5;
-    vertical-align:                 0;
-    margin:                         5px 10px 30px 10px;
+    font:                        "feather bold 14";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
 }
-
-element normal.urgent,
-element alternate.urgent {
-    background-color:               @off;
-    text-color:                     @background;
-    border-radius:                  0px;
-}
-
-element normal.active,
-element alternate.active {
-    background-color:               @on;
-    text-color:                     @background;
-}
-
-element selected {
-    background-color:               @accent;
-    text-color:                     @background;
-    border:                  		0px;
-    border-radius:                  0px;
-    border-color:                  	@border;
-}
-
-element selected.urgent {
-    background-color:               @on;
-    text-color:                     @background;
-}
-
-element selected.active {
-    background-color:               @off;
-    color:                          @background;
+element selected.normal {
+    background-color:            var(selected);
+    text-color:                  var(background);
 }

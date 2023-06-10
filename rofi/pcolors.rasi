@@ -1,9 +1,22 @@
 /* colors */
+
 * {
-  accent:           #A9C03F;
-  background:       #141c21;
-  background-light: #1C252A;
-  foreground:       #93a1a1;
-  on:               #5BB462;
-  off:              #DE635E;
+    background:     #000000FF;
+    background-alt: #000000FF;
+    foreground:     #FF1493FF;
+    selected:       #FF1493FF;
+    active:         #FF1493FF;
+    urgent:         #ff00ffFF;
 }
+
+/*
+* {
+    background:     #1E2127FF;
+    background-alt: #282B31FF;
+    foreground:     #FFFFFFFF;
+    selected:       #61AFEFFF;
+    active:         #98C379FF;
+    urgent:         #E06C75FF;
+}
+
+*/

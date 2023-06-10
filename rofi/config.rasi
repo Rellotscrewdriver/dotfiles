@@ -16,9 +16,9 @@ configuration {
   fullscreen:                     false;
 	hide-scrollbar: 				true;
 	sidebar-mode: 					false;
-  display-run: " ";
+  display-run: "";
   display-drun: "";
-  display-window: "  ";
+  display-window: "";
   drun-display-format: "{icon} {name}";
 }
 

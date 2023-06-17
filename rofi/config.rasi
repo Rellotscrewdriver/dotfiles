@@ -45,9 +45,9 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px;
-	border-color:					@ac;
-    border-radius:                  0px;
+		border:							1px solid;
+		border-color:					@ac;
+    border-radius:                  30px;
 	width:							40%;
     location:                       center;
     x-offset:                       0;
@@ -57,8 +57,8 @@ window {
 prompt {
     enabled: 						true;
 	padding: 						1% 0.75% 1% 0.75%;
-	background-color: 				@ac;
-	text-color: 					@fg;
+	background-color: 				@al;
+	text-color: 					@ac;
 	font:							"Iosevka Nerd Font 12";
 }
 
@@ -72,8 +72,8 @@ textbox-prompt-colon {
 
 entry {
     background-color:               @al;
-    text-color:                     @fg;
-    placeholder-color:              @fg;
+    text-color:                     @ac;
+    placeholder-color:              @ac;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";
@@ -131,7 +131,7 @@ element-icon {
 
 element-text {
     background-color: 				@al;
-    text-color:       				inherit;
+    text-color:       				@ac;
     expand:                         true;
     horizontal-align:               0;
     vertical-align:                 0.5;
@@ -139,10 +139,17 @@ element-text {
 }
 
 element selected {
-    background-color:               @se;
+    background-color:               @ac;
 		text-color: @ac;
-  	border:							0% 0% 0% 0.3%;
+  	/* border:							0% 0% 0% 0.3%; */
     border-radius:                  0px;
     border-color:                  	@ac;
 }
 
+element-text selected {
+    background-color: 				@ac;
+    text-color:       				@al;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    margin:                         0% 0.25% 0% 0.25%;
+}

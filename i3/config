@@ -158,12 +158,13 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 #move Softwares to their own workspaces
-assign [class="xfce4-terminal" instance="nvim$"] → 3
 assign [class="firefox"] 2
 assign [class="discord"] 4
-assign [class="^nemo$"] 3
 
-bindsym $mod+45 exec sh ~/.config/i3/wall.sh
+assign [class="ghostwriter"] 7
+assign [class="libreoffice"] 6
+assign [class="xfce4-terminal"] 1
+assign [class="evince"] 5
 
 ######################################
 # color settings for bar and windows #
@@ -231,16 +232,11 @@ bar {
 	mode hide
 }
 
-# Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/screenshots/$(date).png"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/screenshots/$(date).png"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/screenshots/$(date).png"
 
 default_border pixel 1
 default_floating_border pixel 1
 
-exec nitrogen --set-zoom-fill --random /wallpapers 
 
 # compositor 
 exec picom
-exec --no-startup-id dunst
+exec variety 

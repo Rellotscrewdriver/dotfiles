@@ -1,0 +1,117 @@
+snippet import
+	import ${0:module}
+snippet while
+	while $1:
+		${0}
+
+# dowh - does the same as do...while in other languages
+snippet do
+	while True:
+		${1}
+		if $0:
+			break
+
+snippet with
+	with ${1:expr} as ${2:var}:
+		${0}
+
+snippet with
+	async with ${1:expr} as ${2:var}:
+		${0}
+
+# New Function
+snippet def
+	def ${1:fname}():
+		${0}
+
+# Ifs
+snippet if
+	if $1:
+		${0}
+snippet else
+	else:
+		${0}
+snippet eiif
+	elif $1:
+		${0}
+
+# For
+snippet for
+	for ${1:item} in ${2:items}:
+		${0}
+snippet for
+	for ${1:item} in range(0, ${2:3}):
+		${0}
+
+#Exceptions
+snippet try Try/Except
+	try:
+		${1:${VISUAL}}
+	except ${2:Exception} as ${3:e}:
+		${0:raise $3}
+snippet trye Try/Except/Else
+	try:
+		${1:${VISUAL}}
+	except ${2:Exception} as ${3:e}:
+		${4:raise $3}
+	else:
+		${0}
+snippet tryf Try/Except/Finally
+	try:
+		${1:${VISUAL}}
+	except ${2:Exception} as ${3:e}:
+		${4:raise $3}
+	finally:
+		${0}
+snippet tryef Try/Except/Else/Finally
+	try:
+		${1:${VISUAL}}
+	except ${2:Exception} as ${3:e}:
+		${4:raise $3}
+	else:
+		${5}
+	finally:
+		${0}
+
+# debugger breakpoint
+snippet br
+	breakpoint()
+# python debugger (pdb)
+snippet pdb
+	__import__('pdb').set_trace()
+# bpython debugger (bpdb)
+snippet bpdb
+	__import__('bpdb').set_trace()
+# ipython debugger (ipdb)
+snippet ipdb
+	__import__('ipdb').set_trace()
+# embed ipython itself
+snippet iem
+	__import__('IPython').embed()
+# remote python debugger (rpdb)
+snippet rpdb
+	__import__('rpdb').set_trace()
+# web python debugger (wdb)
+snippet wdb
+	__import__('wdb').set_trace()
+# ptpython
+snippet ptpython
+	__import__('ptpython.repl', fromlist=('repl')).embed(globals(), locals(), vi_mode=${1:False}, history_filename=${2:None})
+# python console debugger (pudb)
+snippet pudb
+	__import__('pudb').set_trace()
+# python console debugger remote (pudb)
+snippet pudbr
+	from pudb.remote import set_trace
+	set_trace()
+# pdb in nosetests
+snippet nosetrace
+	__import__('nose').tools.set_trace()
+snippet pprint
+	__import__('pprint').pprint(${1})
+
+# Printing
+snippet pr
+	print($0)
+snippet prs
+	print("$0")

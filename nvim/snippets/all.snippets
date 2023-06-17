@@ -1,0 +1,34 @@
+# Global snippets
+
+snippet date shows the year, month and day	
+	`strftime("%Y-%m-%d")`
+snippet ddate
+	`strftime("%B %d, %Y")`
+snippet diso
+	`strftime("%Y-%m-%dT%H:%M:%S")`
+snippet time
+	`strftime("%H:%M")`
+snippet datetime
+	`strftime("%Y-%m-%d %H:%M")`
+snippet mylicense
+	
+	Copyright `&enc[:2] == "utf" ? "©" : "(c)"` `strftime("%Y")`, ${2:`g:snips_author`}
+	
+	This software is provided 'as-is', without any express or implied warranty.
+	In no event will the authors be held liable for any damages arising from the use of this software.
+	
+	Permission is granted to anyone to use this software for any purpose,
+	including commercial applications, and to alter it or not and redistribute it freely,
+	subject to the following restrictions:
+	
+	1. The origin of this software must not be misrepresented;
+	   you must not claim that you wrote the original software.
+		 
+	2. Altered source or binary versions must not be
+	   misrepresented as being the original software.
+	   
+	3. Redistributions of source code must retain the above copyright
+	   notice, this list of conditions and the following disclaimer.
+	
+	4. Redistributions in binary form must credit the original author
+		 in the credits or about section including a link to its original source code.

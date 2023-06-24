@@ -31,16 +31,16 @@ local conditions = {
 -- Config
 local config = {
   options = {
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = ' ', right = ' '},
+    section_separators = { left = ' ', right = ' '},
     theme = 'auto'
   },
   sections = {
     -- the elements are added here for the dynamic higlighting effect
     lualine_a = {'mode'},
-    lualine_b = {'branch'},
-    lualine_y = {{'location', padding = {right = 1, left = 0}}},
-    lualine_z = {{'datetime', style = '%H:%M', icon = '', separator = {left = ''}, padding = { right = 1 }},
+    lualine_b = {{'branch', padding = {right = 1, left = 0}, icon = {''}}}, 
+    lualine_y = {{'location', padding = {right = 0, left = 0}}},
+    lualine_z = {{'progress', padding = { right = 1, left = 1 }},
   },
     -- These will be filled later
     lualine_c = {},

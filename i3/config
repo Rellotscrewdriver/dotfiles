@@ -160,7 +160,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i
 #move Softwares to their own workspaces
 assign [class="firefox"] 2
 assign [class="discord"] 4
-
 assign [class="ghostwriter"] 7
 assign [class="libreoffice"] 6
 assign [class="xfce4-terminal"] 1
@@ -171,7 +170,7 @@ assign [class="evince"] 5
 ######################################
 
 # Define colors variables:
-set $darkbluetrans	#08052be6
+set $darkbluetrans	#08052b
 set $darkblue		#08052b
 set $lightblue		#5294e2
 set $urgentred		#e53935
@@ -232,11 +231,11 @@ bar {
 	mode hide
 }
 
-
 default_border pixel 1
 default_floating_border pixel 1
 
 
 # compositor 
 exec picom
-exec variety 
+exec_always --no-startup-id variety
+

@@ -6,18 +6,11 @@ end
 local header = {
   type = "text",
   val = {
-[[            ██████╗ ███████╗██╗     ██╗      ██████╗ ████████╗██╗ ███████╗            ]],
-[[            ██╔══██╗██╔════╝██║     ██║     ██╔═══██╗╚══██╔══╝╚█║ ██╔════╝            ]],
-[[            ██████╔╝█████╗  ██║     ██║     ██║   ██║   ██║    ╚╝ ███████╗            ]],
-[[            ██╔══██╗██╔══╝  ██║     ██║     ██║   ██║   ██║       ╚════██║            ]],
-[[            ██║  ██║███████╗███████╗███████╗╚██████╔╝   ██║       ███████║            ]],
-[[            ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝    ╚═╝       ╚══════╝            ]],
-[[███████╗ ██████╗██████╗ ███████╗██╗    ██╗██████╗ ██████╗ ██╗██╗   ██╗███████╗██████╗ ]],
-[[██╔════╝██╔════╝██╔══██╗██╔════╝██║    ██║██╔══██╗██╔══██╗██║██║   ██║██╔════╝██╔══██╗]],
-[[███████╗██║     ██████╔╝█████╗  ██║ █╗ ██║██║  ██║██████╔╝██║██║   ██║█████╗  ██████╔╝]],
-[[╚════██║██║     ██╔══██╗██╔══╝  ██║███╗██║██║  ██║██╔══██╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗]],
-[[███████║╚██████╗██║  ██║███████╗╚███╔███╔╝██████╔╝██║  ██║██║ ╚████╔╝ ███████╗██║  ██║]],
-[[╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝]],
+[[███    ██ ███████  ██████  ██    ██ ██ ███    ███]],
+[[████   ██ ██      ██    ██ ██    ██ ██ ████  ████]],
+[[██ ██  ██ █████   ██    ██ ██    ██ ██ ██ ████ ██]],
+[[██  ██ ██ ██      ██    ██  ██  ██  ██ ██  ██  ██]],
+[[██   ████ ███████  ██████    ████   ██ ██      ██]],
   },
   opts = {
     position = "center",
@@ -83,7 +76,6 @@ local buttons = {
   val = {
     button("s", "  Restore                         ", ":SessionManager load_last_session<CR>"),
     button("r", "  Recents                         ", ":Telescope oldfiles<CR>"),
-    button("f", "  Search                          ", ":Telescope find_files<CR>"),
     button("e", "  Create                          ", ":ene <BAR> startinsert<CR>"),
     button("w", "  Projects                        ", "<cmd>lua require'telescope'.extensions.project.project{}<CR>"),
     button("p", "  Update                          ", ":Lazy update<CR>"),
@@ -98,8 +90,8 @@ local buttons = {
 
 local function stats()
     -- Number of plugins
-    local datetime = os.date(" %d-%m-%Y   %H:%M:%S")
-    local plugins_text = " v"
+    local datetime = os.date(" %d %B %Y")
+    local plugins_text = " v"
       .. vim.version().major
       .. "."
       .. vim.version().minor
@@ -125,7 +117,6 @@ local Stats = {
   },
 }
 
-
 local Plugstats = {
   type = "text",
   val = plugstats,
@@ -144,7 +135,7 @@ local section = {
 
 local opts = {
   layout = {
-    { type = "padding", val = 1 },
+    { type = "padding", val = 7 },
     section.header,
     { type = "padding", val = 1 },
     section.footer,

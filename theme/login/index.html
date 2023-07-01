@@ -1,6 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
 <html>
 	<head>
+		<!-- <link rel="stylesheet" href="vendor/css/font-awesome.min.css"> -->
+		<!-- <link rel="stylesheet" href="style.css"> -->
+		<!-- <script src="js/jqurey.min.js"></script> -->
+		<!-- <script src="js/mock.js"></script> -->
+		<!-- <script src="js/moment-with-locales.min.js" charset="UTF-8"></script> -->
 	</head>
 	<body>
 		<div class="top-panel">
@@ -11,14 +16,22 @@
 			<div class="margin">
 				<div class="arch-logo">
 					<img />
-				<div class="restart-btn"><img /> Restart</div>
-				<div class="shutdown-btn"><img /> shutdown</div>
+				<button class="restart-btn"><img /> Restart</div>
+				<button class="shutdown-btn"><img /> shutdown</div>
 			</div>
       
 			<div class="user-panel">
 				<div class="greet-com">Welcome <b>OldComp</b></div>
 				<input id="username-field" type="text" placeholder="Enter Username">
 				<input id="password-field" type="password" placeholder="Enter Password">
+					<div id="session-box">
+						Selected session&nbsp;
+						<div id="session-select">
+							<div id="session-text">xfce</div>
+							<ul id="session-field"></ul>
+						</div>
+					</div>
+				
 			</div>
 		</div>
 

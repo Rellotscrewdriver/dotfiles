@@ -1,5 +1,57 @@
-<svg height='16' width='16' xmlns='http://www.w3.org/2000/svg'>
-    <g transform='translate(-633 195)'>
-        <path color='#000' d='M640.75-191a.25.25 0 0 0-.25.25v1.5c0 .139.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25zm3.735 1.068a.247.247 0 0 0-.163.1l-.882 1.213a.25.25 0 0 0 .054.35l.405.294a.247.247 0 0 0 .347-.054l.885-1.213a.25.25 0 0 0-.055-.35l-.404-.295a.253.253 0 0 0-.187-.045zm-7.061.059a.245.245 0 0 0-.184.049l-.4.3a.249.249 0 0 0-.049.35l.903 1.197c.083.111.24.133.351.05l.399-.302a.249.249 0 0 0 .048-.35l-.902-1.196a.252.252 0 0 0-.166-.098zm-2.408 3.33a.248.248 0 0 0-.305.178l-.13.482a.25.25 0 0 0 .177.307l1.45.389a.25.25 0 0 0 .306-.178l.129-.483a.25.25 0 0 0-.178-.306zm11.969 0l-1.45.389a.25.25 0 0 0-.177.306l.129.483a.25.25 0 0 0 .306.178l1.45-.39a.25.25 0 0 0 .177-.306l-.13-.482a.248.248 0 0 0-.305-.178zM638.25-185a.25.25 0 0 0-.25.25v.5c0 .139.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25z' fill='#363636' overflow='visible' style='marker:none'/>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
+ <defs>
+   <style id="current-color-scheme" type="text/css">
+   .ColorScheme-Text { color: #FF1493; } .ColorScheme-Highlight { color: #1AD6AB; }
+  </style>
+  <linearGradient id="arrongin" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#dd9b44" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#ad6c16" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="aurora" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#09D4DF" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#9269F4" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="cyberneon" x1="0%" x2="0%" y1="0%" y2="100%">
+    <stop offset="0"    stop-color= "#0abdc6" stop-opacity="1"/>
+    <stop offset="1"    stop-color= "#ea00d9" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="fitdance" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#1AD6AB" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#329DB6" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="oomox" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#efefe7" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#8f8f8b" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="rainblue" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#00F260" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#0575E6" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="sunrise" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#FF8501" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#FFCB01" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="telinkrin" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#b2ced6" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#6da5b7" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="60spsycho" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#df5940" stop-opacity="1"/>
+   <stop offset="25%"   stop-color= "#d8d15f" stop-opacity="1"/>
+   <stop offset="50%"   stop-color= "#e9882a" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#279362" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="90ssummer" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#f618c7" stop-opacity="1"/>
+   <stop offset="20%"   stop-color= "#94ffab" stop-opacity="1"/>
+   <stop offset="50%"   stop-color= "#fbfd54" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#0f83ae" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+ <path fill="currentColor" class="ColorScheme-Text" d="M 5.5,9 C 5.223,9 5,9.223 5,9.5 V 12 H 11 V 9.5 C 11,9.223 10.777,9 10.5,9 Z"/>
+ <path fill="currentColor" class="ColorScheme-Text" d="M 3,12 V 10 L 0,11 Z"/>
+ <path fill="currentColor" class="ColorScheme-Text" d="M 7,6 H 9 L 8,3 Z"/>
+ <path fill="currentColor" class="ColorScheme-Text" d="M 13,10 V 12 L 16,11 Z"/>
+ <path fill="currentColor" class="ColorScheme-Text" d="M 10.825,6.756 12.239,8.1703 13.654,5.3418 Z"/>
+ <path fill="currentColor" class="ColorScheme-Text" d="M 3.7605,8.1703 5.1748,6.756 2.3463,5.3418 Z"/>
 </svg>

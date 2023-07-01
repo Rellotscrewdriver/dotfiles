@@ -1,4 +1,52 @@
-<svg width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg">
- <path d="m3.5 3c-1.939 0-3.5 1.561-3.5 3.5 0 1.7781 1.3123 3.2367 3.0254 3.4668-0.015974-0.15341-0.025391-0.30933-0.025391-0.4668 0-0.18435 0.013356-0.36622 0.035156-0.54492-1.1614-0.21669-2.0352-1.229-2.0352-2.4551 0-1.385 1.115-2.5 2.5-2.5h5c1.385 0 2.5 1.115 2.5 2.5s-1.115 2.5-2.5 2.5h-2.418c-0.052538 0.15565-0.082031 0.32313-0.082031 0.5 0 0.17687 0.029493 0.34435 0.082031 0.5h2.418c1.939 0 3.5-1.561 3.5-3.5s-1.561-3.5-3.5-3.5h-5z" fill="#363636" stroke-linecap="square" stroke-width="2" style="paint-order:fill markers stroke"/>
- <path d="m12.5 13c1.939 0 3.5-1.561 3.5-3.5 0-1.7781-1.3123-3.2367-3.0254-3.4668 0.01597 0.15341 0.02539 0.30933 0.02539 0.4668 0 0.18435-0.01336 0.36622-0.03516 0.54492 1.1614 0.21669 2.0352 1.229 2.0352 2.4551 0 1.385-1.115 2.5-2.5 2.5h-5c-1.385 0-2.5-1.115-2.5-2.5s1.115-2.5 2.5-2.5h2.418c0.05254-0.15565 0.08203-0.32313 0.08203-0.5s-0.02949-0.34435-0.08203-0.5h-2.418c-1.939 0-3.5 1.561-3.5 3.5s1.561 3.5 3.5 3.5z" fill="#363636" stroke-linecap="square" stroke-width="2" style="paint-order:fill markers stroke"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
+ <defs>
+   <style id="current-color-scheme" type="text/css">
+   .ColorScheme-Text { color: #FF1493; } .ColorScheme-Highlight { color: #1AD6AB; }
+  </style>
+  <linearGradient id="arrongin" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#dd9b44" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#ad6c16" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="aurora" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#09D4DF" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#9269F4" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="cyberneon" x1="0%" x2="0%" y1="0%" y2="100%">
+    <stop offset="0"    stop-color= "#0abdc6" stop-opacity="1"/>
+    <stop offset="1"    stop-color= "#ea00d9" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="fitdance" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#1AD6AB" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#329DB6" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="oomox" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#efefe7" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#8f8f8b" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="rainblue" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#00F260" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#0575E6" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="sunrise" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#FF8501" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#FFCB01" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="telinkrin" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#b2ced6" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#6da5b7" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="60spsycho" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#df5940" stop-opacity="1"/>
+   <stop offset="25%"   stop-color= "#d8d15f" stop-opacity="1"/>
+   <stop offset="50%"   stop-color= "#e9882a" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#279362" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="90ssummer" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"    stop-color= "#f618c7" stop-opacity="1"/>
+   <stop offset="20%"   stop-color= "#94ffab" stop-opacity="1"/>
+   <stop offset="50%"   stop-color= "#fbfd54" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#0f83ae" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+ <path fill="currentColor" class="ColorScheme-Text" d="M 8,1 C 4.9069291,1.0031077 2.1825615,3.0358623 1.2988281,6 H 3.4199219 C 4.2148034,4.1786969 6.0127958,3.0009928 8,3 c 1.985786,0.00254 3.781859,1.1799949 4.576172,3 h 2.128906 C 13.820931,3.0344785 11.094516,1.001382 8,1 Z M 8,4 C 6.7301958,4.0017817 5.1992672,4.8028155 4.776,6 h 6.35 C 10.702493,4.8021406 9.2705212,4.0009552 8,4 Z m -7,3 7,8 7,-8 z"/>
 </svg>

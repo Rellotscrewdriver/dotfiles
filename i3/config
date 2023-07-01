@@ -162,8 +162,10 @@ assign [class="firefox"] 2
 assign [class="discord"] 4
 assign [class="ghostwriter"] 7
 assign [class="libreoffice"] 6
-assign [class="xfce4-terminal"] 1
-assign [class="evince"] 5
+assign [class="Evince"] 5
+assign [class="Nemo"] 5
+assign [class="vokoscreenNG"] 8
+assign [class="kdeconnect.app"] 1
 
 ######################################
 # color settings for bar and windows #
@@ -237,5 +239,6 @@ default_floating_border pixel 1
 
 # compositor 
 exec picom
-exec_always --no-startup-id variety
+
+exec --no-startup-id variety
 

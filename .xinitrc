@@ -51,5 +51,6 @@ fi
 twm &
 
 
-dunst &
+exec notify-send
 exec i3
+

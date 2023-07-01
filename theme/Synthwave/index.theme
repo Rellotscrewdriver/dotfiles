@@ -1,12 +1,11 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Synthwave
-Comment=An Flat Gtk+ theme based on Elegant Design
+Name=oomox-Synthwave
+Comment=A partially sexual act; when a female (of any species; mostly humanoids) rubs the ears/lobes of a male Ferengi, creating sensual emotions and chemical reactions in the male (and sometimes in the female).
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Catppuccin-Mocha-Standard-Blue-Dark
-MetacityTheme=Catppuccin-Mocha-Standard-Blue-Dark
-IconTheme=Tela-circle-Dark
-CursorTheme=Catppuccin-cursors
-ButtonLayout=close,minimize,maximize:menu
+Name=oomox-Synthwave
+GtkTheme=oomox-Synthwave
+IconTheme=oomox-Synthwave
+MetacityTheme=oomox-Synthwave

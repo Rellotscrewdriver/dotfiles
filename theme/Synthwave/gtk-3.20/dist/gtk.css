@@ -70,7 +70,7 @@
 @define-color osd_borders_color rgba(0, 0, 0, 0.8);
 /* lightdm greeter colors */
 @define-color lightdm_bg_color #000000;
-@define-color lightdm_fg_color #C5C8C6;
+@define-color lightdm_fg_color #FF1493;
 /* widget text/foreground color on backdrop windows */
 @define-color theme_unfocused_fg_color mix(#C5C8C6,#000000,0.5);
 /* text color for entries, views and content in general on backdrop windows */
@@ -4497,20 +4497,7 @@ SushiFontWidget {
 
 /*************
  ! Gucharmap *
-**************/
-GucharmapChartable {
-  background-color: #000000;
-  color: #C5C8C6; }
-
-/*************
- ! Evolution *
-**************/
-EPreviewPane .entry {
-  background-color: #000000;
-  color: #C5C8C6; }
-
-/*******************
- ! Gnome Bluetooth *
+**************nome Bluetooth *
 ********************/
 entry.entry.pin-entry {
   font-style: normal;

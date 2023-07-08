@@ -84,7 +84,7 @@ entry {
 inputbar {
 	children: 						[ prompt, entry ];
     background-color:               @se;
-    text-color:                     @fg;
+    text-color:                     @txt;
     expand:                         false;
 	border:							0% 0% 0% 0%;
     border-radius:                  0px;
@@ -131,7 +131,7 @@ element-icon {
 
 element-text {
     background-color: 				@al;
-    text-color:       				@ac;
+    text-color:       				@txt;
     expand:                         true;
     horizontal-align:               0;
     vertical-align:                 0.5;
@@ -139,7 +139,7 @@ element-text {
 }
 
 element selected {
-    background-color:               @ac;
+    background-color:               @bg;
 		text-color: @ac;
   	/* border:							0% 0% 0% 0.3%; */
     border-radius:                  0px;
@@ -147,8 +147,8 @@ element selected {
 }
 
 element-text selected {
-    background-color: 				@ac;
-    text-color:       				@al;
+    background-color: 				@bg;
+    text-color:       				@ac;
     horizontal-align:               0;
     vertical-align:                 0.5;
     margin:                         0% 0.25% 0% 0.25%;

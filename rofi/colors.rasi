@@ -5,6 +5,7 @@
   bg:  #101010ff;
   se:  #101010ff;
   fg:  #FFFFFFff;
+	txt: #C5C8C6ff;
   ac:  #FF1493;
   background:     #000000FF;
   background-alt: #000000FF;

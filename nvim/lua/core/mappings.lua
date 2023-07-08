@@ -5,7 +5,7 @@ keymap("n", "<S-h>", ":bprevious<CR>")
 keymap("n", "<S-l>", ":bnext<CR>")
 
 -- See all the buffers
-keymap("n", "b", ":Telescope buffers<CR>")
+keymap("n", "<C-b>", ":Telescope buffers<CR>")
 keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>")
 
 -- Delele buffers without screwing my layout for the nth time

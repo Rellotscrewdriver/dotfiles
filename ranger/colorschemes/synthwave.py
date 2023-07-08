@@ -21,19 +21,19 @@ class base(ColorScheme):
             if context.border:
                 fg = magenta 
             if context.image:
-                fg = 146
+                fg = 199
             if context.video:
-                fg = 255
+                fg = 199
             if context.audio:
-                fg = 173
+                fg = 199
             if context.document:
-                fg = white
+                fg = 199
             if context.container:
                 attr |= bold
-                fg = 1
+                fg = 199
             if context.directory:
                 attr |= bold
-                fg = 20
+                fg = 199
             elif context.executable and not \
                     any((context.media, context.container,
                        context.fifo, context.socket)):
@@ -47,8 +47,8 @@ class base(ColorScheme):
                 if context.device:
                     attr |= bold
             if context.link:
-                fg = context.good and 7 or 8
-                bg = cyan
+                fg = context.good and 199
+                bg = 0
             if context.bad:
                 fg = 1
             if context.tag_marker and not context.selected:
@@ -77,7 +77,7 @@ class base(ColorScheme):
             if context.hostname:
                 fg = context.bad and 8 or 7
             elif context.directory:
-                fg = blue
+                fg = 199
             elif context.tab:
                 if context.good:
                     fg = 1
@@ -87,7 +87,7 @@ class base(ColorScheme):
         elif context.in_statusbar:
             if context.permissions:
                 if context.good:
-                    fg = 7
+                    fg = 199
                 elif context.bad:
                     fg = 8
             if context.marked:

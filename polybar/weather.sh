@@ -6,6 +6,8 @@
 
 # if you leave these empty location will be picked based on your ip-adres
 APIKEY=$(<$HOME/.own-key)
+CITY_NAME=$(<$HOME/.city)
+COUNTRY_CODE='IN'
 # Desired output language
 LANG="en"
 # UNITS can be "metric", "imperial" or "kelvin". Set KNOTS to "yes" if you

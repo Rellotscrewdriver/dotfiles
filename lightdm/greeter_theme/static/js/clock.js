@@ -10,9 +10,9 @@ const updateTime = () => {
   const day = now.getDate()
   const hours = now.getHours().toString().padStart(2, "0")
   const minutes = now.getMinutes().toString().padStart(2, "0")
-  spanMonth.textContent = `${month}月`
-  spanDay.textContent = `${day}日`
-  spanHours.textContent = hours
+  spanMonth.textContent = `${month}/`
+  spanDay.textContent = `${day}/`
+  spanHours.textContent = `${hours} : `
   spanMinutes.textContent = minutes
 }
 

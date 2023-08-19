@@ -8,42 +8,28 @@
 	<div class="grid-container">
 		<div class="grid-item">
 			<img src="static/img/logo.png" placeholder="Arch logo" id="logo">
-			  <svg
-        class="power shutdown"
-        onclick="lightdm.shutdown();"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-				>
-				<path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M5.636 5.636a9 9 0 1012.728 0M12 3v9"
-        />
-			<p class="">Shutdown</p>
-			</svg>
-			<br />
-			<svg
-        class="power restart"
-        onclick="lightdm.restart();"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        tabindex="5"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
-        />
-			<p class="">Restart</p>
-      </svg>
 
-		</div>
+			<div class="commands-wrapper">
+				<div class = "shutdown">
+					<div class = "icon-wrapper">
+						<svg class="power shutdown" onclick="lightdm.shutdown();" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1012.728 0M12 3v9"/>
+						</svg>
+					<div class="text">Shutdown</div>
+					</div>
+				</div>
+				
+				<div class = "restart">
+					<div class = "icon-wrapper">
+						<svg class="power restart" onclick="lightdm.restart();" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" tabindex="5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+						</svg>
+						<div class="text">Restart</div>
+					</div>
+				</div>
+			</div>
+
+	</div>
 		<div class="grid-item">
 			<h1 id="hostname">Welcome OldComp!</h1>
 			<div class="login-container">
@@ -147,27 +133,21 @@
 			</div>
 			<div class="session-box">
         <button id="login-button" type="submit" tabindex="3" class="button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            width="1rem"
-          >
-
-						<path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-            />
-          </svg>
-
-
+							<svg version="1.1" 
+								id="Layer_1" 
+								xmlns="http://www.w3.org/2000/svg" 
+								xmlns:xlink="http://www.w3.org/1999/xlink" 
+								x="0px" y="0px" 
+								viewBox="626 306 28 28" 
+								enable-background="new 626 306 28 28" 
+								xml:space="preserve">
+								<g><g>
+									<circle cx="640" cy="320"></circle>
+									<polygon fill="#00000" points="636.418,314.791 645.535,320.326 636.418,325.861 638.372,320.326 "></polygon>
+								</g></g>
+							</svg>
 			</div>
-				<!-- <span>Login</span> -->
         </button>
-										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="626 306 28 28" enable-background="new 626 306 28 28" xml:space="preserve"><g><g><circle cx="640" cy="320"></circle><polygon fill="#FFFFFF" points="636.418,314.791 645.535,320.326 636.418,325.861 638.372,320.326 "></polygon></g></g></svg>
 		</div>
 					</div>
 					</div>

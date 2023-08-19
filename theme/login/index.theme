@@ -1,6 +1,0 @@
-[theme]
-name=synthwave
-description=Proabably the best theme ever made, code is simple with no dependencies
-engine=lightdm-webkit-greeter
-url=index.html
-session=i3

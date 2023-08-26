@@ -1,7 +1,6 @@
 NVIM_CONFIG_DIR=~/.config/nvim
 NVIM_LOCAL_DIR=~/.local/share/fonts 
-NERD_FONT_DIR=~/DejaVuSansMono.zip
-
+NERD_FONT_DIR=~/CascadiaCode.zip
 set -e #terminate the script if anything errors out
 
 # check whether neovim is installed
@@ -21,14 +20,14 @@ echo "...done"
 
 echo "Installing CascadiaCode nerd font in your local directory"
 mkdir -p $NVIM_LOCAL_DIR
-if [ -f "~/DejaVuSansMono.zip" ]; then
+if [ -f $NERD_FONT_DIR ]; then
     echo "font's already there, skip installing it"
 else
     echo "installing the required font from the internet, please wait if you do have internet connection"
     wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip -O $NERD_FONT_DIR
 fi
 
-unzip -j $NERD_FONT_DIR "CascadiaCode Sans Mono Nerd Font Complete.ttf" -d $NVIM_LOCAL_DIR
+unzip -j $NERD_FONT_DIR -d $NVIM_LOCAL_DIR
 fc-cache -f
 rm -f $NERD_FONT_DIR
 

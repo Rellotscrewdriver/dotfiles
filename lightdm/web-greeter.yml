@@ -28,7 +28,7 @@ greeter:
     detect_theme_errors: True
     screensaver_timeout: 300
     secure_mode: True
-    theme: gruvbox
+    theme: waves 
     icon_theme:
     time_language:
 

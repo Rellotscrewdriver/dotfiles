@@ -258,8 +258,7 @@ body {
 .date,
 .time > *,
 .date > * {
-  font-size: 3rem;
-  font-family: Yuji Syuku;
+  font-size: 2.5rem;
 }
 
 .time,
@@ -269,12 +268,14 @@ body {
 }
 
 .time {
-  right: 0;
+  right: -3rem;
+	bottom: -3rem;
   margin: 3rem 4rem;
 }
 
 .date {
-  left: 0;
+  left: -3rem;
+	bottom: -3rem;
   margin: 3rem 4rem;
 }
 
@@ -366,8 +367,6 @@ p {
 -webkit-filter: drop-shadow(0 2px 1px rgba(0,0,0,.1));
 filter: drop-shadow(0 2px 1px rgba(0,0,0,.1));
 }
-
-
 
 .shutdown {
 display: flex;

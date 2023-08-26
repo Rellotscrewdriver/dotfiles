@@ -60,10 +60,16 @@ do
 
 				#greeter theme
 				ln -sfvr $DIR/lightdm/greeter_theme /usr/share/web-greeter/themes/waves
+	
+				#GRUB theme
+				ln -sfvr $DIR/GRUB_theme/Vimix /usr/share/grub/themes
+				grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null && sed -i '/GRUB_THEME=/d' /etc/default/grub
+				echo "GRUB_THEME=\"${THEME_DIR}/${THEME_NAME}/theme.txt\"" >> /etc/default/grub
+				grub-mkconfig -o /boot/grub/grub.cfg
 
 				#font
         [ ! -d $HOME/.local/share/fonts ] && mkdir -p $HOME/.local/share/fonts
-        #ln -sfv $DIR/.local/share/fonts/feather.ttf $HOME/.local/share/fonts/feather.ttf
+        ln -sfv $DIR/.local/share/fonts/feather.ttf $HOME/.local/share/fonts/feather.ttf
 				
 				#installing neovim
 				sh $DIR/configs/nvim/install.sh

@@ -1,19 +1,3 @@
-local colors = {
-	"catppuccin-mocha",
-	"catppuccin-frappe",
-	"catppuccin-macchiato",
-	"tokyonight-moon",
-	"tokyonight-storm",
-	"tokyonight-night",
-  "carbonfox",
-	"duskfox",
-	"nightfox",
-	"terafox",
-	"nordfox"
-}
-math.randomseed(os.time())
-
-local c = colors[math.random(#colors, 1)]
 local opt = vim.opt
 local opto = vim.o
 
@@ -28,7 +12,7 @@ opt.ttyfast = true
 opt.cursorline = true
 opt.termguicolors = true
 
-local source_cmd = "colorschem " .. c 
+local source_cmd = "colorscheme tokyonight-night"
 vim.cmd(source_cmd)
 
 opto.updatetime = 300

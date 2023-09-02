@@ -32,3 +32,9 @@ end
 
 impatient.enable_profile()
 
+require("themery").setup({
+  themes = {"catppuccin-mocha", "catppuccin-frappe", "catppuccin-macchiato", "tokyonight-moon", "tokyonight-storm","tokyonight-night", "carbonfox", "duskfox", "nightfox", "terafox", "nordfox"
+}, -- Your list of installed colorschemes
+  themeConfigFile = "~/.config/nvim/lua/session.lua", -- Described below
+  livePreview = true, -- Apply theme while browsing. Default to true.
+})

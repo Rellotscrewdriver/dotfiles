@@ -42,4 +42,5 @@ return {
   {"nvim-treesitter/nvim-treesitter", lazy = true}, --for syntax highlighting
 	--for debugging
   {"rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"}, lazy = true},
+	{"zaldih/themery.nvim"},
 }

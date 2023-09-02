@@ -83,8 +83,8 @@ prompt {
     enabled:                     true;
     padding:                     12px;
     border-radius:               100%;
-    background-color:            @active;
-    text-color:                  @background;
+    background-color:            @background;
+    text-color:                  @foreground;
 }
 
 /*****----- Message -----*****/

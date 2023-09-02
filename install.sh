@@ -69,8 +69,11 @@ do
 
 				#font
         [ ! -d $HOME/.local/share/fonts ] && mkdir -p $HOME/.local/share/fonts
-        ln -sfv $DIR/.local/share/fonts/feather.ttf $HOME/.local/share/fonts/feather.ttf
+        #ln -sfv $DIR/.local/share/fonts/feather.ttf $HOME/.local/share/fonts/feather.ttf
 				
+				#wallpapers
+				ln -sfvr $DIR/wallpapers /wallpapers
+
 				#installing neovim
 				sh $DIR/configs/nvim/install.sh
         ;;

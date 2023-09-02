@@ -25,4 +25,26 @@ Here I use the **Git and Github** for managing my dotfiles with symbolic links w
 Before leaving out, don't forget to **STAR** this repository! Thanks for checking out. *credits rolling*
 
 # credits
-*coming soon*
+https://github.com/SunoBB/dot
+https://github.com/HoNamDuong/.dotfiles
+https://github.com/kritdass/dotfiles
+https://github.com/zoddDev/dotfiles
+https://github.com/folke/dot
+https://github.com/skbolton/titan
+https://github.com/Hamza12700/DotFiles
+https://github.com/CaoHoangKiet222/ArchLinux
+https://github.com/nimishgo/i3wm-themes
+https://github.com/loctvl842/nvim
+https://github.com/KiteAB/.config
+https://github.com/theniceboy/.config
+https://github.com/ericmurphyxyz/dotfiles
+https://github.com/reedrw/dotfiles
+https://github.com/iamsubhranil/Rice
+https://github.com/bookercodes/dotfiles
+https://github.com/catppuccin/polybar
+https://github.com/polybar/polybar-scripts
+https://github.com/Fxzzi/.dots
+https://github.com/anishathalye/dotbot
+https://github.com/nocturnal84/dotfiles
+https://github.com/sbulav/dotfiles
+https://github.com/heapbytes/dotfiles

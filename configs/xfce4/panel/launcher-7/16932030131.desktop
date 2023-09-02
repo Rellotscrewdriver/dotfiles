@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Clocks
+GenericName=Clocks
+X-GNOME-FullName=GNOME Clocks
+Comment=Clocks for world times, plus alarms, stopwatch and a timer
+Keywords=time;timer;alarm;world clock;stopwatch;time zone;
+Exec=gnome-clocks
+Icon=org.gnome.clocks
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Utility;Clock;
+StartupNotify=true
+DBusActivatable=true
+X-GNOME-UsesNotifications=true
+X-Geoclue-Reason=Allows world clocks to be displayed for your time zone.
+X-Purism-FormFactor=Workstation;Mobile;
+X-XFCE-Source=file:///usr/share/applications/org.gnome.clocks.desktop

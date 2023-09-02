@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:CaskaydiaCove Nerd Font 10
+font pango:CaskaydiaCove Nerd Font 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -171,29 +171,43 @@ assign [class="kdeconnect.app"] 1
 # color settings for bar and windows #
 ######################################
 
-# Define colors variables:
-set $darkbluetrans	#08052b
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#e53935
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
-set $darkgrey		#383c4a
-set $grey		#b0b5bd
-set $mediumgrey		#8b8b8b
-set $yellowbrown	#e1b700
-set $primary_synthwave84            #f625a3
-set $secondary_synthwave84          #03edf9
 
-# define colors for windows:
-#class		        	border		bground		text		indicator	child_border
-client.focused		  $lightblue $darkblue	$white		$purple		$primary_synthwave84
-#client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
-client.unfocused	  $darkblue	$darkblue	$grey		$purple		$black
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-client.urgent		    $urgentred	$urgentred	$white		$purple		$secondary_synthwave84
+set $bg-color 	         #000000
+set $inactive-bg-color   #373B41
+set $text-color          #FF1493
+set $inactive-text-color #C5C8C6
+set $urgent-bg-color     #E53935
 
+# window colors
+#                       border              background         text                 indicator
+client.focused          $text-color         $text-color      $bg-color							$text-color 
+client.unfocused        $bg-color						$bg-color				 $text-color						$bg-color
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color  $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
+
+#Define colors variables:
+# set $darkbluetrans	#08052b
+# set $darkblue		#08052b
+# set $lightblue		#5294e2
+# set $urgentred		#e53935
+# set $white		#ffffff
+# set $black		#000000
+# set $purple		#e345ff
+# set $darkgrey		#383c4a
+# set $grey		#b0b5bd
+# set $mediumgrey		#8b8b8b
+# set $yellowbrown	#e1b700
+# set $primary_synthwave84            #f625a3
+# set $secondary_synthwave84          #03edf9
+#
+# # define colors for windows:
+# #class		        	border		bground		text		indicator	child_border
+# client.focused		  $lightblue $darkblue	$white		$purple		$primary_synthwave84
+# #client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
+# client.unfocused	  $darkblue	$darkblue	$grey		$purple		$black
+# client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
+# client.urgent		    $urgentred	$urgentred	$white		$purple		$secondary_synthwave84
+#
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -233,12 +247,11 @@ bar {
 	mode hide
 }
 
-default_border pixel 1
-default_floating_border pixel 1
-
+default_border pixel 2
 
 # compositor 
 exec picom
+exec xfce4-panel
 
 exec --no-startup-id variety
 

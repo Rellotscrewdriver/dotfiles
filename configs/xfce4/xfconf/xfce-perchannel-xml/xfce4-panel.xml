@@ -14,12 +14,12 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="2"/>
         <value type="int" value="1"/>
+        <value type="int" value="11"/>
         <value type="int" value="5"/>
+        <value type="int" value="9"/>
         <value type="int" value="6"/>
         <value type="int" value="7"/>
         <value type="int" value="8"/>
-        <value type="int" value="9"/>
-        <value type="int" value="10"/>
         <value type="int" value="4"/>
       </property>
       <property name="length" type="double" value="5.208333333333333"/>
@@ -64,17 +64,17 @@
     </property>
     <property name="plugin-9" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="16932039202.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-10" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="16933776781.desktop"/>
+        <value type="string" value="16938038701.desktop"/>
       </property>
     </property>
     <property name="plugin-4" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-11" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16938021571.desktop"/>
+      </property>
     </property>
   </property>
 </channel>

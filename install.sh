@@ -55,8 +55,9 @@ do
 				ln -sfvr $DIR/wallpapers /wallpapers
 
 				#lightdm and greeter
-				ln -sfvr $DIR/lightdm.conf /etc/lightdm/lightdm.conf
-				ln -sfvr $DIR/web-greeter.yml /etc/lightdm/web-greeter.yml
+				ln -sfvr $DIR/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
+				ln -sfvr $DIR/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+				ln -sfvr $DIR/lightdm/pfp.png /etc/lightdm/pfp.png
 
 				#greeter theme
 				ln -sfvr $DIR/lightdm/greeter_theme /usr/share/web-greeter/themes/waves
@@ -73,6 +74,9 @@ do
 				
 				#wallpapers
 				ln -sfvr $DIR/wallpapers /wallpapers
+
+				#Configure betterlockscreen
+				betterlockscreen -u /wallpapers/miami6.jpg 
 
 				#installing neovim
 				sh $DIR/configs/nvim/install.sh

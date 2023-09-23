@@ -8,13 +8,13 @@ temperatureIcons=(       ☢)
 
 if [ $temCore -lt 40 ];
 then
-  tmpEcho="${temperatureIcons[0]}%{F-} %{F${temperatureColors[0]}}$temCore$degree "
+  tmpEcho="${temperatureIcons[0]}%{F-}%{F${temperatureColors[0]}}$temCore$degree "
 else
   for (( i=1; i<=7; i++ ))
   do 
       if [ $temCore -ge ${temperatureValues[$i-1]} -a $temCore -lt ${temperatureValues[$i]} ];
       then
-        tmpEcho="%{F${temperatureColors[$i]}} ${temperatureIcons[$i]}%{F-} $temCore$degree"
+        tmpEcho="%{F${temperatureColors[$i]}}${temperatureIcons[$i]}%{F-} $temCore$degree"
       fi
   done
 fi

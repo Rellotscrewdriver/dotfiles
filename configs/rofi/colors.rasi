@@ -1,29 +1,11 @@
 /* colors */
 
 * {
-  al:  #101010ff;
-  bg:  #101010ff;
-  se:  #101010ff;
-  fg:  #FFFFFFff;
-	txt: #C5C8C6ff;
-  ac:  #FF1493;
-  background:     #000000FF;
-  background-alt: #000000FF;
-  foreground:     #FF1493FF;
-  selected:       #FF1493FF;
-  active:         #FF1493FF;
-  urgent:         #ff00ffFF;
-  font:                        "CaskaydiaCove Nerd Font 13";
+  background:     #1e1e2eFF;
+  background-alt: #1e1e2eFF;
+  foreground:     #cdd6f4FF;
+  selected:       #89b4faFF;
+  active:         #cdd6f4FF;
+	item-bg:				#313244FF;
+  font:           "FiraCode Nerd Font 13";
 }
-
-/*
-* {
-    background:     #1E2127FF;
-    background-alt: #282B31FF;
-    foreground:     #FFFFFFFF;
-    selected:       #61AFEFFF;
-    active:         #98C379FF;
-    urgent:         #E06C75FF;
-}
-
-*/

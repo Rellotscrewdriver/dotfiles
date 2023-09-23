@@ -19,10 +19,6 @@ configuration {
 USE_BUTTONS=YES
 */
 
-* {
-	font: "CaskaydiaCove Nerd Font 10";
-}
-
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
@@ -51,8 +47,8 @@ mainbox {
     spacing:                     15px;
     margin:                      0px;
     padding:                     30px;
-    border:                      0px solid;
-    border-radius:               0px;
+    border:                      2px solid;
+		border-radius:							 20px;
     border-color:                @selected;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
@@ -81,10 +77,11 @@ textbox-prompt-colon {
 }
 prompt {
     enabled:                     true;
+		font:												 "FiraCode Nerd Font 11";
     padding:                     12px;
     border-radius:               100%;
-    background-color:            @background;
-    text-color:                  @foreground;
+    background-color:            @selected;
+    text-color:                  @background;
 }
 
 /*****----- Message -----*****/
@@ -149,12 +146,12 @@ element {
     border:                      0px solid;
     border-radius:               100%;
     border-color:                @selected;
-    background-color:            @background-alt;
+    background-color:            @item-bg;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
 element-text {
-    font:                        "CaskaydiaCove bold 32";
+    font:                        "FiraCode bold 32";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

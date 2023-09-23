@@ -1,5 +1,5 @@
 [Configuration]
-FontName=CaskaydiaCove Nerd Font 11
+FontName=FiraCode Nerd Font 11
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
@@ -33,4 +33,14 @@ ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingOnOutput=TRUE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.670000
+ColorForeground=#CDD6F4
+ColorBackground=#1E1E2E
+ColorCursorForeground=#11111B
+ColorCursor=#F5E0DC
+ColorCursorUseDefault=FALSE
+ColorSelection=#CDD6F4
+ColorSelectionBackground=#585B70
+ColorSelectionUseDefault=FALSE
+ColorPalette=#45475A;#F38BA8;#A6E3A1;#F9E2AF;#89B4FA;#F5C2E7;#94E2D5;#BAC2DE;#585B70;#F38BA8;#A6E3A1;#F9E2AF;#89B4FA;#F5C2E7;#94E2D5;#A6ADC8
+TabActivityColor=#FAB387
 

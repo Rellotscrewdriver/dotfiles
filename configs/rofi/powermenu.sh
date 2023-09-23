@@ -33,7 +33,7 @@ rofi_cmd() {
 
 # Confirmation CMD
 confirm_cmd() {
-	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 350px; font: "CaskaydiaCove Nerd Font 15";}' \
+	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 350px; font: "FiraCode Nerd Font 15";}' \
 		-theme-str 'mainbox {children: [ "message", "listview" ];}' \
 		-theme-str 'listview {columns: 2; lines: 1;}' \
 		-theme-str 'element-text {border-radius: 100%; horizontal-align: 0.5;}' \

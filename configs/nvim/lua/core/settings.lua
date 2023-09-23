@@ -12,7 +12,7 @@ opt.ttyfast = true
 opt.cursorline = true
 opt.termguicolors = true
 
-local source_cmd = "colorscheme tokyonight-night"
+local source_cmd = "colorscheme catppuccin-mocha"
 vim.cmd(source_cmd)
 
 opto.updatetime = 300

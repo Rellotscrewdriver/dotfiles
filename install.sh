@@ -66,15 +66,15 @@ do
 				echo "GRUB_THEME=\"${THEME_DIR}/${THEME_NAME}/theme.txt\"" >> /etc/default/grub
 				grub-mkconfig -o /boot/grub/grub.cfg
 
-				#font
-        [ ! -d $HOME/.local/share/fonts ] && mkdir -p $HOME/.local/share/fonts
-        #ln -sfv $DIR/.local/share/fonts/feather.ttf $HOME/.local/share/fonts/feather.ttf
+				#installing neovim
+				sh $DIR/configs/nvim/install.sh
+
+				#copying fonts in system Directory for lightdm
+				cp -r ~/.local/share/fonts/FiraCode/ /usr/share/fonts/FiraCode/
 				
 				#Configure betterlockscreen
 				betterlockscreen -u /wallpapers/forrest.png 
 
-				#installing neovim
-				sh $DIR/configs/nvim/install.sh
         ;;
     *)
         echo "Sorry, choice understand"

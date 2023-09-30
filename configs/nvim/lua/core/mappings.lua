@@ -17,6 +17,7 @@ keymap("n", "<F2>" ,":lua require'telescope'.extensions.project.project{}<CR>")
 -- Close a window/split
 keymap("n", "<leader>q", ":q!<CR>")
 
+keymap("n", "<leader>h", ":lua require('notify').history()")
 -- Moving between windows
 keymap('n', '<C-h>', require('smart-splits').move_cursor_left)
 keymap('n', '<C-j>', require('smart-splits').move_cursor_down)
@@ -33,7 +34,7 @@ keymap('n', '<C-Right>', require('smart-splits').resize_right)
 keymap("n", "<F3>", ":Telescope find_files<CR>")
 
 --Find a string across the file 
-keymap("n", "<F3>", ":Telescope grep_string<CR>")
+keymap("n", "<space><F3>", ":Telescope grep_string<CR>")
 
 --Show definitions in the current file
 keymap("n", "<F3>", ":TroubleToggle workspace_diagnostics<CR>")

@@ -1,17 +1,17 @@
 local lualine = require('lualine')
-
+--
 local colors = {
-  bg       = '#202328',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
+bg       = '#202328',
+fg       = '#bbc2cf',
+yellow   = '#ECBE7B',
+cyan     = '#008080',
+darkblue = '#081633',
+green    = '#98be65',
+orange   = '#FF8800',
+violet   = '#a9a1e1',
+magenta  = '#c678dd',
+blue     = '#51afef',
+red      = '#ec5f67',
 }
 
 local conditions = {
@@ -37,10 +37,10 @@ local config = {
   },
   sections = {
     -- the elements are added here for the dynamic higlighting effect
-    lualine_a = {'mode'},
-    lualine_b = {{'branch', padding = {right = 1, left = 0}, icon = {''}}}, 
-    lualine_y = {{'location', padding = {right = 0, left = 0}}},
-    lualine_z = {{'progress', padding = { right = 1, left = 1 }},
+    lualine_a = {{'mode', separator = { right = '' }}},
+    lualine_b = {{'branch', padding = {right = 0, left = 1}, separator = { right = '' }, icon = {''}}},
+    lualine_y = {{'location', padding = {right = 1, left = 0}, separator = { left = '' }}},
+    lualine_z = {{'progress', padding = { right = 1, left = 0 }, separator = { left = '' }},
   },
     -- These will be filled later
     lualine_c = {},

@@ -1,3 +1,6 @@
+-- leader key is moved here to avoid conflicting with lazy feature
+vim.g.mapleader = "<Space>"
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -49,7 +52,6 @@ require("lazy").setup("plugins", {
 require "plugins"
 require "theme"
 require "core.settings"
-require "core.icons"
 require "cmp.cmpaths"
 require "cmp.server"
 require "cmp.addcmpfeat"

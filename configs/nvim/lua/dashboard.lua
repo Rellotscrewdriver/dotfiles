@@ -43,7 +43,7 @@ local function getGreeting(name)
   return greetingsTable[greetingIndex] .. ", " .. name
 end
 
-vim.notify = require("notify")(getGreeting("Rellot's Screwdriver"), "info", {title = "Greetings", stages = "slide", render = "minimal"})
+vim.notify = require("notify")(getGreeting("Rellot's Screwdriver"), "info", {title = "Greetings"})
 
 local function button(sc, txt, keybind)
   local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")

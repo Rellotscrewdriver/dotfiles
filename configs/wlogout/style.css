@@ -1,0 +1,53 @@
+@define-color base   #1e1e2e;
+@define-color text     #cdd6f4;
+@define-color surface0 #313244;
+@define-color blue     #89b4fa;
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
+
+window {
+    font-family: FiraCode Nerd Font;
+    font-size: 12pt;
+    color: @text; 
+    background-color: @base;
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border: solid;
+    color: @text;
+    text-shadow: none;
+    background-color: @base;
+    margin: 5px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: @surface0;
+}
+
+button:focus {
+    background-color: @surface0;
+    color: @blue;
+    text-shadow: none;
+}

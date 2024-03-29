@@ -1,0 +1,12 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/Rellot/github_pj/periodfiles
+- /home/Rellot/github_pj/Rellotscrewdriver
+- /home/Rellot/github_pj/arch-guide
+- /home/Rellot/github_pj/neovim_config
+startuppopupversion: 5
+customcommandshistory:
+- git push -f Synthwave
+- git push -f https://github.com/Rellotscrewdriver/periodfiles.git
+hidecommandlog: false
+ignorewhitespaceindiffview: false

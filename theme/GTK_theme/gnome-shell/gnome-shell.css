@@ -239,17 +239,17 @@ StWidget.focused .app-well-app-running-dot {
 
 .shell-link {
   border-radius: 6px;
-  color: #1e66f5;
+  color: #5bd3f8;
 }
 
 .shell-link:hover {
-  color: #1e66f5;
-  background-color: rgba(30, 102, 245, 0.15);
+  color: #5bd3f8;
+  background-color: rgba(91, 211, 248, 0.15);
 }
 
 .shell-link:active {
-  color: #1e66f5;
-  background-color: rgba(30, 102, 245, 0.25);
+  color: #5bd3f8;
+  background-color: rgba(91, 211, 248, 0.25);
 }
 
 .lowres-icon {
@@ -370,7 +370,6 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.04);
   border-radius: 6px;
-  border: none;
   box-shadow: none;
   text-shadow: none;
 }
@@ -472,6 +471,7 @@ StWidget.focused .app-well-app-running-dot {
   padding: 0;
   margin: 0;
   text-shadow: none;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .calendar .calendar-month-label {
@@ -485,7 +485,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .calendar .calendar-change-month-back,
 .calendar .calendar-change-month-forward {
-  padding: 0 0 !important;
+  padding: 0 !important;
   margin: 3px 0 !important;
 }
 
@@ -511,33 +511,46 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.calendar .calendar-day,
 .calendar .calendar-day-base {
   font-size: 10pt;
   text-align: center;
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  margin: 2px;
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  margin: 2px !important;
   border-radius: 9999px;
   color: rgba(255, 255, 255, 0.7);
   border: none;
   font-feature-settings: "tnum";
 }
 
-.calendar .calendar-day-base:hover, .calendar .calendar-day-base:focus {
+.calendar .calendar-day:hover, .calendar .calendar-day:focus,
+.calendar .calendar-day-base:hover,
+.calendar .calendar-day-base:focus {
   background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
 }
 
-.calendar .calendar-day-base:active, .calendar .calendar-day-base:selected {
+.calendar .calendar-day:active, .calendar .calendar-day:selected,
+.calendar .calendar-day-base:active,
+.calendar .calendar-day-base:selected {
   color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.3);
-  border-color: transparent;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
+.calendar .calendar-day.calendar-day-heading,
 .calendar .calendar-day-base.calendar-day-heading {
   margin-top: 1em;
   color: rgba(255, 255, 255, 0.5);
   font-size: 10pt;
+}
+
+.calendar .calendar-day.calendar-weekend {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .calendar .calendar-day {
@@ -553,8 +566,8 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .calendar .calendar-nonwork-day {
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-weight: normal;
 }
 
 .calendar .calendar-today {
@@ -585,18 +598,20 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .calendar .calendar-day-with-events {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5) !important;
   background-image: url("assets/calendar-today.svg");
+  background-size: contain;
 }
 
 .calendar .calendar-day-with-events.calendar-work-day {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5) !important;
   font-weight: bold;
 }
 
+.calendar .calendar-other-month,
 .calendar .calendar-other-month-day {
-  color: rgba(255, 255, 255, 0.32);
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.32) !important;
+  font-weight: normal;
 }
 
 .calendar .calendar-week-number {
@@ -1319,12 +1334,12 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   padding: 4px 8px;
   min-height: 26px;
   border-radius: 9999px;
-  caret-color: rgba(0, 0, 0, 0.87);
+  caret-color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.04);
   border-radius: 0;
   border: none;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.87);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
 }
 
 .login-dialog StEntry:focus,
@@ -1332,19 +1347,19 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   border: none;
   background-color: rgba(255, 255, 255, 0.04);
   box-shadow: inset 0 -2px #89b4fa;
-  color: rgba(0, 0, 0, 0.87);
+  color: #FFFFFF;
 }
 
 .login-dialog StEntry:insensitive,
 .unlock-dialog StEntry:insensitive {
   border: none;
   background-color: rgba(255, 255, 255, 0.04);
-  color: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .login-dialog StEntry StLabel.hint-text,
 .unlock-dialog StEntry StLabel.hint-text {
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .login-dialog .modal-dialog-button-box,
@@ -1661,15 +1676,15 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 }
 
 .lg-dialog .shell-link {
-  color: #1e66f5;
+  color: #5bd3f8;
 }
 
 .lg-dialog .shell-link:hover {
-  color: #4f87f7;
+  color: #8ce0fa;
 }
 
 .lg-dialog .shell-link:active {
-  color: #0a4ed6;
+  color: #2ac6f6;
 }
 
 .lg-dialog .actor-link {
@@ -1898,7 +1913,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 }
 
 .url-highlighter {
-  link-color: #1e66f5;
+  link-color: #5bd3f8;
 }
 
 .message-media-control {
@@ -1929,7 +1944,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 }
 
 .media-message-cover-icon {
-  icon-size: 48px;
+  icon-size: 32px !important;
   border-radius: 6px;
 }
 
@@ -2099,7 +2114,6 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   border-radius: 6px;
   color: rgba(255, 255, 255, 0.7);
   background-color: #1e1e2e;
-  border: none;
   text-shadow: none;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
@@ -2424,6 +2438,17 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   -natural-hpadding: 18px;
 }
 
+#panel .panel-button#panelActivities StBoxLayout {
+  spacing: 6px;
+}
+
+#panel .panel-button#panelActivities .workspace-dot {
+  border-radius: 9999px;
+  min-width: 8px;
+  min-height: 8px;
+  background-color: #FFFFFF;
+}
+
 #panel:overview, #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
   background-color: transparent;
   box-shadow: none;
@@ -2465,6 +2490,10 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   color: #FFFFFF;
 }
 
+#panel:overview .panel-button#panelActivities .workspace-dot, #panel.unlock-screen .panel-button#panelActivities .workspace-dot, #panel.login-screen .panel-button#panelActivities .workspace-dot, #panel.lock-screen .panel-button#panelActivities .workspace-dot {
+  background-color: #FFFFFF;
+}
+
 #panel:overview .panel-corner, #panel.unlock-screen .panel-corner, #panel.login-screen .panel-corner, #panel.lock-screen .panel-corner {
   -panel-corner-radius: 0;
   -panel-corner-background-color: transparent;
@@ -2472,6 +2501,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 }
 
 #panel Gjs_status_keyboard_InputSourceIndicator.panel-button,
+#panel Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_IndicatorStatusIcon.panel-button,
 #panel Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
   -natural-hpadding: 18px !important;
   -minimum-hpadding: 18px !important;
@@ -3180,16 +3210,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-media-control {
-  margin: 27px 6px;
+  margin: 21px 6px;
   padding: 12px;
 }
 
 .media-message-cover-icon {
-  padding: 12px;
+  padding: 0;
 }
 
 .media-message-cover-icon.fallback {
-  padding: 12px;
+  padding: 6px;
 }
 
 .controls-manager, .secondary-monitor-workspaces {
@@ -3241,11 +3271,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-menu-item:ltr {
   padding-right: 9px !important;
-  padding-left: 0 !important;
+  padding-left: 12px !important;
 }
 
 .popup-menu .popup-menu-item:rtl {
-  padding-right: 0 !important;
+  padding-right: 12px !important;
   padding-left: 9px !important;
 }
 
@@ -3458,7 +3488,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .quick-slider .icon-button, .quick-slider .background-app-item .close-button, .background-app-item .quick-slider .close-button {
   background-color: transparent;
   color: #FFFFFF !important;
-  padding: 6px;
+  padding: 9px;
 }
 
 .quick-slider .icon-button:hover, .quick-slider .background-app-item .close-button:hover, .background-app-item .quick-slider .close-button:hover {

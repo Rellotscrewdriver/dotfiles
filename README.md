@@ -13,56 +13,31 @@ here are the screenshots as I believe people like to see previews of the repo be
 <details>
 <summary>click here to see the screenshots</summary>
 
-**WM:** i3, polybar(top), ranger(left), btop++(bottom left), peaclock(bottom right)
-<img src = "screenshots/cat1.png" />
+**DE:** Gnome + Catppuccin
 
-neofetch and neovim
-<img src = "screenshots/cat2.png" />
+<video width="640" height="480" controls>
+ <source src="screenshots/catgnomevideo.mp4" type="video/mp4">
+</video>
 
-evince
-<img src = "screenshots/cat3.png" />
+<img src = "screenshots/catgnome1.png" />
 
-obsidian and dunst
-<img src = "screenshots/cat4.png" />
+<img src = "screenshots/catgnome2.png" />
 
-firefox
-<img src = "screenshots/cat5.png" />
+<img src = "screenshots/catgnome3.png" />
 
-nemo(left), cmake(top right)
-<img src = "screenshots/cat6.png" />
+<img src = "screenshots/catgnome4.png" />
 
-discord(bottom right)
-<img src = "screenshots/cat7.png" />
+<img src = "screenshots/catgnome5.png" />
 
-lightdm GTK greeter
-<img src = "screenshots/cat8.png" />
+<img src = "screenshots/catgnome6.png" />
+
+<img src = "screenshots/catgnome7.png" />
+
+<img src = "screenshots/catgnome8.png" />
+
+
 </details>
 
 the wallpaper in each screenshot can be found in **wallpapers** directory
 
-Before leaving out, don't forget to **STAR** this repository! Thanks for checking out. *credits rolling*
-
-## credits
-- https://github.com/SunoBB/dot
-- https://github.com/HoNamDuong/.dotfiles
-- https://github.com/kritdass/dotfiles
-- https://github.com/zoddDev/dotfiles
-- https://github.com/folke/dot
-- https://github.com/skbolton/titan
-- https://github.com/Hamza12700/DotFiles
-- https://github.com/CaoHoangKiet222/ArchLinux
-- https://github.com/nimishgo/i3wm-themes
-- https://github.com/loctvl842/nvim
-- https://github.com/KiteAB/.config
-- https://github.com/theniceboy/.config
-- https://github.com/ericmurphyxyz/dotfiles
-- https://github.com/reedrw/dotfiles
-- https://github.com/iamsubhranil/Rice
-- https://github.com/bookercodes/dotfiles
-- https://github.com/catppuccin/polybar
-- https://github.com/polybar/polybar-scripts
-- https://github.com/Fxzzi/.dots
-- https://github.com/anishathalye/dotbot
-- https://github.com/nocturnal84/dotfiles
-- https://github.com/sbulav/dotfiles
-- https://github.com/heapbytes/dotfiles
+Before leaving out, don't forget to **STAR** this repository! Thanks for checking out. *see ya bois and ladies*

@@ -6,7 +6,8 @@ return {
   {'hrsh7th/cmp-buffer', lazy = false},
   {'hrsh7th/cmp-path', lazy = false},
   {'hrsh7th/cmp-cmdline', lazy = false},
-  {'saadparwaiz1/cmp_luasnip', lazy = false},
+	{ "nvim-neotest/nvim-nio" },
+	{'saadparwaiz1/cmp_luasnip', lazy = false},
   {'L3MON4D3/LuaSnip', lazy = true}, --for snippets
   -- for additional features like outline, hovering docs and what not
   {"glepnir/lspsaga.nvim", event = "LspAttach", dependencies = {{"nvim-tree/nvim-web-devicons"}, {"nvim-treesitter/nvim-treesitter"}}}, 

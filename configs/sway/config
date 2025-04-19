@@ -236,15 +236,18 @@ bar {
 }
 
 ### Theme
-
 #       default_border normal|none|pixel [<n>]
 #           Set default border style for new tiled windows.
 #
 #       default_floating_border normal|none|pixel [<n>]
 #           Set default border style for new floating windows. This only applies to windows that are spawned in
 #           floating mode, not windows that become floating afterwards.
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 3
+default_floating_border pixel 3
+
+#title bar
+titlebar_border_thickness 3
+title_align center
 
 set $rosewater #f5e0dc
 set $peach     #fab387

@@ -68,11 +68,12 @@ exec mako
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-input "2:14:SynPS/2_Synaptics_TouchPad" {
+input "2362:8204:ASUP1204:00_093A:200C_Touchpad" {
        dwt enabled
        tap enabled
        natural_scroll enabled
        middle_emulation enabled
+       tap_button_map lrm
 }
 
 ### Key bindings
@@ -88,6 +89,7 @@ input "2:14:SynPS/2_Synaptics_TouchPad" {
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    bindsym $mod+p exec wlogout
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -270,13 +272,13 @@ gaps inner 12
 gaps outer 5
 
 # gtk
-#set $gnome-schema org.gnome.desktop.interface
+set $gnome-schema org.gnome.desktop.interface
 
-#exec_always {
-#  gsettings set $gnome-schema gtk-theme Nordic
-#  gsettings set $gnome-schema gtk-application-prefer-dark-theme true
-#  gsettings set $gnome-schema icon-theme Papirus-Dark
-#  gsettings set $gnome-schema cursor-theme Adwaita
-#}
+exec_always {
+   gsettings set $gnome-schema gtk-theme reSynthwave
+  gsettings set $gnome-schema gtk-application-prefer-dark-theme true
+  gsettings set $gnome-schema icon-theme reSynthwave
+  gsettings set $gnome-schema cursor-theme Adwaita
+}
 
 include /etc/sway/config.d/*

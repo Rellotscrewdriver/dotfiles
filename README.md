@@ -1,5 +1,9 @@
-# periodfiles/Configuration files
-This is my personal dotfiles repository. 
+# Configuration files
+This is my personal dotfiles repository.
+
+# warning
+currently it is being remastered/modernized for sway and Hyprland. So everything is broken or not working.
+I don't recommend using the latest commit to install it. use this commit link to install it on xorg systems
 
 ## What are dotfiles?
 
@@ -10,8 +14,7 @@ This repository contains my personal dotfiles. They are stored here for convenie
 ## How you manage your dotfiles?
 
 There are a hundred ways to manage your dotfiles.
-Here I use the **Git and Github** for managing my dotfiles with symbolic links with commits every saturday
-(earlier it used to be managed with hard links with scripts but I ditched it)
+Here I use the **Git and Github** for managing my dotfiles with symbolic links with commits everyday expect on sundays
 
 ## How to install and set up my dotfiles?
 
@@ -25,7 +28,7 @@ here are the screenshots as I believe people like to see previews of the repo be
 <details>
 <summary>click here to see the screenshots</summary>
 
-**WM:** i3, polybar(top), xfce4-panel(bottom)
+**WM:** sway, waybar(top)
 <img src = "screenshots/9.png" />
 
 neofetch, neovim and lazygit
@@ -58,6 +61,11 @@ the wallpaper of each screenshot can be found in **wallpapers** directory
 Before leaving out, don't forget to **STAR** this repository! Thanks for checking out. *credits rolling*
 
 ## credits
+- https://www.dwarmstrong.org/sway/
+- https://github.com/JaKooLit/Hyprland-Dots
+- https://github.com/mylinuxforwork/dotfiles.git
+
+
 - https://github.com/SunoBB/dot
 - https://github.com/HoNamDuong/.dotfiles
 - https://github.com/kritdass/dotfiles

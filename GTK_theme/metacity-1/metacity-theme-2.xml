@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>oomox-meow</name>
+	<name>reSynthwave</name>
 	<author>Satyajit Sahoo</author>
 	<copyright>GPL-3.0+</copyright>
 	<date>11 December 2013</date>
@@ -11,14 +11,14 @@
 <!-- ::: CONSTANTS ::: -->
 <constant name="C_titlebar_focused" value="#000000" />
 <constant name="C_titlebar_unfocused" value="#000000" />
-<constant name="C_border_focused" value="#ff1493" />
-<constant name="C_border_unfocused" value="#000000" />
-<constant name="C_title_focused" value="#d3dae3" />
-<constant name="C_title_unfocused" value="blend/#d3dae3/#000000/0.4" />
-<constant name="C_icons_focused" value="#d3dae3" />
+<constant name="C_border_focused" value="#000309" />
+<constant name="C_border_unfocused" value="#000309" />
+<constant name="C_title_focused" value="#ff1493" />
+<constant name="C_title_unfocused" value="blend/#00ffff/#000000/0.4" />
+<constant name="C_icons_focused" value="#ff1493" />
 <constant name="C_icons_focused_prelight" value="gtk:bg[SELECTED])" />
 <constant name="C_icons_focused_pressed" value="shade/gtk:bg[SELECTED]/0.8" />
-<constant name="C_icons_unfocused" value="blend/#d3dae3/#000000/0.4" />
+<constant name="C_icons_unfocused" value="blend/#00ffff/#000000/0.4" />
 <constant name="C_icons_unfocused_prelight" value="gtk:bg[SELECTED])" />
 <constant name="C_icons_unfocused_pressed" value="shade/gtk:bg[SELECTED]/0.8" />
 

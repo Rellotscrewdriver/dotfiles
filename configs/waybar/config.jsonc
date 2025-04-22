@@ -4,15 +4,17 @@
     // "position": "left", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
-        "custom/media"
+        "hyprland/workspaces"
     ],
-    "modules-center": [],
+    "modules-center": [
+        "clock"
+    ],
     "modules-right": [
         "pulseaudio",
         "network",
@@ -24,7 +26,6 @@
         "custom/weather",
         "battery",
         "battery#bat2",
-        "clock",
         "tray",
         "custom/power"
     ],
@@ -35,34 +36,20 @@
          "warp-on-scroll": false,
          "format": "{icon}",
          "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
              "urgent": "",
-             //"focused": "",
-             "default": ""
+             "focused": "",
+             "default": ""
          }
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
     },
     "custom/weather": {
         "exec": "~/.config/waybar/weather.sh Kashipur",
         "return-type": "json",
-        "format": "{fs}",
+        "format": "{}",
         "tooltip": true,
         "interval": 3600
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "Resize"
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -72,15 +59,11 @@
         "tooltip-format": "{app}: {title}"
     },
     "hyprland/workspaces": {
-	"format": "{name}: {icon}",
-	"format-icons": {
-		"1": "",
-		"2": "",
-		"3": "",
-		"4": "",
-		"5": "",
-		"active": "",
-		"default": ""
+			"format": "{icon}",
+			"format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
 	}
     },
     "tray": {
@@ -92,17 +75,31 @@
         // }
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "󰥔  {:%I:%M %p}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",        
+        "format-alt": "{:%d %b %Y %I:%M %p}",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "left",
+            "on-scroll"     : 1,
+            "format": {
+                      "months":     "<span color='#ffead3'><b>{}</b></span>",
+                      "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                      "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                      "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                      "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                      }
+            },
+            "actions":  { "on-click-right": "mode" }
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "  {usage}%",
         "tooltip": true,
         "tooltip-format": true
     },
     "memory": {
-        "format": "  {}%"
+        "format": "  {}%"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -115,7 +112,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "battery": {
         "states": {
@@ -123,48 +120,45 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon}  {capacity}%",
-        "format-charging": " {capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon}   {capacity}%",
+        "format-full": "{icon}   {capacity}%",
+        "format-charging": "{ capacity}% ",
+        "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         "tooltip": true,
-        "tooltip-format": "Watts: {power}, {cycles}, {timeTo}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "tooltip-format": "󰚥 {power}, 󱈑 {cycles}, {timeTo}",
         "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "custom/github": {
-        "format": "{} ",
+        "format": "  {}",
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/github.sh",
         "on-click": "xdg-open https://github.com/notifications"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "U: {bandwidthUpBytes} D: {bandwidthDownBytes}",
-        "format-ethernet": "U: {bandwidthUpBytes} D: {bandwidthDownBytes}",
-        "format-linked": "{ifname} (No IP) ",
+        "format-wifi": "󰖩  {bandwidthDownBytes}",
+        "format-ethernet": "󰈀  {bandwidthDownBytes}",
+        "format-linked": "{ifname} (No IP)",
         "format-disconnected": "⚠ Disconnected",
-        "format-alt": "U: {bandwidthUpBytes} D: {bandwidthDownBytes} T: {bandwidthTotalBytes}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) {frequency} ",
+        "format-alt": "󰁝: {bandwidthUpBytes} 󰁅: {bandwidthDownBytes} T: {bandwidthTotalBytes}",
+        "tooltip-format-wifi": "󰖩  {essid} ({signalStrength}%) {frequency}",
         "tooltip-format-ethernet": "{ifname} {ipaddr} {gwaddr} ",
         "tooltip-format-disconnected": "Disconnected, Please connect to a network"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-bluetooth-muted": " {volume}%",
         "format-muted": " ",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
+            "headphone": " ",
             "hands-free": "",
             "headset": "",
             "phone": "",
@@ -175,7 +169,7 @@
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "format" : "⏻",
+        "format" : "",
 		"tooltip": false,
         "on-click": "wlogout"
         //"exec": "wlogout"

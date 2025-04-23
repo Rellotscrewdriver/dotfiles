@@ -6,6 +6,7 @@
     // "width": 1280, // Waybar width
     "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
+   /*
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
@@ -26,6 +27,29 @@
         "custom/weather",
         "battery",
         "battery#bat2",
+        "tray",
+        "custom/power"
+    ],*/
+    "modules-left": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "battery#bat2",
+        "custom/github",
+        "backlight",
+        "sway/mode",
+        "sway/scratchpad"
+    ],
+    "modules-center": [
+        "sway/workspaces",
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "temperature",
+        "custom/weather",
+        "clock",
         "tray",
         "custom/power"
     ],

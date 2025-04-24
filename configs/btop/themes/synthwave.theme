@@ -1,5 +1,5 @@
-#Bashtop grayscale theme
-#by aristocratos
+#Bashtop ReSynthwave theme
+#by RellotScrewdriver
 
 # Colors should be in 6 or 2 character hexadecimal or single spaced rgb decimal: "#RRGGBB", "#BW" or "0-255 0-255 0-255"
 # example for white: "#FFFFFF", "#ff" or "255 255 255".
@@ -13,7 +13,7 @@
 theme[main_bg]="#000000"
 
 # Main text color
-theme[main_fg]="#FF1493"
+theme[main_fg]="#00FFFF"
 
 # Title color for boxes
 theme[title]="#ff0ff"
@@ -22,31 +22,31 @@ theme[title]="#ff0ff"
 theme[hi_fg]="#ff00ff"
 
 # Background color of selected item in processes box
-theme[selected_bg]="#00" 
+theme[selected_bg]="#ff1493" 
 
 # Foreground color of selected item in processes box
-theme[selected_fg]="#ff00ff"
+theme[selected_fg]="#000000"
 
 # Color of inactive/disabled text
 theme[inactive_fg]="#30"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
-theme[proc_misc]="#90"
+theme[proc_misc]="#ff1493"
 
 # Cpu box outline color
-theme[cpu_box]="#ff00ff"
+theme[cpu_box]="#ff1493"
 
 # Memory/disks box outline color
-theme[mem_box]="#ff00ff"
+theme[mem_box]="#ff1493"
 
 # Net up/down box outline color
-theme[net_box]="#ff00ff"
+theme[net_box]="#ff1493"
 
 # Processes box outline color
 theme[proc_box]="#ff00ff"
 
 # Box divider line and small boxes line color
-theme[div_line]="#cc"
+theme[div_line]="#ff1493"
 
 # Temperature graph colors
 theme[temp_start]="#FF1493""

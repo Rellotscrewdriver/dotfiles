@@ -22,7 +22,7 @@ set $menu wofi --show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/wallpapers/ferrari_TR2.jpg fill
 #
 # Example configuration:
 #
@@ -250,23 +250,6 @@ default_floating_border pixel 3
 #title bar
 titlebar_border_thickness 3
 title_align center
-
-set $rosewater #f5e0dc
-set $peach     #fab387
-set $blue      #89b4fa
-set $lavender  #b4befe
-set $text      #cdd6f4
-set $overlay0  #6c7086
-set $base      #1e1e2e
-
-# Colors the client borders of a window
-#client.focused #000000 #5e81ac #ffffff
-#client.focused           $lavender $base $text  $blue			 $blue
-#client.focused_inactive  $overlay0 $base $text  $blue      $overlay0
-#client.unfocused         $overlay0 $base $text  $blue      $overlay0
-#client.urgent            $peach    $base $peach $overlay0  $peach
-#client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-#client.background        $base $text $text $text $text $text
 
 gaps inner 12
 gaps outer 5

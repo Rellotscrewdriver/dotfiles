@@ -3,7 +3,6 @@ window {
     margin: 0px;
     border: 1px solid #ff1493;
     background-color: #000000;
-    border-radius: 10px;
   }
   
   #input {
@@ -42,11 +41,10 @@ window {
   
   #entry:focus {
     border: none;
+    color:#000000;
   }
   
   #entry:selected {
     background-color: #ff1493;
     color: black;
-    border-radius: 5px;
-    border: none;
   }

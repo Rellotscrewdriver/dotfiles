@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" version="1.1">
  <defs>
   <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color: #FF1493; } .ColorScheme-Highlight { color: #1AD6AB; }
+   .ColorScheme-Text { color: #ff1493; } .ColorScheme-Highlight { color: #1AD6AB; }
   </style>
   <linearGradient id="arrongin" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#dd9b44"/>
@@ -20,8 +20,8 @@
    <stop offset="100%" style="stop-color:#329DB6"/>
   </linearGradient>
   <linearGradient id="oomox" x1="0%" x2="0%" y1="0%" y2="100%">
-   <stop offset="0%" style="stop-color:#efefe7"/>
-   <stop offset="100%" style="stop-color:#8f8f8b"/>
+   <stop offset="0%" style="stop-color:#00ffff"/>
+   <stop offset="100%" style="stop-color:#ff1493"/>
   </linearGradient>
   <linearGradient id="rainblue" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#00F260"/>
@@ -48,5 +48,5 @@
    <stop offset="100%" style="stop-color:#0f83ae"/>
   </linearGradient>
  </defs>
- <path fill="currentColor" class="ColorScheme-Text" d="M 12,3.9999999 A 8,8 0 0 0 3.9999999,12 8,8 0 0 0 12,20 8,8 0 0 0 20,12 8,8 0 0 0 12,3.9999999 Z m -2.5,4 h 5 c 0.831,0 1.5,0.669 1.5,1.5000002 V 14.5 c 0,0.831 -0.669,1.5 -1.5,1.5 h -5 C 8.669,16 7.9999999,15.331 7.9999999,14.5 V 9.5000001 C 7.9999999,8.6689999 8.669,7.9999999 9.5,7.9999999 Z M 10.59961,10 C 10.26721,10 10,10.267209 10,10.599609 V 13.40039 C 10,13.73279 10.26721,14 10.59961,14 h 2.800781 C 13.732791,14 14,13.73279 14,13.40039 V 10.599609 C 14,10.267209 13.732791,10 13.400391,10 Z"/>
+ <path fill="url(#oomox)" class="ColorScheme-Text" d="M 12,3.9999999 A 8,8 0 0 0 3.9999999,12 8,8 0 0 0 12,20 8,8 0 0 0 20,12 8,8 0 0 0 12,3.9999999 Z m -2.5,4 h 5 c 0.831,0 1.5,0.669 1.5,1.5000002 V 14.5 c 0,0.831 -0.669,1.5 -1.5,1.5 h -5 C 8.669,16 7.9999999,15.331 7.9999999,14.5 V 9.5000001 C 7.9999999,8.6689999 8.669,7.9999999 9.5,7.9999999 Z M 10.59961,10 C 10.26721,10 10,10.267209 10,10.599609 V 13.40039 C 10,13.73279 10.26721,14 10.59961,14 h 2.800781 C 13.732791,14 14,13.73279 14,13.40039 V 10.599609 C 14,10.267209 13.732791,10 13.400391,10 Z"/>
 </svg>

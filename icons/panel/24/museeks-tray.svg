@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" version="1.1">
  <defs>
   <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color: #FF1493; } .ColorScheme-Highlight { color: #1AD6AB; }
+   .ColorScheme-Text { color: #ff1493; } .ColorScheme-Highlight { color: #1AD6AB; }
   </style>
   <linearGradient id="arrongin" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#dd9b44"/>
@@ -20,8 +20,8 @@
    <stop offset="100%" style="stop-color:#329DB6"/>
   </linearGradient>
   <linearGradient id="oomox" x1="0%" x2="0%" y1="0%" y2="100%">
-   <stop offset="0%" style="stop-color:#efefe7"/>
-   <stop offset="100%" style="stop-color:#8f8f8b"/>
+   <stop offset="0%" style="stop-color:#00ffff"/>
+   <stop offset="100%" style="stop-color:#ff1493"/>
   </linearGradient>
   <linearGradient id="rainblue" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#00F260"/>
@@ -48,6 +48,6 @@
    <stop offset="100%" style="stop-color:#0f83ae"/>
   </linearGradient>
  </defs>
- <path fill="currentColor" class="ColorScheme-Text" opacity="0.3" d="M 16.833984,4 11.855469,9.544922 13.800781,11.248047 14.662109,12 9.2304685,16.751953 8.9746091,16.974609 10.519531,18.519531 15,13.527344 V 20 h 5 V 4 Z M 10.519531,11.033203 6.9785153,14.978516 7.5585935,15.558594 7.9121091,15.248047 11.625,12 Z"/>
- <path fill="currentColor" class="ColorScheme-Text" d="M 13.142857,12 8.5714284,16 4,20 V 4.0000003 l 4.5714284,3.9999999 z"/>
+ <path fill="url(#oomox)" class="ColorScheme-Text" opacity="0.3" d="M 16.833984,4 11.855469,9.544922 13.800781,11.248047 14.662109,12 9.2304685,16.751953 8.9746091,16.974609 10.519531,18.519531 15,13.527344 V 20 h 5 V 4 Z M 10.519531,11.033203 6.9785153,14.978516 7.5585935,15.558594 7.9121091,15.248047 11.625,12 Z"/>
+ <path fill="url(#oomox)" class="ColorScheme-Text" d="M 13.142857,12 8.5714284,16 4,20 V 4.0000003 l 4.5714284,3.9999999 z"/>
 </svg>

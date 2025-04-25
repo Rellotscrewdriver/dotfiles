@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
  <defs>
    <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color: #FF1493; } .ColorScheme-Highlight { color:#5294e2; }
+   .ColorScheme-Text { color: #ff1493; } .ColorScheme-Highlight { color:#5294e2; }
   </style>
   <linearGradient id="arrongin" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#dd9b44; stop-opacity:1"/>
@@ -20,8 +20,8 @@
    <stop offset="100%" style="stop-color:#329DB6; stop-opacity:1"/>
   </linearGradient>
   <linearGradient id="oomox" x1="0%" x2="0%" y1="0%" y2="100%">
-   <stop offset="0%" style="stop-color:#efefe7; stop-opacity:1"/>
-   <stop offset="100%" style="stop-color:#8f8f8b; stop-opacity:1"/>
+   <stop offset="0%" style="stop-color:#00ffff; stop-opacity:1"/>
+   <stop offset="100%" style="stop-color:#ff1493; stop-opacity:1"/>
   </linearGradient>
   <linearGradient id="rainblue" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#00F260; stop-opacity:1"/>
@@ -48,6 +48,6 @@
    <stop offset="100%" style="stop-color: #0f83ae; stop-opacity:1"/>
   </linearGradient>
  </defs>
- <path fill="currentColor" class="ColorScheme-Text" d="M 13.154297 0 A 1.1444791 1.1444791 0 0 0 12.138672 0.57617188 L 8.3769531 6.9648438 L 6.4375 5.7675781 C 5.5716279 5.3359009 5.0375581 5.5998032 4.7070312 6.2695312 L 4.6875 7.3085938 L 11.574219 11.337891 L 12.287109 11.089844 C 13.037045 10.536085 12.788338 9.6218733 12.097656 9.2617188 L 10.324219 8.1679688 L 14.111328 1.7382812 A 1.1444791 1.1444791 0 0 0 13.154297 0 z"/>
- <path fill="currentColor" class="ColorScheme-Text" d="m 3.953315,8.5142665 6.85463,3.9762095 -1.1954032,1.764725 c -0.2528703,0.278161 -0.1517199,0.65746 0.1011618,0.80918 l 1.0873414,0.935621 H 4.6562639 c -2.5067308,0 -3.65830503,-2.362541 -2.4528313,-4.450548 z"/>
+ <path fill="url(#oomox)" class="ColorScheme-Text" d="M 13.154297 0 A 1.1444791 1.1444791 0 0 0 12.138672 0.57617188 L 8.3769531 6.9648438 L 6.4375 5.7675781 C 5.5716279 5.3359009 5.0375581 5.5998032 4.7070312 6.2695312 L 4.6875 7.3085938 L 11.574219 11.337891 L 12.287109 11.089844 C 13.037045 10.536085 12.788338 9.6218733 12.097656 9.2617188 L 10.324219 8.1679688 L 14.111328 1.7382812 A 1.1444791 1.1444791 0 0 0 13.154297 0 z"/>
+ <path fill="url(#oomox)" class="ColorScheme-Text" d="m 3.953315,8.5142665 6.85463,3.9762095 -1.1954032,1.764725 c -0.2528703,0.278161 -0.1517199,0.65746 0.1011618,0.80918 l 1.0873414,0.935621 H 4.6562639 c -2.5067308,0 -3.65830503,-2.362541 -2.4528313,-4.450548 z"/>
 </svg>

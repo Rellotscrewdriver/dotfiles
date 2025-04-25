@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" version="1.1">
  <defs>
   <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color: #FF1493; } .ColorScheme-Highlight { color: #1AD6AB; }
+   .ColorScheme-Text { color: #ff1493; } .ColorScheme-Highlight { color: #1AD6AB; }
   </style>
   <linearGradient id="arrongin" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#dd9b44"/>
@@ -20,8 +20,8 @@
    <stop offset="100%" style="stop-color:#329DB6"/>
   </linearGradient>
   <linearGradient id="oomox" x1="0%" x2="0%" y1="0%" y2="100%">
-   <stop offset="0%" style="stop-color:#efefe7"/>
-   <stop offset="100%" style="stop-color:#8f8f8b"/>
+   <stop offset="0%" style="stop-color:#00ffff"/>
+   <stop offset="100%" style="stop-color:#ff1493"/>
   </linearGradient>
   <linearGradient id="rainblue" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#00F260"/>
@@ -50,7 +50,7 @@
  </defs>
  <g transform="translate(-80 -620.36)">
   <path fill="currentColor" opacity=".35" class="ColorScheme-Text" d="m99 625.37-14 14h8v-4.004h1.0137c0.01965-1.6349 1.3425-3 2.9863-3 0.77442 0 1.4708 0.30948 2 0.80078v-7.7969z"/>
-  <path fill="currentColor" class="ColorScheme-Text" d="m93 631.37-8 8h8v-8z"/>
-  <path fill="currentColor" class="ColorScheme-Text" d="m97 633.36c-1.108 0-2 0.91085-2 2.0312v0.96875h-1v4h6v-4h-1v-0.96875c0-1.1199-0.892-2.0312-2-2.0312zm0 1c0.554 0 1 0.4424 1 1v1h-2v-1c0-0.5576 0.446-1 1-1z"/>
+  <path fill="url(#oomox)" class="ColorScheme-Text" d="m93 631.37-8 8h8v-8z"/>
+  <path fill="url(#oomox)" class="ColorScheme-Text" d="m97 633.36c-1.108 0-2 0.91085-2 2.0312v0.96875h-1v4h6v-4h-1v-0.96875c0-1.1199-0.892-2.0312-2-2.0312zm0 1c0.554 0 1 0.4424 1 1v1h-2v-1c0-0.5576 0.446-1 1-1z"/>
  </g>
 </svg>

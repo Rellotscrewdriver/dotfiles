@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" version="1.1">
  <defs>
   <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color: #FF1493; } .ColorScheme-Highlight { color: #1AD6AB; }
+   .ColorScheme-Text { color: #ff1493; } .ColorScheme-Highlight { color: #1AD6AB; }
   </style>
   <linearGradient id="arrongin" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#dd9b44"/>
@@ -20,8 +20,8 @@
    <stop offset="100%" style="stop-color:#329DB6"/>
   </linearGradient>
   <linearGradient id="oomox" x1="0%" x2="0%" y1="0%" y2="100%">
-   <stop offset="0%" style="stop-color:#efefe7"/>
-   <stop offset="100%" style="stop-color:#8f8f8b"/>
+   <stop offset="0%" style="stop-color:#00ffff"/>
+   <stop offset="100%" style="stop-color:#ff1493"/>
   </linearGradient>
   <linearGradient id="rainblue" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%" style="stop-color:#00F260"/>
@@ -49,7 +49,7 @@
   </linearGradient>
  </defs>
  <g transform="translate(-105 -599.36)">
-  <path fill="currentColor" class="ColorScheme-Text" opacity="0.3" d="m109 617.37 14-14v14z"/>
-  <path fill="currentColor" class="ColorScheme-Text" d="m113 613.37-4 4h4v-4z"/>
+  <path fill="url(#oomox)" class="ColorScheme-Text" opacity="0.3" d="m109 617.37 14-14v14z"/>
+  <path fill="url(#oomox)" class="ColorScheme-Text" d="m113 613.37-4 4h4v-4z"/>
  </g>
 </svg>

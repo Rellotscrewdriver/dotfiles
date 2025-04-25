@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" version="1.1">
  <defs>
    <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color: #FF1493; } .ColorScheme-Highlight { color: #1AD6AB; }
+   .ColorScheme-Text { color: #ff1493; } .ColorScheme-Highlight { color: #1AD6AB; }
   </style>
   <linearGradient id="arrongin" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%"    stop-color= "#dd9b44" stop-opacity="1"/>
@@ -24,8 +24,8 @@
    <stop offset="100%"  stop-color= "#329DB6" stop-opacity="1"/>
   </linearGradient>
   <linearGradient id="oomox" x1="0%" x2="0%" y1="0%" y2="100%">
-   <stop offset="0%"    stop-color= "#efefe7" stop-opacity="1"/>
-   <stop offset="100%"  stop-color= "#8f8f8b" stop-opacity="1"/>
+   <stop offset="0%"    stop-color= "#00ffff" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#ff1493" stop-opacity="1"/>
   </linearGradient>
   <linearGradient id="rainblue" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%"    stop-color= "#00F260" stop-opacity="1"/>
@@ -57,5 +57,5 @@
    <stop offset="100%"  stop-color= "#0f83ae" stop-opacity="1"/>
   </linearGradient>
  </defs>
- <path fill="currentColor" class="ColorScheme-Text" d="M 7 -0.00390625 L 6.96875 7.4648438 L 3.34375 3.8085938 L 1.96875 5.2148438 L 8 11.214844 L 14 5.2148438 L 12.625 3.8085938 L 8.96875 7.4648438 L 9 -0.00390625 L 7 -0.00390625 z M 8 11.996094 C 6.89543 11.996094 6 12.891524 6 13.996094 C 6 15.100664 6.89543 15.996094 8 15.996094 C 9.10457 15.996094 10 15.100664 10 13.996094 C 10 12.891494 9.10457 11.996094 8 11.996094 z" transform="translate(3 3)"/>
+ <path fill="url(#oomox)" class="ColorScheme-Text" d="M 7 -0.00390625 L 6.96875 7.4648438 L 3.34375 3.8085938 L 1.96875 5.2148438 L 8 11.214844 L 14 5.2148438 L 12.625 3.8085938 L 8.96875 7.4648438 L 9 -0.00390625 L 7 -0.00390625 z M 8 11.996094 C 6.89543 11.996094 6 12.891524 6 13.996094 C 6 15.100664 6.89543 15.996094 8 15.996094 C 9.10457 15.996094 10 15.100664 10 13.996094 C 10 12.891494 9.10457 11.996094 8 11.996094 z" transform="translate(3 3)"/>
 </svg>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
  <defs>
    <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color: #FF1493; } .ColorScheme-Highlight { color: #1AD6AB; }
+   .ColorScheme-Text { color: #ff1493; } .ColorScheme-Highlight { color: #1AD6AB; }
   </style>
   <linearGradient id="arrongin" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%"    stop-color= "#dd9b44" stop-opacity="1"/>
@@ -24,8 +24,8 @@
    <stop offset="100%"  stop-color= "#329DB6" stop-opacity="1"/>
   </linearGradient>
   <linearGradient id="oomox" x1="0%" x2="0%" y1="0%" y2="100%">
-   <stop offset="0%"    stop-color= "#efefe7" stop-opacity="1"/>
-   <stop offset="100%"  stop-color= "#8f8f8b" stop-opacity="1"/>
+   <stop offset="0%"    stop-color= "#00ffff" stop-opacity="1"/>
+   <stop offset="100%"  stop-color= "#ff1493" stop-opacity="1"/>
   </linearGradient>
   <linearGradient id="rainblue" x1="0%" x2="0%" y1="0%" y2="100%">
    <stop offset="0%"    stop-color= "#00F260" stop-opacity="1"/>
@@ -57,5 +57,5 @@
    <stop offset="100%"  stop-color= "#0f83ae" stop-opacity="1"/>
   </linearGradient>
  </defs>
- <path fill="currentColor" class="ColorScheme-Text" d="m 13.456086,1.0006868 c -0.38886,0.011288 -0.758096,0.1736868 -1.029397,0.4526607 l -2.353186,2.3550062 -0.0039,-0.00585 L 8.1355916,1.8669891 6.7240702,3.2796026 8.1609366,4.7175807 1.0000001,11.884057 v 3.115944 h 3.115479 L 11.274466,7.8354729 12.713282,9.273451 14.124804,7.8608375 12.190786,5.9272739 14.543971,3.5722677 C 15.521581,2.6194252 14.82011,0.96132714 13.456086,1.0006868 Z M 8.9973154,5.5468049 10.408838,6.9594183 3.5325442,13.841031 2.1210229,12.428418 Z"/>
+ <path fill="url(#oomox)" class="ColorScheme-Text" d="m 13.456086,1.0006868 c -0.38886,0.011288 -0.758096,0.1736868 -1.029397,0.4526607 l -2.353186,2.3550062 -0.0039,-0.00585 L 8.1355916,1.8669891 6.7240702,3.2796026 8.1609366,4.7175807 1.0000001,11.884057 v 3.115944 h 3.115479 L 11.274466,7.8354729 12.713282,9.273451 14.124804,7.8608375 12.190786,5.9272739 14.543971,3.5722677 C 15.521581,2.6194252 14.82011,0.96132714 13.456086,1.0006868 Z M 8.9973154,5.5468049 10.408838,6.9594183 3.5325442,13.841031 2.1210229,12.428418 Z"/>
 </svg>

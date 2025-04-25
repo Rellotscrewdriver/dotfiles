@@ -2,7 +2,7 @@ from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import *
 
 class base(ColorScheme):
-    progress_bar_color = 177
+    progress_bar_color = magenta
 
     def use(self, context):
         fg, bg, attr = default_colors
@@ -21,19 +21,19 @@ class base(ColorScheme):
             if context.border:
                 fg = magenta 
             if context.image:
-                fg = 199
+                fg = cyan
             if context.video:
-                fg = 199
+                fg = cyan
             if context.audio:
-                fg = 199
+                fg = cyan
             if context.document:
-                fg = 199
+                fg = cyan
             if context.container:
                 attr |= bold
-                fg = 199
+                fg = cyan
             if context.directory:
                 attr |= bold
-                fg = 199
+                fg = cyan
             elif context.executable and not \
                     any((context.media, context.container,
                        context.fifo, context.socket)):

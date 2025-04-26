@@ -22,7 +22,7 @@ set $menu wofi --show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/wallpapers/ferrari_TR2.jpg fill
+output * bg ~/wallpapers/TR.jpg fill
 #
 # Example configuration:
 #
@@ -237,6 +237,7 @@ bar {
     swaybar_command waybar
 }
 
+
 ### Theme
 #       default_border normal|none|pixel [<n>]
 #           Set default border style for new tiled windows.
@@ -246,6 +247,9 @@ bar {
 #           floating mode, not windows that become floating afterwards.
 default_border pixel 3
 default_floating_border pixel 3
+# colors the border
+client.focused "#ff1493" "#ff1493" "#000000" "#ff1493"
+
 
 #title bar
 titlebar_border_thickness 3
@@ -258,10 +262,10 @@ gaps outer 5
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-   gsettings set $gnome-schema gtk-theme reSynthwave
-  gsettings set $gnome-schema gtk-application-prefer-dark-theme true
-  gsettings set $gnome-schema icon-theme reSynthwave
-  gsettings set $gnome-schema cursor-theme Adwaita
+    gsettings set $gnome-schema gtk-theme reSynthwave
+    gsettings set $gnome-schema gtk-application-prefer-dark-theme true
+    gsettings set $gnome-schema icon-theme reSynthwave
+    gsettings set $gnome-schema cursor-theme Adwaita
 }
 
 include /etc/sway/config.d/*

@@ -21,8 +21,8 @@ set $menu wofi --show drun
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/wallpapers/TR.jpg fill
+# Default wallpaper
+output * bg ~/wallpapers/miami3.jpg fill
 #
 # Example configuration:
 #
@@ -90,6 +90,12 @@ input "2362:8204:ASUP1204:00_093A:200C_Touchpad" {
     bindsym $mod+d exec $menu
 
     bindsym $mod+p exec wlogout
+    # Notification Daemon
+    exec swaync
+
+    # Toggle control center
+    bindsym $mod+Shift+n exec swaync-client -t -sw
+    
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.

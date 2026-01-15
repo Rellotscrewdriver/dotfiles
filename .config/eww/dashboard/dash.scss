@@ -1,0 +1,507 @@
+@import "../colors.scss";
+
+/** Global *******************************************/
+*{
+	all: unset;
+	font-family: "RobotoMono Nerd Font Propo";
+}
+
+/** Background ***************************************/
+.bg {
+  all: unset;
+	background-image: url("./dashboard/images/bg.png");
+	background-position: center;
+  opacity: 1;
+  border-radius: 20px;
+	border: 3px solid $green;
+  
+  /* Reset padding/margins to ensure full coverage */
+  padding: 20px;
+  margin: 0;
+}
+
+/** Generic window ***********************************/
+.genwin {
+	background-color: $background;
+  border-radius: 16px;
+  padding-top: 1.3rem;
+	padding-bottom: 1.3rem;
+  padding-left: 2.4rem;
+	padding-right: 2.4rem;
+  box-shadow: 5px 10px 5px $Lbackground;
+}
+
+.genwin:hover {
+  background-color: rgba($background, 0.95);
+  border: 1px solid $green; /* Highlights tile on hover */
+  transition: 300ms cubic-bezier(0.05, 0.7, 0.1, 1); 
+}
+
+/** Layouts ******************************************/
+.rightLay {
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.midLay {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.leftLay {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/** Profile ******************************************/
+.face {
+	background-size: 200px;
+	min-height: 200px;
+	min-width: 200px;
+	margin: 65px 0px 0px 0px;
+	border-radius: 100%;
+}
+
+.fullname {
+	color: $magenta;
+	font-size : 30px;
+	font-weight : bold;
+}
+
+.dusername {
+	color: $foreground;
+	font-size : 22px;
+	font-weight : bold;
+	margin : -15px 0px 0px 0px;
+}
+
+.fullLinux {
+	color: $foreground;
+	font-size : 18px;
+	font-weight : bold;
+  margin-bottom: 4.2rem;
+}
+
+/** Date ********************************************/
+
+.mdate {
+	color: $foreground;
+	font-size : 40px;
+	font-weight : bold;
+  margin-left: -100px;
+}
+
+.mdateicon {
+	color: $green;
+	font-size : 70px;
+	font-weight : bold;
+  margin-left: -90px;
+}
+
+/** Uptime ********************************************/
+.icontimer {
+	color: $red;
+	font-size : 90px;
+	font-weight : normal;
+}
+
+.uphour {
+	color: $foreground;
+	font-size : 30px;
+	font-weight : bold;
+}
+
+.upmin {
+	color: $foreground;
+	font-size : 30px;
+	font-weight : bold;
+}
+
+/** Weather ***************************************/
+.iconweather {
+	font-family: "RobotoMono Nerd Font";
+	font-size : 120px;
+	font-weight : normal;
+	margin : 15px 0px 0px 30px;
+}
+
+.label_temp {
+	color : $blue;
+	font-size : 30px;
+	font-weight : bold;
+	margin : 0px 0px 0px 0px;
+}
+
+.label_stat {
+	color : $foreground;
+	font-size : 38px;
+	font-weight : bold;
+}
+
+/** Applications ***************************************/
+.appbox {
+	margin: 0rem 0rem 1.3rem 0rem;
+}
+
+.app_dash {
+  background-repeat: no-repeat;
+	background-size: 64px;
+	background-position: center;
+  min-height: 64px;
+	min-width: 64px;
+	margin: 8px 8px 0px 8px;
+}
+
+/** Music Player **************************************/
+.music-box {
+  margin-bottom: 0;
+}
+
+.music-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: $magenta;
+  min-width: 25rem; 
+}
+
+.music-artist {
+  font-size: 1rem;
+  color: $foreground; 
+  opacity: 0.7;
+}
+
+.music-controls {
+	margin-left: 11rem;
+}
+
+.music-sep {
+  background-color: $green; 
+}
+
+.music-btn-play {
+  font-size: 2rem;
+  color: $blue; 
+}
+
+.music-btn {
+  font-size: 2rem;
+  color: $blue;
+}
+
+.music-bar-container {
+  padding: 0 10px;
+}
+
+.music-bar {
+  trough {
+    background-color: rgba($foreground, 0.1); 
+    border-radius: 10px;
+    min-height: 8px;
+    min-width: 400px;
+  }
+  highlight {
+    background-color: $green; 
+    border-radius: 10px;
+    transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  }
+}
+
+/* Optional: Make the slider handle visible only on hover */
+.music-bar slider {
+  background-color: $magenta; /* */
+  border-radius: 100%;
+  border: 2px solid $background; 
+  min-height: 12px;
+  min-width: 12px;
+}
+
+/** Control Panel *******************************/
+.cp-i {
+  font-family: "RobotoMono Nerd Font";
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.sliderctl {
+  box-shadow: 10px 10px 0px $blue;
+  border-radius: 15px;
+  background-color: $background;
+}
+
+.volume-slider {
+  margin-bottom: 0.3rem;
+}
+
+.light-slider {
+  margin-bottom: 0;
+}
+
+.mic-slider {
+  margin-bottom: 0.3rem;
+}
+
+.vol trough,
+.lig trough,
+.mic trough {
+  background-color: $Lbackground;
+  box-shadow: 0 2px 3px 2px $background;
+  border-radius: 50px;
+  min-height: 20px;
+  min-width: 250px;
+  margin: 0 0 0 20px;
+}
+
+.vol trough highlight {
+  background-color: $green;
+  border-radius: 10px;
+}
+
+.volume-slider,
+.volume-short {
+  color: $green;
+}
+
+.lig trough highlight {
+  background-color: $yellow;
+  border-radius: 10px;
+}
+
+.mic trough highlight {
+  background-color: $cyan;
+  border-radius: 10px;
+}
+
+.light-slider {
+  color: $yellow;
+}
+
+.mic-icon {
+  font-size: 1.2rem;
+  color: $cyan;
+}
+
+.vol-icon {
+  font-size: 1.2rem;
+}
+
+.lig-icon {
+  font-size: 1.2rem;
+}
+
+/** Bluetooth ***********************************/
+.bt-name {
+        color: $red;
+        font-weight: 900;
+        font-size: 18px;
+        min-width: 15.5rem;
+}
+
+.bt-icon {
+        font-size: 26px;
+        font-weight: bold;
+        border-radius: 20px;
+        background-color: $yellow;
+        color: $background;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        margin-left: 4rem;
+        margin-right: 4rem;
+}
+
+.bluetooth-box {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 4rem;
+  padding-right: 3.5rem;
+}
+
+/** Links ***************************************/
+.socials-box {
+}
+
+.socials {
+}
+
+.iconweb {
+	color: $foreground;
+	font-family: "RobotoMono Nerd Font";
+	font-size : 70px;
+	font-weight : normal;
+}
+
+.iconmail, .icongit {
+	background-color: $background;
+	color: $yellow;
+	font-family: "RobotoMono Nerd Font";
+	font-size : 48px;
+	font-weight : normal;
+}
+
+.icongit {
+	color: $green;
+}
+
+.udemy {
+	background-color: #A435F0;
+	border-radius: 16px;
+  padding: 2rem 3.5rem 2rem 3.5rem;
+  box-shadow: 5px 10px 5px $Lbackground;
+}
+
+.arch {
+	background-color: #1793d1;
+	border-radius: 16px;
+  box-shadow: 5px 10px 5px $Lbackground;  
+  padding: 2rem 3.5rem 2rem 3.5rem; 
+}
+
+.stacko {
+	background-color: #F48024;
+	border-radius: 16px;
+  padding: 2rem 3.5rem 2rem 3.5rem; 
+  box-shadow: 5px 10px 5px $Lbackground;
+}
+
+.youtube {
+	background-color: #FF0000;
+	border-radius: 16px;
+  padding: 2rem 3.5rem 2rem 3.5rem; 
+  box-shadow: 5px 10px 5px $Lbackground;
+}
+
+.reddit {
+	background-color: #FF4500;
+	border-radius: 16px;
+  padding: 2rem 3.5rem 2rem 3.5rem; 
+  box-shadow: 5px 10px 5px $Lbackground;
+}
+
+.mail {
+	background-color: $background;
+	border-radius: 16px;
+}
+
+.mailbox {
+	background-color: $background;
+	border-radius: 10px;
+}
+
+.label_mails {
+	color: $foreground;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0px 8px 0px 8px;
+}
+
+.gitbox {
+	background-color: $background;
+	border-radius: 10px;
+}
+
+.label_git {
+	color: $foreground;
+	font-size : 32px;
+  font-weight : bold;
+  min-width: 60px;
+	margin: 0px 0px 0px 8px;
+}
+
+/** Home folders ***************************************/
+.cfold {
+  background-color: $background;
+	border-radius: 16px;
+  padding-bottom: 14.5rem;
+  box-shadow: 5px 10px 5px $Lbackground;
+}
+
+.hddbox {
+	background-color: $background;
+	border-radius: 10px;
+	margin: 15px;
+}
+.hddicon {
+	color: $magenta;
+	font-family: "RobotoMono Nerd Font";
+	font-size : 70px;
+	font-weight : normal;
+	margin : 25px 20px 25px 40px;
+}
+.hdd_label {
+	color: $foreground;
+	font-size : 48px;
+	font-weight : bold;
+	margin : 0px 0px 0px 15px;
+}
+.fs_sep {
+	color: $green;
+	font-size : 36px;
+	font-weight : bold;
+}
+
+.iconfolder1, .iconfolder2, .iconfolder3, .iconfolder4, .iconfolder5, .iconfolder6, .iconfolder7, .iconfolder8 {
+	font-family: Iosevka Nerd Font;
+	font-size : 32px;
+	font-weight : normal;
+	margin : 0px 0px 0px 75px;
+}
+.iconfolder1 {
+	color: $red;
+}
+.iconfolder2 {
+	color: $blue;
+}
+.iconfolder3 {
+	color: $green;
+}
+.iconfolder4 {
+	color: $yellow;
+}
+.iconfolder5 {
+	color: $magenta;
+}
+.iconfolder6 {
+	color: $cyan;
+}
+.iconfolder7 {
+	color: $Lgrey;
+}
+.iconfolder8 {
+  color: $red;
+}
+
+.label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5, .label_folder6, .label_folder7, .label_folder8 {
+	font-size : 22px;
+	font-weight : normal;
+	margin : 0px 0px 0px 30px;
+}
+.label_folder1 {
+	color: $red;
+}
+.label_folder2 {
+	color: $blue;
+}
+.label_folder3 {
+	color: $green;
+}
+.label_folder4 {
+	color: $yellow;
+}
+.label_folder5 {
+	color: $magenta;
+}
+.label_folder6 {
+	color: $cyan;
+}
+.label_folder7 {
+	color: $Lgrey;
+}
+.label_folder8 {
+  color: $red;
+}
+
+/** EOF *************************************************/

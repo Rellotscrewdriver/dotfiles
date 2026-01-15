@@ -1,0 +1,15 @@
+#!/bin/bash
+
+user="rellotscrewdriver"
+token=`cat ~/.env/token`
+count=$(gh api 'notifications?per_page=100' --jq length 2>/dev/null)
+
+if [ "$count" -eq 100 ]; then
+    echo "99+"
+else
+    if [ "$count" -ne 0 ]; then
+        echo "$count"
+    else
+        echo "0"
+    fi
+fi

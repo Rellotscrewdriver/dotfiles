@@ -1,0 +1,30 @@
+#!/bin/bash
+
+## Open folders in thunar
+APP="nemo -t --existing-window"
+
+close_dash() {
+  eww update mdashrev=false && eww close dashboard &
+}
+
+if [[ "$1" == "--cfg" ]]; then
+	close_dash && ${APP} ~/.config &
+
+elif [[ "$1" == "--home" ]]; then
+	close_dash && ${APP} ~ &
+
+elif [[ "$1" == "--docs" ]]; then
+	close_dash && ${APP} ~/Documents &
+
+elif [[ "$1" == "--gitp" ]]; then
+	close_dash && ${APP} ~/github_pj &
+
+elif [[ "$1" == "--godotP" ]]; then
+	close_dash && ${APP} ~/"Godot Projects" &
+
+elif [[ "$1" == "--notes" ]]; then
+	close_dash && ${APP} ~/notes &
+
+elif [[ "$1" == "--s" ]]; then
+	close_dash && ${APP} ~/study &
+fi

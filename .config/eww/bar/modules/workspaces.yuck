@@ -1,0 +1,15 @@
+(deflisten workspaces_json :initial "[]"
+  "~/.config/eww/bar/scripts/workspaces.sh")
+
+(defwidget workspaces []
+  (box :class "workspace-sway"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+    (for ws in workspaces_json
+      (button :onclick "swaymsg workspace ${ws.id}"
+              :class "workspace-btn ${ws.status}"
+
+        ;; USE THE ICON HERE
+        (label :text "${ws.icon}")))))

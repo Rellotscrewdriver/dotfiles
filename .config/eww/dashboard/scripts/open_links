@@ -1,0 +1,31 @@
+#!/bin/bash
+
+## Open links in firefox
+cmd="brave --new-tab"
+
+close_dash() {
+  eww update mdashrev=false && eww close dashboard &
+}
+
+if [[ "$1" == "--arch" ]]; then
+	close_dash && ${cmd} "https://archlinux.org"
+
+elif [[ "$1" == "--gh" ]]; then
+	close_dash && ${cmd} "https://github.com"
+
+elif [[ "$1" == "--ud" ]]; then
+	close_dash && ${cmd} "https://udemy.com"
+
+elif [[ "$1" == "--so" ]]; then
+	close_dash && ${cmd} "https://stackoverflow.com"
+
+elif [[ "$1" == "--yt" ]]; then
+	close_dash && ${cmd} "https://youtube.com"
+
+elif [[ "$1" == "--mail" ]]; then
+	close_dash && ${cmd} "https://gmail.com"
+
+elif [[ "$1" == "--rd" ]]; then
+	close_dash && ${cmd} "https://reddit.com"
+
+fi

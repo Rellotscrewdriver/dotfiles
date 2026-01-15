@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# Configuration
+TMP_COVER="/tmp/eww_music_cover.png"
+DEFAULT_COVER="./dashboard/images/music.png" 
+
+# Function to get metadata with fallbacks
+get_meta() {
+    # 'head -c' ensures long YouTube titles don't break the layout
+    val=$(playerctl metadata --format "{{ $1 }}" 2>/dev/null)
+    
+    if [[ -z "$val" ]]; then
+        [[ "$1" == "title" ]] && echo "Nothing Playing" || echo "Unknown"
+    else
+        # This removes quotes which can sometimes confuse Eww's parser
+        echo "$val" | tr -d '"' | tr -d "'"
+    fi
+}
+
+# Function to get 0-100 percentage
+get_progress() {
+    # Get metadata
+    pos=$(playerctl metadata --format "{{ position }}" 2>/dev/null)
+    len=$(playerctl metadata --format "{{ mpris:length }}" 2>/dev/null)
+    status=$(playerctl status 2>/dev/null)
+
+    # 1. If player is stopped or nothing is playing, force 0
+    if [[ "$status" != "Playing" && "$status" != "Paused" ]]; then
+        echo 0
+        return
+    fi
+
+    # 2. Sanity Check: If position or length are missing, or if pos >= len (track end)
+    # This prevents the bar from staying at 100% when a new song starts.
+    if [[ -z "$pos" || -z "$len" || "$len" -eq 0 || "$pos" -ge "$len" ]]; then
+        echo 0
+    else
+        # Standard percentage calculation
+        echo $(( pos * 100 / len ))
+    fi
+}
+
+# Function to seek to a percentage
+set_progress() {
+    len_us=$(playerctl metadata --format "{{ mpris:length }}" 2>/dev/null)
+    if [[ -n "$len_us" && "$len_us" -gt 0 ]]; then
+        # $2 is the 0-100 value from Eww's {}
+        target_s=$(( ($2 * len_us / 100) / 1000000 ))
+        playerctl position "$target_s"
+    fi
+}
+
+get_cover() {
+    url=$(playerctl metadata mpris:artUrl 2>/dev/null)
+    if [[ "$url" == http* ]]; then
+        curl -s "$url" -o "$TMP_COVER" && echo "$TMP_COVER"
+    elif [[ "$url" == file://* ]]; then
+        echo "${url#file://}"
+    else
+        [cite_start]echo "$DEFAULT_COVER" [cite: 22]
+    fi
+}
+
+case "$1" in
+    --song)   get_meta "title" ;;
+    --artist) get_meta "artist" ;;
+    --cover)  get_cover ;;
+    --status) 
+        status=$(playerctl status 2>/dev/null)
+        [[ "$status" == "Playing" ]] && echo "󰏤" || echo "󰐊" ;;
+    --toggle) playerctl play-pause ;;
+    --next)   playerctl next ;;
+    --prev)   playerctl previous ;;
+    --progress) get_progress ;;
+    --set-progress) set_progress "$@" ;;
+esac

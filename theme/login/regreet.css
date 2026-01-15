@@ -1,0 +1,138 @@
+@define-color background #141b1e;
+@define-color Lbackground #232a2d;
+@define-color foreground #dadada;
+@define-color shadow #000000;
+@define-color red #e57474;
+@define-color blue #67b0e8;
+@define-color green #8ccf7e;
+@define-color yellow #e5c76b;
+@define-color magenta #c47fd5;
+@define-color cyan #6cbfbf;
+@define-color Lgrey #b3b9b8;
+
+
+* {
+  font-family: "Noto Sans Nerd Font";
+  all: unset;
+}
+
+picture {
+  filter: blur(1.2rem);
+  background-image: url("/usr/share/wallpapers/Night.png"); 
+}
+
+frame.background {
+  background: alpha(@background, .92);
+  color: @foreground;
+  border-radius: 24px;
+  box-shadow: 0 0 8px 0 alpha(@shadow, .92);
+}
+
+frame.background.top {
+  font-size: 1.2rem;
+  padding: 8px;
+  background: @background;
+  color: @yellow;
+  border-radius: 0;
+}
+
+box.horizontal>button.default.suggested-action.text-button {
+  background: @green;
+  color: @background;
+  padding: 12px;
+  margin: 0 8px;
+  border-radius: 12px;
+  transition: background .3s ease-in-out;
+}
+
+box.horizontal>button.default.suggested-action.text-button:hover {
+  background: shade(@green, 1.2);
+}
+
+box.horizontal>button.text-button {
+  background: @background;
+  color: @red;
+  padding: 12px;
+  border-radius: 12px;
+  transition: background .3s ease-in-out;
+}
+
+box.horizontal>button.text-button:hover {
+  background: @Lbackground;
+  color: @red;
+}
+
+combobox {
+  background: @Lbackground;
+  color: @foreground;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 0 4px 0 alpha(@shadow, .6);
+}
+
+combobox:disabled {
+  background: @Lgrey;
+  color: @shadow;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 0 4px 0 alpha(@shadow, .6);
+}
+
+modelbutton.flat {
+  background: @background;
+  padding: 6px;
+  margin: 2px;
+  border-radius: 8px;
+  border-spacing: 6px;
+}
+
+modelbutton.flat:hover {
+  background: shade(@Lbackground, 1.2);
+}
+
+button.image-button.toggle {
+  margin-right: 36px;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+button.image-button.toggle:hover {
+  background: @blue;
+  box-shadow: 0 0 4px 0px alpha(@shadow, .6);
+}
+
+button.image-button.toggle:disabled {
+  background: @Lgrey;
+  color: alpha(@shadow, .6);
+  margin-right: 36px;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+combobox>popover {
+  background: @background;
+  color: @foreground;
+  border-radius: 8px;
+  border-spacing: 6px;
+  box-shadow: 0 0 4px 0 alpha(@shadow, .6);
+  padding: 6px 12px;
+}
+
+combobox>popover>contents {
+  padding: 2px;
+}
+
+combobox:hover {
+  background: shade(@Lbackground, 1.2);
+}
+
+entry.password {
+  border: 2px solid @Lbackground;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+entry.password:hover {
+  border: 2px solid @blue;
+}
+

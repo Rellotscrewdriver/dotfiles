@@ -1,0 +1,67 @@
+@define-color background #141b1e;
+@define-color Lbackground #232a2d;
+@define-color foreground #dadada;
+
+@define-color blue #67b0e8;
+@define-color yellow #e5c76b;
+
+window {
+font-family: "RobotoMono", "Font Awesome 5 Free";
+margin: 0px;
+border: 2px solid @yellow;
+background-color: @background;
+}
+
+#input {
+margin: 5px;
+border: none;
+color: @foreground;
+background-color: @Lbackground;
+}
+
+#inner-box {
+margin: 5px;
+border: none;
+background-color: @background;
+}
+
+#outer-box {
+margin: 5px;
+border: none;
+background-color: @background;
+}
+
+#img{
+    background-color: @background;
+}
+
+#img:selected {
+    background-color: @blue;
+    border-radius: 10px;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: @foreground;
+} 
+
+#entry.activatable #text {
+color: @foreground;
+background-color: @Lbackground;
+}
+
+#entry > * {
+color: @foreground;
+}
+
+#entry:selected {
+background-color: @blue;
+color: @background;
+}
+
+#entry:selected #text {
+font-weight: bold;
+background-color: @blue;
+color: @background;
+}

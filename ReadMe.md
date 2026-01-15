@@ -1,0 +1,85 @@
+# ✨ My workstation ✨
+This is my personal dotfiles repository. The theme is everblush.
+this will my final rice before I change it for multi-monitor setup
+
+## ❓ What are dotfiles?
+
+Dotfiles are the customization files that are used to personalize your Linux or other Unix-based system. they are configurations for various applications. 
+This repository contains my personal dotfiles. They are stored here for convenience so that I may quickly access them on new machines or new installs. Also, others may find some of my configurations helpful in customizing their own dotfiles.
+
+## 📦 How to install and set up my dotfiles?
+
+my install script isn't perfect so only execute this if you know what you're doing
+- install dependencies from `dependencies.txt` file
+- Clone this repository
+- run `sudo sh install.sh`
+- restart and enjoy!
+
+## 📸 Screenshots
+here are the screenshots as I believe people like to see previews of the repo before downloading it
+
+<details>
+<summary>Greeter in Regreet</summary>
+<img src = "screenshots/10.png" />
+</details>
+
+<details>
+<summary>eww</summary>
+<img src = "screenshots/1.png" />
+</details>
+
+<details>
+<summary>fastfetch & btop & ranger</summary>
+<img src = "screenshots/2.png" />
+</details>
+
+<details>
+<summary>Code - OSS(alternative to VScode)</summary>
+<img src = "screenshots/3.png" />
+</details>
+
+<details>
+<summary>Nemo & Neovim(no rhyme intended)</summary>
+<img src = "screenshots/4.png" />
+</details>
+
+<details>
+<summary>Godot</summary>
+<img src = "screenshots/5.png" />
+</details>
+
+<details>
+<summary>obsidian</summary>
+<img src = "screenshots/6.png" />
+</details>
+
+<details>
+<summary>mpv(with modernZ config)</summary>
+<img src = "screenshots/7.png" />
+</details>
+
+<details>
+<summary>eww powermenu</summary>
+<img src = "screenshots/8.png" />
+</details>
+
+<details>
+<summary>swaync</summary>
+<img src = "screenshots/9.png" />
+</details>
+
+<br>
+
+the wallpaper of each screenshot can be found in **wallpapers** directory
+
+Before leaving out, don't forget to **STAR** this repository! Thanks for checking out. 
+
+***credits rolling***
+
+## 🙏 Credits
+- https://github.com/randomboi404/eww - main inspiration
+- https://github.com/Firstp1ck/Hyprland-Simple-Setup
+- https://github.com/mehedirm6244/Miserable_Xfce
+- https://github.com/syndrizzle/hotfiles/tree/worm
+- https://github.com/AlphaTechnolog/dotfiles/tree/openbox
+- https://github.com/zDyant/HyprNova

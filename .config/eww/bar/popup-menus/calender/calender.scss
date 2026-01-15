@@ -1,0 +1,68 @@
+.cal-container {
+  box-shadow: 0 2px 3px 2px $shadow-primary;
+  background-color: $Lbackground;
+  border: 2px solid $Lgrey;
+  margin: 5.5px;
+  border-radius: 20px;
+  padding: 5px;
+  min-width: 330px;
+}
+
+.time-box {
+  background-color: $Lbackground;
+  border-radius: 15px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+}
+
+.time-inner {
+  background-color: $Lbackground;
+  color: $red;
+  font-size: 50px;
+  margin-left: 4px;
+  margin-top: 10px;
+}
+
+.date-inner {
+  margin-top: 20px;
+  font-size: 18px;
+  color: $red;
+}
+
+.calendar-box {
+  box-shadow: 0 2px 3px 2px $shadow-primary;
+  background-color: $Lbackground;
+  border-radius: 15px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 9px;
+}
+
+.cal {
+  padding: 5px;
+  color: $blue;
+  &.header {
+    color: $yellow;
+  }
+  &.button {
+    color: $yellow;
+    &:hover {
+      color: $red;
+    }
+  }
+  &:indeterminate {
+    color: $Lgrey;
+  }
+  &.highlight {
+    color: $yellow;
+  }
+  &:selected {
+    color: $green;
+  }
+  font-size: 1em;
+  padding: 0.2em;
+}

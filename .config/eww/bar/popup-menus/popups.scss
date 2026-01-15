@@ -1,0 +1,46 @@
+.parent {
+  background-color: rgba($background, 0.9);
+  border-radius: 8px;
+  border: 2px solid $yellow;
+  padding: 12px;
+}
+
+.header {
+  font-weight: bold;
+  font-size: large;
+}
+
+.title {
+  margin-right: 50px;
+  margin-left: 1px;
+  color: $foreground;
+}
+
+.button {
+  margin-top: 8px;
+  background-color: #333;
+  border-radius: 8px;
+  padding: 8px;
+  color: $foreground;
+}
+
+.button:hover {
+  background-color: $Lbackground;
+}
+
+.button:active {
+  background-color: #111;
+}
+
+.exit {
+  color: $foreground;
+  transition: all 0.2s ease;
+}
+
+.exit:hover {
+  color: #726e65;
+}
+
+.button {
+  transition: all 0.2s ease;
+}

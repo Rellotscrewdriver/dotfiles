@@ -1,0 +1,61 @@
+
+/*
+@background: #141b1e;
+$Lbackground: #232a2d;
+$foreground: #dadada;
+
+$red: #e57474;
+$blue: #67b0e8;
+$green: #8ccf7e;
+$yellow: #e5c76b;
+$magenta: #c47fd5;
+$cyan: #6cbfbf;
+$Lgrey: #b3b9b8;
+*/ 
+
+window#osd {
+  border-radius: 10px;
+  border: 2px solid #e5c78b;
+  background: alpha(#141b1e, 0.4);
+}
+
+window#osd #container {
+  margin: 0px;
+  padding: 10px;
+  background: #141b1e;
+}
+
+window#osd image {
+  -gtk-icon-transform: scale(1);
+}
+
+window#osd image,
+window#osd label {
+  color: #67b0e8;
+}
+
+window#osd progressbar:disabled,
+window#osd image:disabled {
+  opacity: 0.5;
+}
+
+window#osd progressbar {
+  min-height: 6px;
+  border-radius: 999px;
+  background: #232a2d;
+  border: none;
+}
+
+window#osd trough {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: alpha(#dadada, 0.5);
+}
+
+window#osd progress {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: #6cbfbf;
+}

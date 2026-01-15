@@ -1,0 +1,8 @@
+(deflisten cpuTemp "sh ./bar/scripts/temp.sh")
+
+(defwidget temp []
+  (box 
+		:space-evenly false
+		:orientation "h" 
+    (label :text "${cpuTemp.tempIcon}" :class "temp-i")
+	(label :class "temp-t" :unindent false :text "${cpuTemp.tempNo}°C")))

@@ -1,0 +1,5 @@
+(defwidget notifications []
+  (eventbox :cursor "pointer" :onclick "swaync-client -t -sw"
+	(label :text "" :class "notif-hist")
+	)
+)

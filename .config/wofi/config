@@ -1,0 +1,10 @@
+mode=drun
+run-always_parse_args=true
+allow_images=true
+hide_scroll=true
+insensitive=true
+prompt=Type here for search
+height=30%
+width=15%
+location=top
+no_actions=true

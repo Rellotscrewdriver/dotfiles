@@ -1,0 +1,44 @@
+#!/bin/bash
+# Function to fetch and output data as JSON
+get_data() {
+    # Fetch raw values
+    DEVICE=$(bluetoothctl info | grep 'Alias:' | awk -F: '{print $2}' | xargs)
+    DEVICE_PATH=$(upower --dump | tr : _ | grep headset | awk 'FNR == 1' | awk '{print $2}')
+    BATTERY=$(upower -i "$DEVICE_PATH" 2>/dev/null | grep percentage | awk '{print $2}')
+    POWERED=$(bluetoothctl show | grep "Powered: yes" | wc -c)
+    CONNECTED=$(bluetoothctl info | grep 'Device' | wc -c)
+
+    # Logic for Icon
+    if [ "$POWERED" -eq 0 ]; then
+        ICON="󰂲" # Bluetooth Off
+        NAME="Bluetooth Off"
+        BATT="---"
+    elif [ "$CONNECTED" -eq 0 ]; then
+        ICON="󰂯" # Bluetooth Idle
+        NAME="Bluetooth Idle"
+        BATT="---"
+    else
+        ICON="󰋋" # Connected (Headphones)
+        NAME="${DEVICE}"
+        BATT="${BATTERY:----}"
+    fi
+
+    # Output as single-line JSON
+    jq -ncn \
+        --arg icon "$ICON" \
+        --arg name "$NAME" \
+        --arg batt "$BATT" \
+        '{"icon": $icon, "name": $name, "battery": $batt}'
+}
+
+# Initial update
+get_data
+
+# Listen for events and update
+bluetoothctl --monitor | while read -r line; do
+    # Only update on specific event triggers to save CPU
+    if [[ "$line" == *"[DEL] Device"* || "$line" == *"[NEW] Device"* || "$line" == *"PropertiesChanged"* ]]; then
+        get_data
+    fi
+done
+

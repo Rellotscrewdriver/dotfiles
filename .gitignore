@@ -1,0 +1,3 @@
+*.log
+token
+__pycache__

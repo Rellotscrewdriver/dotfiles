@@ -1,0 +1,6 @@
+[General]
+theme=Everblush
+
+[Applications]
+Default=virtualbox, qt-creator
+Everblush=qt-creator, virtualbox

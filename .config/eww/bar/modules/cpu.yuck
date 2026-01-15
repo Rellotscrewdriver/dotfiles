@@ -1,0 +1,6 @@
+(defwidget cpu []
+  (box
+		:space-evenly false
+		:orientation "h"
+    (label :text "" :class "cpu-i")
+	  (label :class "temp-t" :unindent false :text "${system.cpu_usage}%")))

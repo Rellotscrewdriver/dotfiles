@@ -1,0 +1,194 @@
+.container {
+  box-shadow: 0 2px 3px 2px $shadow-primary;
+  background-color: $background;
+  border: 2px solid $border-primary;
+  margin: 5.5px;
+  border-radius: 20px;
+  padding: 5px;
+  min-width: 385px;
+}
+
+.main-container {
+  /*box-shadow: 0 2px 3px 2px $shadow-primary;*/
+  background-color: $background;
+  border: 2px solid $yellow;
+  margin: 5.5px;
+  border-radius: 20px;
+  padding: 5px;
+  min-width: 385px;
+}
+
+.main-title {
+  margin-top: 15px;
+  margin-bottom: 12px;
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: $text-accent;
+}
+
+.profile {
+  /*box-shadow: 0 2px 3px 2px $shadow-primary;*/
+  background-color: $background;
+  min-width: 370px;
+  margin: 0px 7px;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.graph-container {
+  /*box-shadow: 0 2px 3px 2px $shadow-primary;*/
+  background-color: $background;
+  min-width: 370px;
+  margin: 0px 7px;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.pfp {
+  /*box-shadow: 0 2px 3px 2px $shadow-primary;*/
+  background-image: url('./assets/pfp.png');
+  background-size: 90px;
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  min-height: 90px;
+  min-width: 90px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.ctlpanel {
+  /*box-shadow: 0 2px 3px 2px $shadow-primary;*/
+  min-width: 230px;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: rgba(65, 72, 86, 0.3);
+  font-family: "jetbrainsmono nerd font";
+}
+
+.shutdown {
+  color: #e06c75;
+  transition: color 0.3s;
+  &:hover {
+    color: #f38b91;
+  }
+}
+
+.logout {
+  color: #d19a66;
+  transition: color 0.3s;
+  &:hover {
+    color: #e5b07b;
+  }
+}
+
+.lockscr {
+  color: #61afef;
+  transition: color 0.3s;
+  &:hover {
+    color: #79c0ff;
+  }
+}
+
+.reboot {
+  color: #c678dd;
+  transition: color 0.3s;
+  &:hover {
+    color: #d896f0;
+  }
+}
+
+.suspend {
+  color: #56b6c2;
+  transition: color 0.3s;
+  &:hover {
+    color: #6edddf;
+  }
+}
+
+.hibernate {
+  color: #5fb3b3;
+  transition: color 0.3s;
+  &:hover {
+    color: #a1e3e3;
+  }
+}
+
+.musername {
+  color: $green;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.bsht {
+  color: $text-info;
+}
+
+.uptime {
+  color: $magenta;
+}
+
+.sliderctl {
+  /*box-shadow: 0 2px 3px 2px $shadow-primary;*/
+  border-radius: 15px;
+  background-color: $background;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.volume-slider {
+  margin-left: 15px; 
+}
+
+.light-slider {
+  margin-bottom: 10px;
+  margin-left: 13px;
+}
+
+.mic-slider {
+  margin-top: 10px;
+  margin-left: 13px;
+}
+
+.vol trough,
+.lig trough,
+.mic trough {
+  background-color: $Lbackground;
+  /*box-shadow: 0 2px 3px 2px $shadow-primary;*/
+  border-radius: 50px;
+  min-height: 10px;
+  min-width: 250px;
+  margin: 0 0 0 20px;
+}
+
+.vol trough highlight {
+  background-color: $green;
+  border-radius: 10px;
+}
+
+.volume-slider,
+.volume-short {
+  color: $green;
+}
+
+.lig trough highlight {
+  background-color: $yellow;
+  border-radius: 10px;
+}
+
+.mic trough highlight {
+  background-color: $cyan;
+  border-radius: 10px;
+}
+
+.light-slider {
+  color: $yellow;
+}
+
+.mic-icon {
+  color: $cyan;
+}

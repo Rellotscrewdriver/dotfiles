@@ -1,0 +1,14 @@
+#!/bin/python
+# hihu lgym zpme tbzp
+import imaplib
+obj = imaplib.IMAP4_SSL('imap.gmail.com',993)
+obj.login("jkanimations71@gmail.com", "hihu lgym zpme tbzp") # write your email and password
+obj.select()
+unseen_mails = len(obj.search(None, 'UnSeen')[1][0].split())
+
+if unseen_mails >= 100:
+    print("99+")
+elif unseen_mails < 100:
+    print(unseen_mails)
+else:
+    print("Not")

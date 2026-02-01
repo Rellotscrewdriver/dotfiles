@@ -31,7 +31,7 @@ installDependencies() {
 
 installConfig() {
     echo "Installing configs"
-    ln -sfvr $DIR/.config/* ~/.config/
+    ln -sfvr $DIR/configs/* ~/.config/
     echo "done"
 }
 
@@ -72,8 +72,6 @@ installGRUB(){
 installLogin(){
     echo "installing login theme"
 	sudo cp -r $DIR/theme/login/ /etc/greetd/
-    sudo systemctl enable --now greetd.service
-    sudo systemctl start greetd.service
     echo "done"
 }
 

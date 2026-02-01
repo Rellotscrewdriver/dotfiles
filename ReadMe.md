@@ -14,7 +14,20 @@ this script only works if you're on arch linux!
 - install dependencies from `dependencies.txt` file
 - Clone this repository
 - run `sudo sh install.sh`
+- disable your current login manager and then enable greetd 
+```sudo systemctl enable --now greetd.service```
 - restart and enjoy!
+
+## Shortcut keys
+
+`$mod` + `x` opens dashboard
+
+`$mod` + `p` opens powermenu
+
+`$mod` + `d` opens application launcher
+
+`$mod` + `m` opens obsidian
+
 
 ## 📸 Screenshots
 here are the screenshots as I believe people like to see previews of the repo before downloading it
@@ -70,11 +83,6 @@ here are the screenshots as I believe people like to see previews of the repo be
 </details>
 
 <br>
-
-## ShortCuts
-
-$mod + x opens dashboard
-$mod + p opens powermenu
 
 
 the wallpaper of each screenshot can be found in **wallpapers** directory

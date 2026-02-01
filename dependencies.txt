@@ -15,7 +15,7 @@ wofi
 greetd-regreet
 kvantum
 nwg-look
-eww-git
+eww
 swaylock-effects
 swaync 
 greetd

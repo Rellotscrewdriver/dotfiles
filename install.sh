@@ -37,6 +37,7 @@ installConfig() {
 
 inputToken(){
     echo "creating a token"
+    mkdir $TOKEN_DIR
     touch $TOKEN_DIR/token
     read -p "Enter the github token: " token
     echo $token > $TOKEN_DIR/token
@@ -71,6 +72,8 @@ installGRUB(){
 installLogin(){
     echo "installing login theme"
 	sudo cp -r $DIR/theme/login/ /etc/greetd/
+    sudo systemctl enable --now greetd.service
+    sudo systemctl start greetd.service
     echo "done"
 }
 

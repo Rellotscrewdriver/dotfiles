@@ -1,13 +1,13 @@
 #!/bin/sh
 
 # Credits to HoNamDuong
-## Directories ----------------------------
+# Edited by Rellot's Screwdriver
+
 DIR=$(pwd)
 LOCAL_DIR=~/.local/share/fonts 
 NERD_FONT_DIR=~/RobotoMono.zip
 TOKEN_DIR=~/.env
 
-## Directories ----------------------------
 
 # Reset
 Reset='\033[0m'       # Text Reset
@@ -25,7 +25,8 @@ BGreen='\e[1;32m'
 
 installDependencies() {
   echo "Installing main Arch dependencies"
-  paru -Sy --needed --noconfirm $(cat dependencies.txt)
+  # add --noconfirm later
+  sudo paru -Sy --needed $(cat dependencies.txt)
 }
 
 installConfig() {
@@ -52,9 +53,9 @@ inputWeather(){
 installTheme(){
     echo "installing icons, cursors theme and wallpapers"
 	sudo mkdir -p /usr/share/themes /usr/share/icons
-	ln -sfvr $DIR/theme/icons/ /usr/share/icons
-	ln -sfvr $DIR/theme/GTK/ /usr/share/themes
-	ln -sfvr $DIR/theme/cursor/ /usr/share/icons
+	sudo ln -sfvr $DIR/theme/icons/ /usr/share/icons
+	sudo ln -sfvr $DIR/theme/GTK/ /usr/share/themes
+	sudo ln -sfvr $DIR/theme/cursor/ /usr/share/icons
     echo "done"
 }
 
@@ -69,7 +70,7 @@ installGRUB(){
 
 installLogin(){
     echo "installing login theme"
-	cp -r $DIR/theme/login/ /etc/greetd/
+	sudo cp -r $DIR/theme/login/ /etc/greetd/
     echo "done"
 }
 

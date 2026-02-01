@@ -10,6 +10,7 @@ This repository contains my personal dotfiles. They are stored here for convenie
 ## 📦 How to install and set up my dotfiles?
 
 my install script isn't perfect so only execute this if you know what you're doing
+this script only works if you're on arch linux!
 - install dependencies from `dependencies.txt` file
 - Clone this repository
 - run `sudo sh install.sh`
@@ -69,6 +70,12 @@ here are the screenshots as I believe people like to see previews of the repo be
 </details>
 
 <br>
+
+## ShortCuts
+
+$mod + x opens dashboard
+$mod + p opens powermenu
+
 
 the wallpaper of each screenshot can be found in **wallpapers** directory
 

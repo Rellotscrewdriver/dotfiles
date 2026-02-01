@@ -23,6 +23,11 @@ BBlue='\e[1;34m'
 BGreen='\e[1;32m'
 
 
+installDependencies() {
+  echo "Installing main Arch dependencies"
+  paru -Sy --needed --noconfirm $(cat dependencies.txt)
+}
+
 installConfig() {
     echo "Installing configs"
     ln -sfvr $DIR/.config/* ~/.config/
@@ -84,7 +89,7 @@ installFonts(){
     else
         echo "installing the required fonts from the internet, please wait if you do have internet connection"
         wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip -O $NERD_FONT_DIR
-    fi
+fi
 
     unzip -j $NERD_FONT_DIR -d $LOCAL_DIR
     fc-cache -f
@@ -97,6 +102,7 @@ clear
 echo -e "${Blue}                        Welcome to my configuration!"
 echo "Select anything you want and it will link to destinated folder"
 echo "after installing do not delete this folder the configs are in, else it won't work properly"
+echo -e "${BRed}before you install my config in any of these steps you need to have 'paru' installed"
 while :
 do
 		echo " "
@@ -114,6 +120,7 @@ do
         exit
     ;;
     1)
+        installDependencies
         installConfig
         installTheme
         installFonts

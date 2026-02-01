@@ -110,7 +110,7 @@ do
 		echo " "
     echo -e  "${BRed} [1] Install Everything"
     echo -e  "${Green} [2] Install Theme "
-    echo -e  "${Blue} [3] Install Icons "
+    echo -e  "${Blue} [3] Install Dependencies "
     echo -e  "${Red} [4] Install GRUB theme "
     echo -e  "${Green} [5] Install Wallpapers"
     echo -e  "${Blue} [6] Install Config Files(Sway, Swaylock, btop etc.)"
@@ -137,7 +137,7 @@ do
         break
     ;;
     3)
-        installIcons
+        installDependencies
         break
     ;;
     4)

@@ -26,7 +26,7 @@ BGreen='\e[1;32m'
 installDependencies() {
   echo "Installing main Arch dependencies"
   # add --noconfirm later
-  sudo paru -Sy --needed $(cat dependencies.txt)
+  paru -Sy --needed $(cat dependencies.txt)
 }
 
 installConfig() {
@@ -53,20 +53,19 @@ inputWeather(){
 
 installTheme(){
     echo "installing icons, cursors theme and wallpapers"
-	sudo mkdir -p /usr/share/themes /usr/share/icons
-	sudo ln -sfvr $DIR/theme/icons/ /usr/share/icons
-	sudo ln -sfvr $DIR/theme/GTK/ /usr/share/themes
-	sudo ln -sfvr $DIR/theme/cursor/ /usr/share/icons
+	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/Papirus/
+	sudo cp -r $DIR/theme/icons/ /usr/share/icons/Everblush/
+	sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Papirus/
+	sudo cp -r $DIR/theme/cursor/ /usr/share/icons/ModernIce/
     echo "done"
 }
 
 installGRUB(){
     echo "installing GRUB theme"
 	sudo mkdir -p /boot/grub/themes/stylish
-	sudo cp -r $DIR/theme/GRUB /boot/grub/themes/stylish
+	sudo cp -r $DIR/theme/GRUB /boot/grub/themes/stylish/
     sudo grub-mkconfig -o /boot/grub/grub.cfg
     echo "done"
-
 }
 
 installLogin(){
@@ -126,11 +125,11 @@ do
         installConfig
         installTheme
         installFonts
-        inputToken
         installWallpapers
         installLogin
         installGRUB
-	    break                
+	    inputToken
+        break                
     ;;
     2)	    
         installTheme

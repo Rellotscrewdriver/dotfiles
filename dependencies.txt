@@ -20,13 +20,11 @@ swaylock-effects
 swaync 
 greetd
 awk
-sensors
 pamixer
 upower
 bluez
 bluez-utils
 jq
 brightnessctl
-pactl
 auto-cpufreq
 playerctl

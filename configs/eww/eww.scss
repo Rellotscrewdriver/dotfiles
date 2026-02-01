@@ -1,7 +1,5 @@
-// Import pywal generated colors
-@import "/home/Rellot/.config/eww/colors.scss";
+@import "colors.scss";
 
-// Pywal generated color aliases
 $bg: $background;
 $shadow-primary: #06060b;
 $border-primary: $yellow;
@@ -39,7 +37,6 @@ tooltip {
   background-color: rgba(#ffffff, 0.5);
 }
 
-/* Bar */
 @import "./dashboard/dash.scss";
 @import "./bar/bar.scss";
 @import "./bar/popup-menus/calender/calender.scss";
@@ -48,6 +45,6 @@ tooltip {
 
 * {
   all: unset;
-  font-family: "Noto Sans CJK JP", "RobotoMono Nerd Font Propo";
+  font-family: "Noto Sans CJK JP Medium", "RobotoMono Nerd Font Propo";
 }
 

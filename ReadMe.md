@@ -15,7 +15,7 @@ this script only works if you're on arch linux!
 - Clone this repository
 - run `sudo sh install.sh`
 - disable your current login manager and then enable greetd 
-```sudo systemctl enable --now greetd.service```
+```sudo systemctl enable greetd.service```
 - restart and enjoy!
 
 ## Shortcut keys
@@ -27,7 +27,6 @@ this script only works if you're on arch linux!
 `$mod` + `d` opens application launcher
 
 `$mod` + `m` opens obsidian
-
 
 ## 📸 Screenshots
 here are the screenshots as I believe people like to see previews of the repo before downloading it

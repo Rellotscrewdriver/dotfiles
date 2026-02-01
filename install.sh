@@ -94,6 +94,7 @@ installFonts(){
 fi
 
     unzip -j $NERD_FONT_DIR -d $LOCAL_DIR
+    cp $DIR/fonts/* $LOCAL_DIR/
     fc-cache -f
     rm -f $NERD_FONT_DIR
     echo "font installed"

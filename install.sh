@@ -53,9 +53,10 @@ inputWeather(){
 
 installTheme(){
     echo "installing icons, cursors theme and wallpapers"
-	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/Papirus/
-	sudo cp -r $DIR/theme/icons/ /usr/share/icons/Everblush/
-	sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Papirus/
+	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/ModernIce 
+    echo "click yes to install the papirus icons"
+    sudo paru -Sy papirus-icon-theme
+	sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Everblush/
 	sudo cp -r $DIR/theme/cursor/ /usr/share/icons/ModernIce/
     echo "done"
 }

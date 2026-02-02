@@ -37,8 +37,8 @@ installTheme(){
 	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/ModernIce 
     echo "click yes to install the papirus icons"
     sudo paru -S papirus-icon-theme
-	sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Everblush/
-	sudo cp -r $DIR/theme/cursor/ /usr/share/icons/ModernIce/
+	sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Everblush/*
+	sudo cp -r $DIR/theme/cursor/ /usr/share/icons/ModernIce/*
     echo "done"
 }
 
@@ -55,7 +55,7 @@ installLogin(){
     echo "installing login theme"
 	sudo cp -r $DIR/theme/login/ /etc/greetd/*
     sudo systemctl disable display-manager
-    sudo systemctl enable display-manager
+    sudo systemctl enable greetd
     echo "done"
 }
 
@@ -74,7 +74,7 @@ installFonts(){
         echo "RobotoMono's font's already there, skip installing it"
     else
         echo "installing the required fonts from the internet, please wait if you do have internet connection"
-        wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip -O $NERD_FONT_DIR
+        wget -qv https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip -O $NERD_FONT_DIR
 fi
 
     unzip -j $NERD_FONT_DIR -d $LOCAL_DIR
@@ -115,7 +115,7 @@ do
         installWallpapers
         installLogin
         installGRUB
-        echo "${BRed} now do a system reboot to see the changes ${Reset}"
+        echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
         break                
     ;;
     2)	    

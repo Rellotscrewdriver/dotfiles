@@ -54,6 +54,8 @@ installGRUB(){
 installLogin(){
     echo "installing login theme"
 	sudo cp -r $DIR/theme/login/ /etc/greetd/*
+    sudo systemctl disable display-manager
+    sudo systemctl enable display-manager
     echo "done"
 }
 
@@ -113,6 +115,7 @@ do
         installWallpapers
         installLogin
         installGRUB
+        echo "${BRed} now do a system reboot to see the changes ${Reset}"
         break                
     ;;
     2)	    

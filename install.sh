@@ -25,8 +25,7 @@ BGreen='\e[1;32m'
 
 installDependencies() {
   echo "Installing main Arch dependencies"
-  # add --noconfirm later
-  paru -Sy --needed $(cat dependencies.txt)
+  paru -Sy --needed --noconfirm $(cat dependencies.txt)
 }
 
 installConfig() {
@@ -55,7 +54,7 @@ installTheme(){
     echo "installing icons, cursors theme and wallpapers"
 	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/ModernIce 
     echo "click yes to install the papirus icons"
-    sudo paru -Sy papirus-icon-theme
+    sudo paru -S papirus-icon-theme
 	sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Everblush/
 	sudo cp -r $DIR/theme/cursor/ /usr/share/icons/ModernIce/
     echo "done"
@@ -64,7 +63,8 @@ installTheme(){
 installGRUB(){
     echo "installing GRUB theme"
 	sudo mkdir -p /boot/grub/themes/stylish
-	sudo cp -r $DIR/theme/GRUB /boot/grub/themes/stylish/
+	sudo cp -r $DIR/theme/GRUB/ /boot/grub/themes/stylish/
+    echo 'GRUB_THEME="/boot/grub/themes/stylish/theme.txt"' | sudo tee -a /etc/default/grub
     sudo grub-mkconfig -o /boot/grub/grub.cfg
     echo "done"
 }
@@ -78,7 +78,7 @@ installLogin(){
 installWallpapers(){
     echo "Creating symlink to wallpapers"
     mkdir ~/wallpapers
-	ln -sfvr $DIR/wallpapers ~/wallpapers
+    cp -r $DIR/wallpapers ~/wallpapers
 }
 
 installFonts(){
@@ -95,7 +95,7 @@ fi
 
     unzip -j $NERD_FONT_DIR -d $LOCAL_DIR
     cp $DIR/fonts/* $LOCAL_DIR/
-    fc-cache -f
+    fc-cache -fv
     rm -f $NERD_FONT_DIR
     echo "font installed"
 }

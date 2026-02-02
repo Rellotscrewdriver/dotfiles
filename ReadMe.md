@@ -9,20 +9,19 @@ This repository contains my personal dotfiles. They are stored here for convenie
 
 ## 📦 How to install and set up my dotfiles?
 
-my install script isn't perfect so only execute this if you know what you're doing
+my install script isn't perfect so only execute this if you know what you're doing,
 this script only works if you're on arch linux!
 - install dependencies from `dependencies.txt` file
 - Clone this repository
-- run `sudo sh install.sh`
-- disable your current login manager and then enable greetd 
-```sudo systemctl enable greetd.service```
+- run `sh install.sh`
+- disable your current login manager and then enable greetd by ```sudo systemctl enable greetd.service```
 - restart and enjoy!
 
-## Shortcut keys
+## 🎹 Shortcut keys
 
-`$mod` + `x` opens dashboard
+`$mod` + `x` toggles dashboard
 
-`$mod` + `p` opens powermenu
+`$mod` + `p` toggles powermenu
 
 `$mod` + `d` opens application launcher
 

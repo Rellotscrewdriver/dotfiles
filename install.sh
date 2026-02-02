@@ -32,14 +32,6 @@ installConfig() {
     echo "done"
 }
 
-inputMailPassword(){
-    echo "nothing :p"
-}
-
-inputWeather(){
-    echo "nothing :p"
-}
-
 installTheme(){
     echo "installing icons, cursors theme and wallpapers"
 	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/ModernIce 
@@ -53,7 +45,7 @@ installTheme(){
 installGRUB(){
     echo "installing GRUB theme"
 	sudo mkdir -p /boot/grub/themes/stylish
-	sudo cp -r $DIR/theme/GRUB/ /boot/grub/themes/stylish/
+	sudo cp -r $DIR/theme/GRUB/ /boot/grub/themes/stylish/*
     echo 'GRUB_THEME="/boot/grub/themes/stylish/theme.txt"' | sudo tee -a /etc/default/grub
     sudo grub-mkconfig -o /boot/grub/grub.cfg
     echo "done"
@@ -61,7 +53,7 @@ installGRUB(){
 
 installLogin(){
     echo "installing login theme"
-	sudo cp -r $DIR/theme/login/ /etc/greetd/
+	sudo cp -r $DIR/theme/login/ /etc/greetd/*
     echo "done"
 }
 

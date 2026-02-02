@@ -6,11 +6,9 @@
 DIR=$(pwd)
 LOCAL_DIR=~/.local/share/fonts 
 NERD_FONT_DIR=~/RobotoMono.zip
-TOKEN_DIR=~/.env
-
 
 # Reset
-Reset='\033[0m'       # Text Reset
+Reset='\033[0m'
 
 # Regular Colors
 Blue='\e[0;34m'
@@ -25,21 +23,13 @@ BGreen='\e[1;32m'
 
 installDependencies() {
   echo "Installing main Arch dependencies"
-  paru -Sy --needed --noconfirm $(cat dependencies.txt)
+  paru -Sy --needed $(cat dependencies.txt)
 }
 
 installConfig() {
     echo "Installing configs"
     ln -sfvr $DIR/configs/* ~/.config/
     echo "done"
-}
-
-inputToken(){
-    echo "creating a token"
-    mkdir $TOKEN_DIR
-    touch $TOKEN_DIR/token
-    read -p "Enter the github token: " token
-    echo $token > $TOKEN_DIR/token
 }
 
 inputMailPassword(){
@@ -102,20 +92,21 @@ fi
 
 clear
 
-echo -e "${Blue}                        Welcome to my configuration!"
-echo "Select anything you want and it will link to destinated folder"
+echo -e "${BBlue}                        Welcome to my configuration! ${Reset}"
+echo "Select anything you want but this script won't install everything"
+echo "so you need to setup some stuff yourself"
 echo "after installing do not delete this folder the configs are in, else it won't work properly"
 echo -e "${BRed}before you install my config in any of these steps you need to have 'paru' installed"
 while :
 do
-		echo " "
-    echo -e  "${BRed} [1] Install Everything"
-    echo -e  "${Green} [2] Install Theme "
-    echo -e  "${Blue} [3] Install Dependencies "
-    echo -e  "${Red} [4] Install GRUB theme "
-    echo -e  "${Green} [5] Install Wallpapers"
-    echo -e  "${Blue} [6] Install Config Files(Sway, Swaylock, btop etc.)"
-    echo -e  "${BRed} [0] Quit        ${Reset}"
+	echo " "
+    echo -e  "${BRed}[1] Install Everything"
+    echo -e  "${Green}[2] Install Theme "
+    echo -e  "${Blue}[3] Install Dependencies "
+    echo -e  "${Red}[4] Install GRUB theme "
+    echo -e  "${Green}[5] Install Wallpapers"
+    echo -e  "${Blue}[6] Only Install Config Files(Sway, Swaylock, btop etc.)"
+    echo -e  "${BRed}[0] Quit        ${Reset}"
     echo
     read -p "Enter your choice: " choice
     case $choice in
@@ -130,7 +121,6 @@ do
         installWallpapers
         installLogin
         installGRUB
-	    inputToken
         break                
     ;;
     2)	    
@@ -155,6 +145,6 @@ do
     ;;    
     *)
         echo "Sorry, choice understand"
-        ;;
+    ;;
     esac
 done

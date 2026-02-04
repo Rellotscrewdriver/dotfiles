@@ -54,6 +54,7 @@ installGRUB(){
 installLogin(){
     echo "installing login theme"
 	sudo cp -r $DIR/theme/login/ /etc/greetd/*
+    sudo cp -r $DIR/wallpapers/Night.png /usr/share/backgrounds/greeter.jpg
     sudo systemctl disable display-manager
     sudo systemctl enable greetd
     echo "done"

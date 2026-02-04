@@ -36,9 +36,8 @@ installTheme(){
     echo "installing icons, cursors theme and wallpapers"
 	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/ModernIce 
     echo "click yes to install the papirus icons"
-    sudo paru -S --noconfirm papirus-icon-theme
+    sudo paru -S --noconfirm papirus-icon-theme bibata-cursor-theme-bin
 	sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Everblush/
-	sudo cp -r $DIR/theme/cursor/ /usr/share/icons/ModernIce/
     echo "done"
 }
 

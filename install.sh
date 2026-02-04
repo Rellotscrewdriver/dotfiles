@@ -36,24 +36,24 @@ installTheme(){
     echo "installing icons, cursors theme and wallpapers"
 	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/ModernIce 
     echo "click yes to install the papirus icons"
-    sudo paru -S papirus-icon-theme
-	sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Everblush/*
-	sudo cp -r $DIR/theme/cursor/ /usr/share/icons/ModernIce/*
+    sudo paru -S --noconfirm papirus-icon-theme
+	sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Everblush/
+	sudo cp -r $DIR/theme/cursor/ /usr/share/icons/ModernIce/
     echo "done"
 }
 
 installGRUB(){
     echo "installing GRUB theme"
 	sudo mkdir -p /boot/grub/themes/stylish
-	sudo cp -r $DIR/theme/GRUB/ /boot/grub/themes/stylish/*
-    echo 'GRUB_THEME="/boot/grub/themes/stylish/theme.txt"' | sudo tee -a /etc/default/grub
+	sudo cp -r $DIR/theme/GRUB/ /boot/grub/themes/stylish/
+    echo 'GRUB_THEME="/boot/grub/themes/stylish/GRUB/theme.txt"' | sudo tee -a /etc/default/grub
     sudo grub-mkconfig -o /boot/grub/grub.cfg
     echo "done"
 }
 
 installLogin(){
     echo "installing login theme"
-	sudo cp -r $DIR/theme/login/ /etc/greetd/*
+	sudo cp -r $DIR/theme/login/ /etc/greetd/
     sudo systemctl disable display-manager
     sudo systemctl enable greetd
     echo "done"

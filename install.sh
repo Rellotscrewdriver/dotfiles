@@ -53,7 +53,7 @@ installGRUB(){
 
 installLogin(){
     echo "installing login theme"
-	sudo cp -r $DIR/theme/login/ /etc/greetd/
+	sudo cp -r $DIR/theme/login/ /etc/greetd/*
     sudo systemctl disable display-manager
     sudo systemctl enable greetd
     echo "done"

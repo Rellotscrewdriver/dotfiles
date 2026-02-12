@@ -27,7 +27,7 @@ cursor_theme_name = "Bibata-Modern-Ice"
 cursor_blink = true
 
 # Font name and size
-font_name = "Noto Sans Regular 13"
+font_name = "RobotoMono Nerd Font 13"
 
 # Icon theme name
 icon_theme_name = "Papirus-Dark"

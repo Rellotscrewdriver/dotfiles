@@ -1,0 +1,360 @@
+;; **
+;; ** Widgets config for EWW
+;; ** Created by : @adi1090x
+;; ** Converted by : @tripleo1
+;; ** Edited by : Rellot
+
+;; ** Variables ***********************************************************************
+
+;; Profile vars
+(defvar IMAGE "/home/Rellot/.config/eww/assets/pfp.png")
+(defvar NAME "Rellot's Screw")
+(defpoll UNAME :interval "5h" `whoami`)
+(defpoll HOST :interval "5h" `cat /etc/hostname`)
+
+;; Time vars
+(defpoll YEAR :interval "5s" `date +\"%Y\"`)
+(defpoll DAY :interval "5s" `date +\"%d\"`)
+(defpoll MON :interval "5s" `date +\"%B\"`)
+(defpoll NWEEK :interval "5s" `date +\"%A\"`)
+
+;; Music vars
+(defpoll music_cover :interval "2s" "./dashboard/scripts/music_info --cover")
+(defpoll music_song  :interval "1s" "./dashboard/scripts/music_info --song")
+(defpoll music_artist :interval "1s" "./dashboard/scripts/music_info --artist")
+(defpoll music_status :interval "1s" "./dashboard/scripts/music_info --status")
+(defpoll music_progress :interval "500ms" "./dashboard/scripts/music_info --progress")
+
+;; Uptime vars
+(defpoll UPHOUR :interval "5s" `uptime -p | awk '{print $2 \" \" $3}' | sed 's/,//g'`)
+(defpoll UPMIN :interval "5s" `uptime -p | awk '{print $4 \" \" $5}'`)
+
+;; Weather vars
+(defpoll weather :interval "1h" `./dashboard/scripts/weather.sh`)
+(defvar weatherText "Weather Today")
+
+;; Apps vars
+(defpoll MAILS :interval "5m" `python ./dashboard/scripts/mails`)
+(defpoll GITHUBN :interval "10m" `sh ./dashboard/scripts/github`)
+
+;; Files vars
+(defpoll FREE :interval "5s" `df -h / | awk '{print $4}' | tail -n 1 | sed 's/G/GB/'`)
+
+;; bluetooth var
+(deflisten bluetooth :initial '{"icon": "󰂲", "name": "Bluetooth Off", "battery": "---"}' "./dashboard/scripts/bluetooth")
+
+;; Audio/Light vars (Required for the slider widget)
+(deflisten volume `./dashboard/scripts/getvol.sh`)
+(deflisten micvol `./dashboard/scripts/getmic.sh`)
+(deflisten brightness `./dashboard/scripts/getbrightness.sh`)
+
+
+;; ** Widgets *************************************************************************
+
+;; background
+(defwidget bg []
+  (box :class "bg")
+)
+
+;; profile
+(defwidget user []
+  (box :class "genwin" :orientation "v" :spacing 35 :space-evenly false :vexpand false :hexpand false 
+    (box :style "background-image: url('${IMAGE}');" :class "face" :halign "center")
+    (label :class "fullname" :halign "center" :wrap true :limit-width 25 :text NAME)
+    (label :class "dusername" :halign "center" :wrap true :limit-width 25 :text UNAME)
+    (label :class "fullLinux" :halign "center" :wrap true :limit-width 25 :text "${UNAME}@${HOST}")
+    ))
+
+;; clock
+(defwidget clock-dash []
+  (box :class "genwin" :orientation "h" :vexpand false :hexpand false :width 350
+    (label :class "mdateicon" :text "󰃭 ")
+    (box :orientation "v" :vexpand false :hexpand false
+      (label :class "mdate" :halign "start" :text "${NWEEK} ${DAY}")
+      (label :class "mdate" :halign "start" :text "${MON} ${YEAR}")
+    )
+  )
+)
+
+;; uptime
+(defwidget uptime []
+  (box :class "genwin"
+    (box :orientation "h" :halign "start" :space-evenly false :vexpand false :hexpand true
+      (label :class "icontimer" :valign "center" :text "")
+      (box :orientation "v" :valign "center" :halign "start" :spacing 2 :space-evenly false :vexpand false :hexpand false
+        (label :class "uphour" :halign "start" :wrap true :limit-width 25 :text UPHOUR)
+        (label :class "upmin" :halign "start" :wrap true :limit-width 25 :text UPMIN)))))
+
+;; archlinux
+(defwidget arch []
+  (box :class "arch" :vexpand false :hexpand false
+    (button :class "iconweb" :onclick "./dashboard/scripts/open_links --arch" "󰣇")))
+
+;; stackoverflow
+(defwidget stacko []
+  (box :class "stacko" :vexpand false :hexpand false
+    (button :class "iconweb" :onclick "./dashboard/scripts/open_links --so" "")))
+
+;; youtube
+(defwidget youtube []
+  (box :class "youtube" :vexpand false :hexpand false
+    (button :class "iconweb" :onclick "./dashboard/scripts/open_links --yt" "")))
+
+;; reddit
+(defwidget reddit []
+  (box :class "reddit" :vexpand false :hexpand false
+    (button :class "iconweb" :onclick "./dashboard/scripts/open_links --rd" "󰑍")))
+
+(defwidget udemy []
+  (box :class "udemy" :vexpand false :hexpand false
+    (button :class "iconweb" :onclick "./dashboard/scripts/open_links --ud" "")))
+
+
+;; Music Player
+(defwidget music []
+  (box :class "genwin music-box" :orientation "h" :spacing 10 :space-evenly false
+    ;; RIGHT: Information & Controls
+    (box :orientation "v" :valign "center" :spacing 8 :space-evenly false :hexpand false
+      (label :class "music-title"  :text music_song :limit-width 20 :halign "start")
+      (label :class "music-artist" :text music_artist :limit-width 25 :halign "start")
+      
+      (box :orientation "h" :halign "start" :spacing 25 :class "music-controls"
+        (button :class "music-btn" :onclick "./dashboard/scripts/music_info --prev" "󰒮")
+        (button :class "music-btn-play" :onclick "./dashboard/scripts/music_info --toggle" music_status)
+        (button :class "music-btn" :onclick "./dashboard/scripts/music_info --next" "󰒭"))
+    
+    ;; The Progress Bar
+      (box :class "music-bar-container" :orientation "h" :space-evenly false
+        (scale :class "music-bar" :min 0 :max 101 :active true :value music_progress
+               :onchange "./dashboard/scripts/music_info --set-progress {}")
+      )
+    )
+  )
+)
+
+;; mail
+(defwidget mail []
+  (box :class "genwin"
+    (box :orientation "h" :halign "center" :space-evenly false :vexpand false :hexpand false
+      (box :class "mailbox" :space-evenly false :vexpand false :hexpand false
+        (button :class "iconmail" :onclick "scripts/open_links --mail" "󰊫")
+        (button :class "label_mails" :onclick "scripts/open_links --mail"
+          (label :class "label_git" :limit-width 30 :xalign 0 :text MAILS)
+        )
+      )
+    )
+  )
+)
+
+;; Github Notifications
+(defwidget github []
+  (box :class "genwin"
+    (box :orientation "h" :halign "center" :space-evenly false :vexpand false :hexpand false
+      (box :class "gitbox" :space-evenly false :vexpand false :hexpand false
+        (button :class "icongit" :onclick "scripts/open_links --gh" "󰊤")
+        (button :class "label_git" :onclick "scripts/open_links --gh"
+          (label :class "label_git" :limit-width 30 :xalign 0 :text GITHUBN)
+        )
+      )
+    )
+  )
+)
+
+;; weather
+(defwidget weather []
+  (box :class "genwin"
+    (box :orientation "v" :spacing false :space-evenly false :vexpand false :hexpand false
+      (box :orientation "v" :vexpand false :hexpand false
+        (label :class "label_temp" :halign "center" :xalign 0 :text "Weather Today")
+        (label :class "label_stat" :halign "center" :xalign 0 :text "${weather}")
+      )
+    )
+  )
+)
+
+;; apps
+(defwidget apps []
+  (box :class "genwin" :orientation "v" :space-evenly false :vexpand false :hexpand false
+    (box :class "appbox" :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :style "background-image: url('./dashboard/images/icons/braveb.svg'); background-size: 48px;" :class "app_dash" :onclick "./dashboard/scripts/open_apps --br")
+      (button :style "background-image: url('./dashboard/images/icons/discord.svg');" :class "app_dash" :onclick "./dashboard/scripts/open_apps --dc")
+      (button :style "background-image: url('./dashboard/images/icons/code.svg');" :class "app_dash" :onclick "./dashboard/scripts/open_apps --cd")
+    )
+    (box :class "appbox" :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :style "background-image: url('./dashboard/images/icons/obsidian.svg'); background-size: 50px;" :class "app_dash" :onclick "./dashboard/scripts/open_apps --ob")
+      (button :style "background-image: url('./dashboard/images/icons/godot.svg'); background-size: 56px;" :class "app_dash" :onclick "./dashboard/scripts/open_apps --gde")
+      (button :style "background-image: url('./dashboard/images/icons/onlyoffice.svg'); background-size: 56px;" :class "app_dash" :onclick "./dashboard/scripts/open_apps --of")
+    )
+  )
+)
+
+(defwidget slider []
+  (eventbox :valign "start"
+  (box :class "genwin slidersctl" :orientation "v" :space-evenly false
+    (label :class "cp-i" :text "Control Panel")
+
+    ;; Mic Slider
+    (box :class "mic-slider" :space-evenly false :halign "center"
+       (button :class "mic-icon" :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle" "${micvol.icon}")
+       (scale :value "${micvol.value}" :class "mic" :max 101 :min 0 :round-digits 0 :onchange "pactl set-source-volume @DEFAULT_SOURCE@ {}%")
+    )
+    ;; Volume Slider
+    (box :class "volume-slider" :space-evenly false :halign "center"
+        (button :class "vol-icon" :onclick "pamixer --toggle-mute" "${volume.icon}")
+        (scale :class "vol" :value "${volume.value}" :max 101 :min 0 :round-digits 0 :onchange "pamixer --set-volume {}")
+    )
+    ;; Brightness Slider
+    (box :class "light-slider" :space-evenly false :halign "center"
+        (label :class "lig-icon" :text "${brightness.icon}")
+        (scale :value "${brightness.value}" :class "lig" :max 101 :min 1 :round-digits 0 :onchange "brightnessctl set {}%")
+    )
+  )
+  )
+)
+
+;; bluetooth
+(defwidget bluetooth []
+  (box :class "genwin bluetooth-box" :orientation "v" :space-evenly false :vexpand false :hexpand false :valign "center" :halign "center"
+        (button :valign "center" :class "bt-icon" "${bluetooth.icon} ${bluetooth.battery}")
+        (label :class "bt-name"  :text "${bluetooth.name}")
+  )
+)
+
+
+;; folders
+(defwidget folders []
+  (box :class "cfold" :orientation "v" :space-evenly false :vexpand false :hexpand false
+    (box :class "hddbox" :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (box :space-evenly false :vexpand false :hexpand false
+        (button :class "hddicon" :onclick "./dashboard/scripts/open_apps --fm" "")
+        (label :class "fs_sep" :text "|"))
+      (box :space-evenly false :vexpand false :hexpand false
+        (label :class "hdd_label" :wrap true :limit-width 25 :text FREE)))
+    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :class "iconfolder1" :onclick "./dashboard/scripts/open_folders --cfg" "")
+      (button :class "label_folder1" :onclick "./dashboard/scripts/open_folders --cfg" ".config"))
+
+    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :class "iconfolder2" :onclick "./dashboard/scripts/open_folders --home" "")
+      (button :class "label_folder2" :onclick "./dashboard/scripts/open_folders --home" "Home"))
+
+    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :class "iconfolder3" :onclick "./dashboard/scripts/open_folders --docs" "")
+      (button :class "label_folder3" :onclick "./dashboard/scripts/open_folders --docs" "Documents"))
+
+    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :class "iconfolder4" :onclick "./dashboard/scripts/open_folders --gitp" "")
+      (button :class "label_folder4" :onclick "./dashboard/scripts/open_folders --gitp" "Github Projects"))
+
+    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :class "iconfolder5" :onclick "./dashboard/scripts/open_folders --godotP" "")
+      (button :class "label_folder5" :onclick "./dashboard/scripts/open_folders --godotP" "Godot Projects"))
+
+    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :class "iconfolder6" :onclick "./dashboard/scripts/open_folders --notes" "")
+      (button :class "label_folder6" :onclick "./dashboard/scripts/open_folders --notes" "Programming Notes"))
+
+    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :class "iconfolder7" :onclick "./dashboard/scripts/open_folders --s" "")
+      (button :class "label_folder7" :onclick "./dashboard/scripts/open_folders --s" "Study Folder"))
+      
+    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :class "iconfolder8" :onclick "./dashboard/scripts/open_folders --home" "")
+      (button :class "label_folder8" :onclick "./dashboard/scripts/open_folders --home" "QT Projects"))
+  )
+)
+
+;; LAYOUTS
+(defwidget uptime []
+  (box :orientation "h" :spacing 15 :space-evenly true
+    ;; Uptime Box
+    (box :class "genwin" :orientation "h" :space-evenly false :spacing 20 :halign "center"
+      (label :class "icontimer" :text "")
+      (box :orientation "v" :valign "center"
+        (label :class "uphour" :text UPHOUR)
+        (label :class "upmin" :text UPMIN)
+      )
+    )
+  )
+)
+
+(defwidget weather []
+    ;; Weather Box
+    (box :class "genwin" :orientation "v" :valign "center"
+        (label :class "label_temp" :text "Weather Today")
+        (label :class "label_stat" :text "${weather}")
+    )
+)
+
+(defwidget socials []
+  (box :class "socials-box" :orientation "h" :spacing 10 :space-evenly false :halign "center" 
+      (arch)
+      (stacko)
+      (youtube)
+      (reddit)
+      (udemy)
+  )
+)
+
+(defwidget layout []
+  (box :class "bg" :orientation "h" :space-evenly false :spacing 10 :halign "center" :valign "center"
+    ;; LEFT COLUMN
+    (box :class "leftLay" :orientation "v" :spacing 10 :space-evenly false :width 335 :height 650 
+        (user)
+        (slider)
+    )
+
+    ;; MIDDLE COLUMN
+    (box :class "midLay" :orientation "v" :spacing 10 :space-evenly false :width 675 :height 650
+        (box :orientation "h" :spacing 10 :space-evenly true :width 775
+          (weather)
+          (clock-dash)
+        )
+        (box :orientation "h" :spacing 10 :space-evenly false
+          (uptime)
+          (apps)
+          (box :orientation "v" :spacing 10 :space-evenly false
+            (mail)
+            (github)
+          )
+        )
+        (box :orientation "h" :spacing 10 :space-evenly false :width 200 
+          (box :width 450 (music))
+          (box :width 215 (bluetooth))
+        )
+        (socials)
+    )
+
+    ;; RIGHT COLUMN
+    (box :class "rightLay" :orientation "v" :spacing 10 :space-evenly false :width 420
+        (folders)
+    )
+  )
+)
+
+(defwidget ImpLayout []
+  (eventbox :onhoverlost "eww update mdashrev=false && eww close dashboard" :halign "center"
+    (revealer :transition "slideleft" :reveal mdashrev :duration "700ms"
+      (box :space-evenly false
+        (layout)
+      )
+    )
+  )
+)
+
+
+(defvar mdashrev false)
+
+;; ** SINGLE WINDOW DEFINITION **
+(defwindow dashboard
+  :geometry (geometry :x "0%" :y "0%" :width "0%" :height "60%" :anchor "center")
+  :stacking "overlay"
+  :exclusive false
+  :windowtype "dialog"
+  :wm-ignore false
+  :focusable false
+  :resizable false
+  :monitor 0
+  (ImpLayout)
+)
+

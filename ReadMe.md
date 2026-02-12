@@ -1,19 +1,37 @@
 # ✨ My workstation ✨
-This is my personal dotfiles repository. The theme is everblush.
-this will my final rice before I change it for multi-monitor setup
+This is my personal dotfiles repository. The theme name is everblush.
+
+this will my final rice before I change it for multi-monitor setup, 
+small incremental changes will be done
 
 ## ❓ What are dotfiles?
 
 Dotfiles are the customization files that are used to personalize your Linux or other Unix-based system. they are configurations for various applications. 
-This repository contains my personal dotfiles. They are stored here for convenience so that I may quickly access them on new machines or new installs. Also, others may find some of my configurations helpful in customizing their own dotfiles.
+
+This repository contains my personal dotfiles. They are stored here for convenience so that I may quickly access them on new machines or new installs. Also, others may find some of my configurations helpful in customizing their own dotfiles. This config uses `sway` window manager.
+
 
 ## 📦 How to install and set up my dotfiles?
 
-my install script isn't perfect so only execute this if you know what you're doing
+my install script isn't perfect so only execute this if you know what you're doing,
+this script only works if you're on arch linux!
 - install dependencies from `dependencies.txt` file
 - Clone this repository
-- run `sudo sh install.sh`
+- run `sh install.sh`
+- disable your current login manager and then enable greetd by ```sudo systemctl enable greetd.service```
 - restart and enjoy!
+
+## 🎹 Shortcut keys
+
+here mod key is the windows key(the one with Windows logo)
+
+`$mod + x` toggles dashboard
+
+`$mod + p` toggles powermenu
+
+`$mod + d` opens application launcher
+
+`$mod + n` opens obsidian
 
 ## 📸 Screenshots
 here are the screenshots as I believe people like to see previews of the repo before downloading it
@@ -69,6 +87,7 @@ here are the screenshots as I believe people like to see previews of the repo be
 </details>
 
 <br>
+
 
 the wallpaper of each screenshot can be found in **wallpapers** directory
 

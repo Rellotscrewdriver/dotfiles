@@ -14,5 +14,5 @@ while true; do
 	# Output JSON
 	echo "{\"cpu_fan\": \"${fan}\", \"cpu_usage\": ${usage}, \"meminfo\": \"${mem}\"}"
 
-	sleep 1
+	sleep 2
 done

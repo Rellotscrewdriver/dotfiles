@@ -1,5 +1,7 @@
+// Import pywal generated colors
 @import "colors.scss";
 
+// Pywal generated color aliases
 $bg: $background;
 $shadow-primary: #06060b;
 $border-primary: $yellow;
@@ -37,6 +39,7 @@ tooltip {
   background-color: rgba(#ffffff, 0.5);
 }
 
+/* Bar */
 @import "./dashboard/dash.scss";
 @import "./bar/bar.scss";
 @import "./bar/popup-menus/calender/calender.scss";

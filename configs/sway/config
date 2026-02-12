@@ -98,7 +98,10 @@ input "2362:8204:ASUP1204:00_093A:200C_Touchpad" {
 	
     # Random Wallpaper
     exec sh ~/.config/sway/wallp.sh
-  
+
+    # Battery Warning 
+    exec sh ~/.config/sway/batnoti.sh
+
     # swayOSD server
     exec swayosd-server
 

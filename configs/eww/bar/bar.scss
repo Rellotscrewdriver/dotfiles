@@ -1,7 +1,7 @@
 .bar {
-  box-shadow: 0 2px 3px 1px $shadow-primary;
-  border-radius: 10px;
-  background-color: rgba($background, 0.4);
+  box-shadow: 0 2px 3px 1px $background;
+  border-radius: 16px;
+  background-color: rgba($background, 0.6);
   padding: 6.5px;
 }
 

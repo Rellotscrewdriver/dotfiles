@@ -334,7 +334,7 @@
 
 (defwidget ImpLayout []
   (eventbox :onhoverlost "eww update mdashrev=false && eww close dashboard" :halign "center"
-    (revealer :transition "slideleft" :reveal mdashrev :duration "300ms"
+    (revealer :transition "slideleft" :reveal mdashrev :duration "700ms"
       (box :space-evenly false
         (layout)
       )
@@ -347,13 +347,13 @@
 
 ;; ** SINGLE WINDOW DEFINITION **
 (defwindow dashboard
-  :geometry (geometry :x "0%" :y "0%" :width "100%" :height "60%" :anchor "center")
+  :geometry (geometry :x "0%" :y "0%" :width "0%" :height "60%" :anchor "center")
+  :stacking "overlay"
+  :exclusive false
   :windowtype "dialog"
-  :wm-ignore "true"
-  :stacking "fg"
-  :focusable false 
-  :namespace "eww-dashboard"
-  :passthrough true
+  :wm-ignore false
+  :focusable false
+  :resizable false
   :monitor 0
   (ImpLayout)
 )

@@ -7,7 +7,7 @@ get_icon() {
 
 	if [[ "$state" == "charging" || "$state" == "fully-charged" ]]; then
 		if ((percent > 80)); then
-			echo "󰉁"
+      echo "󰉁"
 		else
 			echo ""
 		fi
@@ -20,7 +20,7 @@ get_icon() {
 			echo ""
 		elif ((percent > 10)); then
 			echo ""
-		else
+    else
 			echo ""
 		fi
 	fi

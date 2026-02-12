@@ -38,7 +38,7 @@ installTheme(){
 	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/ModernIce 
     sudo paru -S --noconfirm papirus-icon-theme 
 	paru -S --noconfirm bibata-cursor-theme-bin
-    sudo cp -r $DIR/theme/GTK/ /usr/share/themes/Everblush/
+    sudo cp -r $DIR/theme/GTK/* /usr/share/themes/Everblush/
     echo "done"
 }
 
@@ -61,7 +61,7 @@ installLogin(){
 installWallpapers(){
     echo "Creating symlink to wallpapers"
     mkdir ~/wallpapers
-    cp -r $DIR/wallpapers ~/wallpapers
+    cp -r $DIR/wallpapers/* ~/wallpapers
 }
 
 installFonts(){
@@ -73,7 +73,7 @@ installFonts(){
         echo "RobotoMono's font's already there, skip installing it"
     else
         echo "installing the required fonts from the internet, please wait if you do have internet connection"
-        wget -qv https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip -O $NERD_FONT_DIR
+        wget -v https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip -O $NERD_FONT_DIR
     fi
 
     unzip -j $NERD_FONT_DIR -d $LOCAL_DIR

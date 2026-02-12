@@ -1,11 +1,15 @@
 # ✨ My workstation ✨
-This is my personal dotfiles repository. The theme is everblush.
-this will my final rice before I change it for multi-monitor setup
+This is my personal dotfiles repository. The theme name is everblush.
+
+this will my final rice before I change it for multi-monitor setup, 
+small incremental changes will be done
 
 ## ❓ What are dotfiles?
 
 Dotfiles are the customization files that are used to personalize your Linux or other Unix-based system. they are configurations for various applications. 
-This repository contains my personal dotfiles. They are stored here for convenience so that I may quickly access them on new machines or new installs. Also, others may find some of my configurations helpful in customizing their own dotfiles.
+
+This repository contains my personal dotfiles. They are stored here for convenience so that I may quickly access them on new machines or new installs. Also, others may find some of my configurations helpful in customizing their own dotfiles. This config uses `sway` window manager.
+
 
 ## 📦 How to install and set up my dotfiles?
 
@@ -27,7 +31,7 @@ here mod key is the windows key(the one with Windows logo)
 
 `$mod + d` opens application launcher
 
-`$mod + m` opens obsidian
+`$mod + n` opens obsidian
 
 ## 📸 Screenshots
 here are the screenshots as I believe people like to see previews of the repo before downloading it

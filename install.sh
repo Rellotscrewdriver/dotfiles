@@ -29,6 +29,7 @@ installDependencies() {
 installConfig() {
     echo "Installing configs"
     ln -sfvr $DIR/configs/* ~/.config/
+    chsh -s $(which fish)
     echo "done"
 }
 
@@ -53,11 +54,9 @@ installGRUB(){
 
 installLogin(){
     echo "installing login theme"
-	sudo rm -rf /etc/greetd/* 
+	sudo rm -rf /etc/greetd/*
     sudo cp -r $DIR/theme/login/ /etc/greetd/*
     sudo cp -r $DIR/wallpapers/Night.png /usr/share/backgrounds/greeter.jpg
-    sudo systemctl disable display-manager
-    sudo systemctl enable greetd
     echo "done"
 }
 
@@ -77,7 +76,7 @@ installFonts(){
     else
         echo "installing the required fonts from the internet, please wait if you do have internet connection"
         wget -qv https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip -O $NERD_FONT_DIR
-fi
+    fi
 
     unzip -j $NERD_FONT_DIR -d $LOCAL_DIR
     cp $DIR/fonts/* $LOCAL_DIR/

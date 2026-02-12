@@ -19,13 +19,15 @@ this script only works if you're on arch linux!
 
 ## 🎹 Shortcut keys
 
-`$mod` + `x` toggles dashboard
+here mod key is the windows key(the one with Windows logo)
 
-`$mod` + `p` toggles powermenu
+`$mod + x` toggles dashboard
 
-`$mod` + `d` opens application launcher
+`$mod + p` toggles powermenu
 
-`$mod` + `m` opens obsidian
+`$mod + d` opens application launcher
+
+`$mod + m` opens obsidian
 
 ## 📸 Screenshots
 here are the screenshots as I believe people like to see previews of the repo before downloading it

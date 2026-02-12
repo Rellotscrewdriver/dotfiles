@@ -53,7 +53,7 @@ installGRUB(){
 
 installLogin(){
     echo "installing login theme"
-    sudo cp -ri $DIR/theme/login/* /etc/greetd/
+    sudo cp -r $DIR/theme/login/* /etc/greetd/
     sudo cp -r $DIR/wallpapers/Night.png /usr/share/backgrounds/greeter.jpg
     echo "done"
 }

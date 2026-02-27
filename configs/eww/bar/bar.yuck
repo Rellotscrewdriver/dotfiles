@@ -2,7 +2,7 @@
 (include "./bar/modules/logo.yuck")
 (include "./bar/modules/workspaces.yuck")
 (include "./bar/modules/cpu.yuck")
-(include "./bar/modules/cpufan.yuck")
+(include "./bar/modules/bluetooth.yuck")
 (include "./bar/modules/memory.yuck")
 (include "./bar/modules/temp.yuck")
 (include "./bar/modules/cava.yuck")
@@ -72,6 +72,7 @@
 			:hexpand true
 			:spacing 10
 			:space-evenly false
+           (bluebar)
            (network)
            (battery)
            (audio)

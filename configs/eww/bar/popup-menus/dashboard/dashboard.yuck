@@ -24,14 +24,6 @@
 
 (defvar dashrev true)
 
-(deflisten volume1
-	"./bar/popup-menus/dashboard/scripts/getvol.sh")
-(deflisten brightness1
-	"./bar/popup-menus/dashboard/scripts/getbrightness.sh")
-(deflisten micvol1
-	"./bar/popup-menus/dashboard/scripts/getmic.sh")
-
-
 (defwidget usrctl-widget [uptime]
     (eventbox :space-evenly false
          :valign "start"

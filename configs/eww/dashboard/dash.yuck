@@ -8,9 +8,11 @@
 
 ;; Profile vars
 (defvar IMAGE "/home/Rellot/.config/eww/assets/pfp.png")
-(defvar NAME "Rellot's Screw")
+(defvar NAME "Rellot's Screwdriver")
 (defpoll UNAME :interval "5h" `whoami`)
 (defpoll HOST :interval "5h" `cat /etc/hostname`)
+(deflisten INFO "./dashboard/scripts/pfpinfo.sh")
+
 
 ;; Time vars
 (defpoll YEAR :interval "5s" `date +\"%Y\"`)
@@ -41,7 +43,7 @@
 (defpoll FREE :interval "5s" `df -h / | awk '{print $4}' | tail -n 1 | sed 's/G/GB/'`)
 
 ;; bluetooth var
-(deflisten bluetooth :initial '{"icon": "󰂲", "name": "Bluetooth Off", "battery": "---"}' "./dashboard/scripts/bluetooth")
+(deflisten bluetooth :initial '{"icon": "󰂲", "name": "Bluetooth Off", "battery": "N/A"}' "./dashboard/scripts/bluetooth")
 
 ;; Audio/Light vars (Required for the slider widget)
 (deflisten volume `./dashboard/scripts/getvol.sh`)
@@ -61,9 +63,11 @@
   (box :class "genwin" :orientation "v" :spacing 35 :space-evenly false :vexpand false :hexpand false 
     (box :style "background-image: url('${IMAGE}');" :class "face" :halign "center")
     (label :class "fullname" :halign "center" :wrap true :limit-width 25 :text NAME)
-    (label :class "dusername" :halign "center" :wrap true :limit-width 25 :text UNAME)
-    (label :class "fullLinux" :halign "center" :wrap true :limit-width 25 :text "${UNAME}@${HOST}")
-    ))
+    (label :class "dInfo1" :halign "start" :wrap true :limit-width 25 :text "󰀉 ${UNAME}@${HOST}")
+    (label :class "dInfo2" :halign "start" :wrap true :limit-width 25 :text "󰣇 ${INFO.distro}")
+    (label :class "lastElement" :halign "start" :wrap true :limit-width 25 :text " ${INFO.wm} ${INFO.wmver}")
+  )
+)
 
 ;; clock
 (defwidget clock-dash []
@@ -88,7 +92,9 @@
 ;; archlinux
 (defwidget arch []
   (box :class "arch" :vexpand false :hexpand false
-    (button :class "iconweb" :onclick "./dashboard/scripts/open_links --arch" "󰣇")))
+    (button :class "iconweb" :onclick "./dashboard/scripts/open_links --arch" "󰣇")
+  )
+)
 
 ;; stackoverflow
 (defwidget stacko []
@@ -259,8 +265,12 @@
       (button :class "label_folder7" :onclick "./dashboard/scripts/open_folders --s" "Study Folder"))
       
     (box :orientation "h" :space-evenly false :vexpand false :hexpand false
-      (button :class "iconfolder8" :onclick "./dashboard/scripts/open_folders --home" "")
-      (button :class "label_folder8" :onclick "./dashboard/scripts/open_folders --home" "QT Projects"))
+      (button :class "iconfolder8" :onclick "./dashboard/scripts/open_folders --qt" "")
+      (button :class "label_folder8" :onclick "./dashboard/scripts/open_folders --qt" "QT Projects"))
+
+    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
+      (button :class "iconfolder2" :onclick "./dashboard/scripts/open_folders --cs" "")
+      (button :class "label_folder2" :onclick "./dashboard/scripts/open_folders --cs" "Semester Syllabus"))
   )
 )
 

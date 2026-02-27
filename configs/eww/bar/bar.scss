@@ -149,9 +149,17 @@
 }
 
 /********** ARCH LOGO *************/
-.logo {
+.logo-default {
   background-color: $Lbackground;
   color: $blue;
+  padding: 0 18px;
+  border-radius: 10px;
+  margin: 0 0.1rem 0 0;
+}
+
+.logo-resize {
+  background-color: rgba($green, 0.7);
+  color: $Lbackground;
   padding: 0 18px;
   border-radius: 10px;
   margin: 0 0.1rem 0 0;
@@ -166,7 +174,7 @@
 }
 
 .cava {
-  margin-left: 1.9rem; /* gotta center this bitch it hurts my eyes on a 1080p lappy monitor*/
+  margin-left: 1.9rem; /* gotta center this bitch it hurts my eyes */
 }
 
 .cpu-t1 {

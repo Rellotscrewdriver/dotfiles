@@ -235,15 +235,19 @@
 }
 
 .volume-slider {
-  margin-bottom: 0.3rem;
+  margin-top: 2px;
+  margin-left: -15px;
+  margin-bottom: 2px;
 }
 
 .light-slider {
-  margin-bottom: 0;
+  margin-bottom: 10px;
+  margin-left: -13px;
 }
 
 .mic-slider {
-  margin-bottom: 0.3rem;
+  margin-top: 10px;
+  margin-left: -13px;
 }
 
 .vol trough,
@@ -252,9 +256,17 @@
   background-color: $Lbackground;
   box-shadow: 0 2px 3px 2px $background;
   border-radius: 50px;
-  min-height: 20px;
-  min-width: 250px;
+  min-height: 15px;
+  min-width: 260px;
   margin: 0 0 0 20px;
+}
+
+.vol {
+  margin-left: 2px;
+}
+
+.lig {
+  margin-left: 0;
 }
 
 .vol trough highlight {
@@ -284,14 +296,18 @@
 .mic-icon {
   font-size: 1.2rem;
   color: $cyan;
+  margin-left: 3px;
 }
 
 .vol-icon {
   font-size: 1.2rem;
+  margin-left: 8px;
 }
 
 .lig-icon {
   font-size: 1.2rem;
+  margin-left: 3px;
+  margin-right: -4px;
 }
 
 /** Bluetooth ***********************************/

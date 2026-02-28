@@ -63,9 +63,9 @@
   (box :class "genwin" :orientation "v" :spacing 35 :space-evenly false :vexpand false :hexpand false 
     (box :style "background-image: url('${IMAGE}');" :class "face" :halign "center")
     (label :class "fullname" :halign "center" :wrap true :limit-width 25 :text NAME)
-    (label :class "dInfo1" :halign "start" :wrap true :limit-width 25 :text "󰀉 ${UNAME}@${HOST}")
-    (label :class "dInfo2" :halign "start" :wrap true :limit-width 25 :text "󰣇 ${INFO.distro}")
-    (label :class "lastElement" :halign "start" :wrap true :limit-width 25 :text " ${INFO.wm} ${INFO.wmver}")
+    (label :class "dInfo1" :halign "start" :wrap true :limit-width 25 :text "󰀉  ${UNAME}@${HOST}")
+    (label :class "dInfo2" :halign "start" :wrap true :limit-width 25 :text "󰣇  ${INFO.distro}")
+    (label :class "lastElement" :halign "start" :wrap true :limit-width 25 :text "  ${INFO.wm} ${INFO.wmver}")
   )
 )
 

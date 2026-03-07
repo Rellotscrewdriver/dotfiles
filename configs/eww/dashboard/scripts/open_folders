@@ -26,11 +26,9 @@ elif [[ "$1" == "--notes" ]]; then
 	close_dash && ${APP} ~/notes &
 
 elif [[ "$1" == "--s" ]]; then
-	close_dash && ${APP} "~/study/BCA 2nd Sem/" &
+	close_dash && ${APP} ~/study &
 
 elif [[ "$1" == "--qt" ]]; then
 	close_dash && ${APP} ~/QTdrama &
 
-elif [[ "$1" == "--cs" ]]; then
-	close_dash && evince "../../../../study/BCA 2nd Sem/New BCA FINAL(1 year )Sem I and II .pdf" &
 fi

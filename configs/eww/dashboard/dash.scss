@@ -67,26 +67,27 @@
 	font-weight : bold;
 }
 
+.pfpInfo {
+  background-color: $Lbackground;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 22px;
+}
+
 .dInfo1 {
 	color: $red;
-	font-size : 22px;
-	margin : -15px 0px 0px 0px;
-  margin-left: 0.9rem;
 }
 
 .dInfo2 {
 	color: $blue;
-	font-size : 22px;
-	margin : -15px 0px 0px 0px;
-  margin-left: 0.9rem;
 }
 
-.lastElement {
+.dInfo3 {
+  color: $green;
+}
+
+.dInfo4 {
 	color: $yellow;
-	font-size : 22px;
-  margin-top: -1rem;
-  margin-left: 0.9rem;
-  margin-bottom: 2rem;
 }
 
 /** Date ********************************************/
@@ -164,11 +165,15 @@
   margin-bottom: 0;
 }
 
+.music-cover {
+  border-radius: 30rem;
+  margin-left: -20px;
+}
+
 .music-title {
   font-size: 1.3rem;
   font-weight: 900;
-  color: $magenta;
-  min-width: 25rem; 
+  color: $cyan;
 }
 
 .music-artist {
@@ -178,7 +183,7 @@
 }
 
 .music-controls {
-	margin-left: 11rem;
+	margin-left: 7.5rem;
 }
 
 .music-sep {
@@ -187,16 +192,18 @@
 
 .music-btn-play {
   font-size: 2rem;
-  color: $blue; 
+  color: $foreground; 
 }
 
 .music-btn {
   font-size: 2rem;
-  color: $blue;
+  color: $foreground;
 }
 
 .music-bar-container {
-  padding: 0 10px;
+  padding: 0;
+  margin-right: -5px;
+  margin-left: 5px;
 }
 
 .music-bar {
@@ -204,7 +211,7 @@
     background-color: rgba($foreground, 0.1); 
     border-radius: 10px;
     min-height: 8px;
-    min-width: 400px;
+    min-width: 300px;
   }
   highlight {
     background-color: $green; 
@@ -214,7 +221,7 @@
 }
 
 .music-bar slider {
-  background-color: $magenta; 
+  background-color: $green; 
   border-radius: 100%;
   border: 1px solid $background; 
   min-height: 12px;
@@ -440,7 +447,7 @@
 .cfold {
   background-color: $background;
 	border-radius: 16px;
-  padding-bottom: 11.7rem;
+  padding-bottom: 14.5rem;
   box-shadow: 5px 10px 5px $Lbackground;
 }
 
@@ -468,12 +475,13 @@
 	font-weight : bold;
 }
 
-.iconfolder1, .iconfolder2, .iconfolder3, .iconfolder4, .iconfolder5, .iconfolder6, .iconfolder7, .iconfolder8 {
-	font-family: Iosevka Nerd Font;
+.iconfolder1, .iconfolder2, .iconfolder3, .iconfolder4, .iconfolder5, .iconfolder6, .iconfolder7 {
+	font-family: "RobotoMono Nerd Font";
 	font-size : 32px;
 	font-weight : normal;
 	margin : 0px 0px 0px 75px;
 }
+
 .iconfolder1 {
 	color: $red;
 }
@@ -495,11 +503,8 @@
 .iconfolder7 {
 	color: $Lgrey;
 }
-.iconfolder8 {
-  color: $red;
-}
 
-.label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5, .label_folder6, .label_folder7, .label_folder8 {
+.label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5, .label_folder6, .label_folder7 {
 	font-size : 22px;
 	font-weight : normal;
 	margin : 0px 0px 0px 30px;
@@ -524,9 +529,6 @@
 }
 .label_folder7 {
 	color: $Lgrey;
-}
-.label_folder8 {
-  color: $red;
 }
 
 /** EOF *************************************************/

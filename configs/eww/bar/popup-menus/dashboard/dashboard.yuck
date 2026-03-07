@@ -29,7 +29,7 @@
          :valign "start"
 	:onhoverlost "./bar/popup-menus/scripts/toggle-dashboard.sh"
     (eventbox :class "shadow-container"
-         :onhoverlost "./scripts/usrctl.sh"
+         :onhoverlost "./scripts/scripts/toggle-dashboard.sh"
          (box :orientation "v"
               :space-evenly false
          (box :class "main-container"

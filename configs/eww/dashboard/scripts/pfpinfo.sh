@@ -7,8 +7,9 @@ while true; do
   # fetches operating system(or distro)
   OS=$(fastfetch -s os --format json | jq -r ".[].result.prettyName")
 
+  KERN=$(fastfetch -s kernel --format json | jq -r ".[].result.release")
   # Output JSON
-	echo "{\"wm\": \"${WM}\", \"wmver\": ${WMver}, \"distro\": \"${OS}\"}"
+	echo "{\"wm\": \"${WM}\", \"wmver\": ${WMver}, \"distro\": \"${OS}\", \"kern\": \"${KERN}\"}"
 
 	sleep 2000
 done

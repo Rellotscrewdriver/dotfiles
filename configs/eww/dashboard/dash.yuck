@@ -13,7 +13,6 @@
 (defpoll HOST :interval "5h" `cat /etc/hostname`)
 (deflisten INFO "./dashboard/scripts/pfpinfo.sh")
 
-
 ;; Time vars
 (defpoll YEAR :interval "5s" `date +\"%Y\"`)
 (defpoll DAY :interval "5s" `date +\"%d\"`)
@@ -63,9 +62,12 @@
   (box :class "genwin" :orientation "v" :spacing 35 :space-evenly false :vexpand false :hexpand false 
     (box :style "background-image: url('${IMAGE}');" :class "face" :halign "center")
     (label :class "fullname" :halign "center" :wrap true :limit-width 25 :text NAME)
-    (label :class "dInfo1" :halign "start" :wrap true :limit-width 25 :text "󰀉  ${UNAME}@${HOST}")
-    (label :class "dInfo2" :halign "start" :wrap true :limit-width 25 :text "󰣇  ${INFO.distro}")
-    (label :class "lastElement" :halign "start" :wrap true :limit-width 25 :text "  ${INFO.wm} ${INFO.wmver}")
+    (box :class "pfpInfo" :orientation "v" :space-evenly false :vexpand false :hexpand false
+      (label :class "dInfo1" :halign "start" :wrap true :limit-width 25 :text "󰀉  ${UNAME}@${HOST}")
+      (label :class "dInfo2" :halign "start" :wrap true :limit-width 25 :text "󰣇  ${INFO.distro}")
+      (label :class "dInfo3" :halign "start" :wrap true :limit-width 25 :text "󰌽  ${INFO.kern}")
+      (label :class "dInfo4" :halign "start" :wrap true :limit-width 25 :text "  ${INFO.wm} ${INFO.wmver}")
+    )
   )
 )
 
@@ -120,8 +122,10 @@
 (defwidget music []
   (box :class "genwin music-box" :orientation "h" :spacing 10 :space-evenly false
     ;; RIGHT: Information & Controls
+    (image :class "music-cover" :path music_cover :image-width 200 :image-height 135)
+
     (box :orientation "v" :valign "center" :spacing 8 :space-evenly false :hexpand false
-      (label :class "music-title"  :text music_song :limit-width 20 :halign "start")
+      (label :class "music-title"  :text music_song :limit-width 26 :halign "start")
       (label :class "music-artist" :text music_artist :limit-width 25 :halign "start")
       
       (box :orientation "h" :halign "start" :spacing 25 :class "music-controls"
@@ -131,7 +135,7 @@
     
     ;; The Progress Bar
       (box :class "music-bar-container" :orientation "h" :space-evenly false
-        (scale :class "music-bar" :min 0 :max 101 :active true :value music_progress
+        (scale :class "music-bar" :min 0 :max 101 :round-digits 0 :active true :value music_progress
                :onchange "./dashboard/scripts/music_info --set-progress {}")
       )
     )
@@ -143,8 +147,8 @@
   (box :class "genwin"
     (box :orientation "h" :halign "center" :space-evenly false :vexpand false :hexpand false
       (box :class "mailbox" :space-evenly false :vexpand false :hexpand false
-        (button :class "iconmail" :onclick "scripts/open_links --mail" "󰊫")
-        (button :class "label_mails" :onclick "scripts/open_links --mail"
+        (button :class "iconmail" :onclick "./dashboard/scripts/open_links --mail" "󰊫")
+        (button :class "label_mails" :onclick "./dashboard/scripts/open_links --mail"
           (label :class "label_git" :limit-width 30 :xalign 0 :text MAILS)
         )
       )
@@ -157,8 +161,8 @@
   (box :class "genwin"
     (box :orientation "h" :halign "center" :space-evenly false :vexpand false :hexpand false
       (box :class "gitbox" :space-evenly false :vexpand false :hexpand false
-        (button :class "icongit" :onclick "scripts/open_links --gh" "󰊤")
-        (button :class "label_git" :onclick "scripts/open_links --gh"
+        (button :class "icongit" :onclick "./dashboard/scripts/open_links --gh" "󰊤")
+        (button :class "label_git" :onclick "./dashboard/scripts/open_links --gh"
           (label :class "label_git" :limit-width 30 :xalign 0 :text GITHUBN)
         )
       )
@@ -172,7 +176,7 @@
     (box :orientation "v" :spacing false :space-evenly false :vexpand false :hexpand false
       (box :orientation "v" :vexpand false :hexpand false
         (label :class "label_temp" :halign "center" :xalign 0 :text "Weather Today")
-        (label :class "label_stat" :halign "center" :xalign 0 :text "${weather}")
+        (label :class "label_stat" :halign "center" :wrap true :limit-width 30 :xalign 0 :text "${weather}")
       )
     )
   )
@@ -183,8 +187,8 @@
   (box :class "genwin" :orientation "v" :space-evenly false :vexpand false :hexpand false
     (box :class "appbox" :orientation "h" :space-evenly false :vexpand false :hexpand false
       (button :style "background-image: url('./dashboard/images/icons/braveb.svg'); background-size: 48px;" :class "app_dash" :onclick "./dashboard/scripts/open_apps --br")
-      (button :style "background-image: url('./dashboard/images/icons/discord.svg');" :class "app_dash" :onclick "./dashboard/scripts/open_apps --dc")
-      (button :style "background-image: url('./dashboard/images/icons/code.svg');" :class "app_dash" :onclick "./dashboard/scripts/open_apps --cd")
+      (button :style "background-image: url('./dashboard/images/icons/discord.svg'); background-size: 56px;" :class "app_dash" :onclick "./dashboard/scripts/open_apps --dc")
+      (button :style "background-image: url('./dashboard/images/icons/code.svg'); background-size: 56px;" :class "app_dash" :onclick "./dashboard/scripts/open_apps --cd")
     )
     (box :class "appbox" :orientation "h" :space-evenly false :vexpand false :hexpand false
       (button :style "background-image: url('./dashboard/images/icons/obsidian.svg'); background-size: 50px;" :class "app_dash" :onclick "./dashboard/scripts/open_apps --ob")
@@ -222,7 +226,7 @@
 (defwidget bluetooth []
   (box :class "genwin bluetooth-box" :orientation "v" :space-evenly false :vexpand false :hexpand false :valign "center" :halign "center"
         (button :valign "center" :class "bt-icon" "${bluetooth.icon} ${bluetooth.battery}")
-        (label :class "bt-name"  :text "${bluetooth.name}")
+        (label :class "bt-name" :wrap true :limit-width 25 :text "${bluetooth.name}")
   )
 )
 
@@ -265,12 +269,8 @@
       (button :class "label_folder7" :onclick "./dashboard/scripts/open_folders --s" "Study Folder"))
       
     (box :orientation "h" :space-evenly false :vexpand false :hexpand false
-      (button :class "iconfolder8" :onclick "./dashboard/scripts/open_folders --qt" "")
-      (button :class "label_folder8" :onclick "./dashboard/scripts/open_folders --qt" "QT Projects"))
-
-    (box :orientation "h" :space-evenly false :vexpand false :hexpand false
-      (button :class "iconfolder2" :onclick "./dashboard/scripts/open_folders --cs" "")
-      (button :class "label_folder2" :onclick "./dashboard/scripts/open_folders --cs" "Semester Syllabus"))
+      (button :class "iconfolder1" :onclick "./dashboard/scripts/open_folders --qt" "")
+      (button :class "label_folder1" :onclick "./dashboard/scripts/open_folders --qt" "QT Projects"))
   )
 )
 
@@ -280,7 +280,7 @@
     ;; Uptime Box
     (box :class "genwin" :orientation "h" :space-evenly false :spacing 20 :halign "center"
       (label :class "icontimer" :text "")
-      (box :orientation "v" :valign "center"
+      (box :orientation "v" :valign "center" 
         (label :class "uphour" :text UPHOUR)
         (label :class "upmin" :text UPMIN)
       )

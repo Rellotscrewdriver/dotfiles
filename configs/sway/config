@@ -122,7 +122,10 @@ input "2362:8204:ASUP1204:00_093A:200C_Touchpad" {
     bindsym $mod+Shift+c reload
 
     # KillSwitch(in case of double eww bar or no cava playing)
-    bindsym $mod+z exec pkill eww
+    bindsym $mod+g exec pkill eww
+    
+    # to close the bar when I'm focused
+    bindsym --no-repeat $mod+z exec eww open --toggle bar
 
     bindsym --no-repeat $mod+x exec sh ~/.config/eww/dashboard/launch_dashboard
 

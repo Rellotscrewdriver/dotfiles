@@ -23,11 +23,16 @@ this script only works if you're on arch linux!
 
 ## 🎹 Shortcut keys
 
-here mod key is the windows key(the one with Windows logo)
+here mod key is the windows key(the one with Windows logo) rest are same as default. 
+since sway mostly uses shortcut keys from i3(which I love it's ease of use and keys making sense) 
 
 `$mod + x` toggles dashboard
 
 `$mod + p` toggles powermenu
+
+`$mod + z` toggles bar
+
+`$mod + g` kill eww daemon(if it crashes or spawns a zombie process)
 
 `$mod + d` opens application launcher
 

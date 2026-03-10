@@ -3,6 +3,8 @@
 # Configuration
 TMP_COVER="/tmp/eww_music_cover.png"
 DEFAULT_COVER="./dashboard/images/music.png" 
+CROPPED_COVER="/tmp/mpris_cropped_cover.png"
+CROP_SIZE="400:400"
 
 # Function to get metadata with fallbacks
 get_meta() {
@@ -52,12 +54,26 @@ set_progress() {
 
 get_cover() {
     url=$(playerctl metadata mpris:artUrl 2>/dev/null)
+    local source_img=""
+
     if [[ "$url" == http* ]]; then
-        curl -s "$url" -o "$TMP_COVER" && echo "$TMP_COVER"
+        curl -s "$url" -o "$TMP_COVER" 
+        source_img="$TMP_COVER" 
     elif [[ "$url" == file://* ]]; then
-        echo "${url#file://}"
+        source_img="${url#file://}"
     else
-        [cite_start]echo "$DEFAULT_COVER" [cite: 22]
+        source_img="$DEFAULT_COVER"  
+      echo "$DEFAULT_COVER"
+    fi
+
+    if [[ -n "$source_img" && -f "$source_img" ]]; then
+        # Use FFmpeg to crop a perfect square from the center, then scale it
+        ffmpeg -y -v quiet -i "$source_img" -vf "crop='min(iw,ih)':'min(iw,ih)',scale=$CROP_SIZE" \
+            "$CROPPED_COVER" </dev/null
+        
+        echo "$CROPPED_COVER"
+    else
+        echo "$DEFAULT_COVER"
     fi
 }
 

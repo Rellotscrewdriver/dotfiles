@@ -41,18 +41,15 @@
 .rightLay {
   margin-right: 1rem;
   margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .midLay {
   margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .leftLay {
   margin-left: 1rem;
   margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 /** Profile ******************************************/
@@ -60,7 +57,7 @@
 	background-size: 200px;
 	min-height: 200px;
 	min-width: 200px;
-	margin: 65px 0px 0px 0px;
+	margin: 60px 0px 0px 0px;
 	border-radius: 100%;
 }
 
@@ -70,18 +67,27 @@
 	font-weight : bold;
 }
 
-.dusername {
-	color: $foreground;
-	font-size : 22px;
-	font-weight : bold;
-	margin : -15px 0px 0px 0px;
+.pfpInfo {
+  background-color: $Lbackground;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 22px;
 }
 
-.fullLinux {
-	color: $foreground;
-	font-size : 18px;
-	font-weight : bold;
-  margin-bottom: 4.2rem;
+.dInfo1 {
+	color: $red;
+}
+
+.dInfo2 {
+	color: $blue;
+}
+
+.dInfo3 {
+  color: $green;
+}
+
+.dInfo4 {
+	color: $yellow;
 }
 
 /** Date ********************************************/
@@ -159,11 +165,15 @@
   margin-bottom: 0;
 }
 
+.music-cover {
+  border-radius: 30rem;
+  margin-left: -20px;
+}
+
 .music-title {
   font-size: 1.3rem;
   font-weight: 900;
-  color: $magenta;
-  min-width: 25rem; 
+  color: $cyan;
 }
 
 .music-artist {
@@ -173,7 +183,7 @@
 }
 
 .music-controls {
-	margin-left: 11rem;
+	margin-left: 7.5rem;
 }
 
 .music-sep {
@@ -182,16 +192,18 @@
 
 .music-btn-play {
   font-size: 2rem;
-  color: $blue; 
+  color: $foreground; 
 }
 
 .music-btn {
   font-size: 2rem;
-  color: $blue;
+  color: $foreground;
 }
 
 .music-bar-container {
-  padding: 0 10px;
+  padding: 0;
+  margin-right: -5px;
+  margin-left: 5px;
 }
 
 .music-bar {
@@ -199,7 +211,7 @@
     background-color: rgba($foreground, 0.1); 
     border-radius: 10px;
     min-height: 8px;
-    min-width: 400px;
+    min-width: 300px;
   }
   highlight {
     background-color: $green; 
@@ -208,11 +220,10 @@
   }
 }
 
-/* Optional: Make the slider handle visible only on hover */
 .music-bar slider {
-  background-color: $magenta; /* */
+  background-color: $green; 
   border-radius: 100%;
-  border: 2px solid $background; 
+  border: 1px solid $background; 
   min-height: 12px;
   min-width: 12px;
 }
@@ -231,15 +242,19 @@
 }
 
 .volume-slider {
-  margin-bottom: 0.3rem;
+  margin-top: 2px;
+  margin-left: -15px;
+  margin-bottom: 2px;
 }
 
 .light-slider {
-  margin-bottom: 0;
+  margin-bottom: 10px;
+  margin-left: -13px;
 }
 
 .mic-slider {
-  margin-bottom: 0.3rem;
+  margin-top: 10px;
+  margin-left: -13px;
 }
 
 .vol trough,
@@ -248,9 +263,17 @@
   background-color: $Lbackground;
   box-shadow: 0 2px 3px 2px $background;
   border-radius: 50px;
-  min-height: 20px;
-  min-width: 250px;
+  min-height: 15px;
+  min-width: 260px;
   margin: 0 0 0 20px;
+}
+
+.vol {
+  margin-left: 2px;
+}
+
+.lig {
+  margin-left: 0;
 }
 
 .vol trough highlight {
@@ -280,14 +303,18 @@
 .mic-icon {
   font-size: 1.2rem;
   color: $cyan;
+  margin-left: 3px;
 }
 
 .vol-icon {
   font-size: 1.2rem;
+  margin-left: 8px;
 }
 
 .lig-icon {
   font-size: 1.2rem;
+  margin-left: 3px;
+  margin-right: -4px;
 }
 
 /** Bluetooth ***********************************/
@@ -348,13 +375,15 @@
 
 .udemy {
 	background-color: #A435F0;
-	border-radius: 16px;
+  color: $foreground;
+  border-radius: 16px;
   padding: 2rem 3.5rem 2rem 3.5rem;
   box-shadow: 5px 10px 5px $Lbackground;
 }
 
 .arch {
 	background-color: #1793d1;
+  color: $foreground;
 	border-radius: 16px;
   box-shadow: 5px 10px 5px $Lbackground;  
   padding: 2rem 3.5rem 2rem 3.5rem; 
@@ -362,20 +391,23 @@
 
 .stacko {
 	background-color: #F48024;
-	border-radius: 16px;
+	color: $foreground;
+  border-radius: 16px;
   padding: 2rem 3.5rem 2rem 3.5rem; 
   box-shadow: 5px 10px 5px $Lbackground;
 }
 
 .youtube {
 	background-color: #FF0000;
-	border-radius: 16px;
+	color: $foreground;
+  border-radius: 16px;
   padding: 2rem 3.5rem 2rem 3.5rem; 
   box-shadow: 5px 10px 5px $Lbackground;
 }
 
 .reddit {
 	background-color: #FF4500;
+  color: $foreground;
 	border-radius: 16px;
   padding: 2rem 3.5rem 2rem 3.5rem; 
   box-shadow: 5px 10px 5px $Lbackground;
@@ -383,7 +415,7 @@
 
 .mail {
 	background-color: $background;
-	border-radius: 16px;
+  border-radius: 16px;
 }
 
 .mailbox {
@@ -443,12 +475,13 @@
 	font-weight : bold;
 }
 
-.iconfolder1, .iconfolder2, .iconfolder3, .iconfolder4, .iconfolder5, .iconfolder6, .iconfolder7, .iconfolder8 {
-	font-family: Iosevka Nerd Font;
+.iconfolder1, .iconfolder2, .iconfolder3, .iconfolder4, .iconfolder5, .iconfolder6, .iconfolder7 {
+	font-family: "RobotoMono Nerd Font";
 	font-size : 32px;
 	font-weight : normal;
 	margin : 0px 0px 0px 75px;
 }
+
 .iconfolder1 {
 	color: $red;
 }
@@ -470,11 +503,8 @@
 .iconfolder7 {
 	color: $Lgrey;
 }
-.iconfolder8 {
-  color: $red;
-}
 
-.label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5, .label_folder6, .label_folder7, .label_folder8 {
+.label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5, .label_folder6, .label_folder7 {
 	font-size : 22px;
 	font-weight : normal;
 	margin : 0px 0px 0px 30px;
@@ -499,9 +529,6 @@
 }
 .label_folder7 {
 	color: $Lgrey;
-}
-.label_folder8 {
-  color: $red;
 }
 
 /** EOF *************************************************/

@@ -18,8 +18,7 @@ print_bt_json() {
         connected=false
     fi
 
-    jq -nc --arg icon "$icon" --arg status "$status" --argjson connected "$connected" \
-        '{icon: $icon, status: $status, connected: $connected}'
+    jq -nc --arg icon "$icon" --arg status "$status" --argjson connected "$connected" '{icon: $icon, status: $status, connected: $connected}'
 }
 
 # Output initial state

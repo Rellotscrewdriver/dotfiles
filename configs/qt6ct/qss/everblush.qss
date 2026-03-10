@@ -1,0 +1,83 @@
+QWidget {
+    background-color: #141b1e;
+    color: #dadada;
+    font-family: "Cantarell", "sans-serif";
+}
+
+QPushButton {
+    background-color: #232a2d;
+    border-radius: 4px;
+    padding: 5px 15px;
+    min-height: 20px;
+}
+
+QPushButton:hover {
+    background-color: #67b0e8;
+    color: #141b1e;
+}
+
+QPushButton:pressed {
+    background-color: #1a2124;
+    color: #dadada
+}
+
+QLineEdit, QTextEdit, QPlainTextEdit, QComboBox {
+    background-color: #181f22;
+    border: 1px solid #2d3437;
+    border-radius: 3px;
+    padding: 3px;
+    selection-background-color: #67b0e8;
+    selection-color: #141b1e;
+}
+
+QLineEdit:focus {
+    border: 1px solid #6cbfbf;
+}
+
+QMenuBar {
+    background-color: #141b1e;
+    padding: 2px;
+}
+
+QMenuBar::item:selected {
+    background-color: #232a2d;
+    border-radius: 3px;
+}
+
+QMenu {
+    background-color: #1b2225;
+    border: 1px solid #2d3437;
+}
+
+QMenu::item:selected {
+    background-color: #6cbfbf;
+    color: #141b1e;
+}
+
+QScrollBar:vertical {
+    border: none;
+    background: #141b1e;
+    width: 10px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #2d3437;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #6cbfbf;
+}
+
+QProgressBar {
+    border: 1px solid #2d3437;
+    border-radius: 4px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #8ccf7e; /* Everblush Green */
+    width: 10px;
+}

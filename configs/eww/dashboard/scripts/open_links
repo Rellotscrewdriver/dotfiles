@@ -11,7 +11,7 @@ if [[ "$1" == "--arch" ]]; then
 	close_dash && ${cmd} "https://archlinux.org"
 
 elif [[ "$1" == "--gh" ]]; then
-	close_dash && ${cmd} "https://github.com"
+	close_dash && ${cmd} "https://www.github.com"
 
 elif [[ "$1" == "--ud" ]]; then
 	close_dash && ${cmd} "https://udemy.com"
@@ -23,7 +23,7 @@ elif [[ "$1" == "--yt" ]]; then
 	close_dash && ${cmd} "https://youtube.com"
 
 elif [[ "$1" == "--mail" ]]; then
-	close_dash && ${cmd} "https://gmail.com"
+	close_dash && ${cmd} "https://www.gmail.com"
 
 elif [[ "$1" == "--rd" ]]; then
 	close_dash && ${cmd} "https://reddit.com"

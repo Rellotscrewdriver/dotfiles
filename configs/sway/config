@@ -105,6 +105,9 @@ input "2362:8204:ASUP1204:00_093A:200C_Touchpad" {
     # swayOSD server
     exec swayosd-server
 
+    # Sway mode listener
+    exec sh ~/.config/eww/bar/scripts/mode.sh
+
     # Toggle control center
     bindsym $mod+Shift+n exec swaync-client -t -sw
     
@@ -117,6 +120,12 @@ input "2362:8204:ASUP1204:00_093A:200C_Touchpad" {
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+
+    # KillSwitch(in case of double eww bar or no cava playing)
+    bindsym $mod+g exec pkill eww
+    
+    # to close the bar when I'm focused
+    bindsym --no-repeat $mod+z exec eww open --toggle bar
 
     bindsym --no-repeat $mod+x exec sh ~/.config/eww/dashboard/launch_dashboard
 
@@ -272,9 +281,6 @@ assign [class="java"] workspace number 6
 #
 # Read `man 5 sway-bar` for more information about this section.
 
-#bar {
-#    swaybar_command eww open eww-bar 
-#}   
 exec_always eww daemon && eww open bar
 
 ### Theme

@@ -2,6 +2,6 @@
 
 (defwidget network [] 
 	(box :space-evenly false :orientation "h"
-  (eventbox :cursor "pointer" :onclick "./bar/popup-menus/scripts/toggle-wifi.sh" (label :text "${network.icon}" :class "net-i"))
+  (eventbox :cursor "pointer" :onclick "exec foot impala &" :onrightclick "./bar/popup-menus/scripts/toggle-wifi.sh" (label :text "${network.icon}" :class "net-i"))
 	(label :text "${network.name}" :class "net-t"))
 )

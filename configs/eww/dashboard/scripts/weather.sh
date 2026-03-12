@@ -22,7 +22,7 @@ print_weather() {
       {
         "Sunny": "󰖙",
         "Clear": "󰖙",
-        "Partly cloudy": "⛅",
+        "Partly Cloudy": "󰖕",
         "Cloudy": "󰖐",
         "Overcast": "󰖐",
         "Mist": "🌫️",

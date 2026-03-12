@@ -2,6 +2,6 @@
 
 (defwidget audio [] 
 	(box :space-evenly false :orientation "h"
-  (eventbox :cursor "pointer" :onclick "exec pavucontrol &" (label :text "${audio.icon}" :class "aud-i"))
+  (eventbox :cursor "pointer" (label :text "${audio.icon}" :class "aud-i"))
 	(label :text "${audio.value}" :class "aud-t"))
 )

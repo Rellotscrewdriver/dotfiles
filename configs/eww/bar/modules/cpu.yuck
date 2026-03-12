@@ -2,5 +2,11 @@
   (box
 		:space-evenly false
 		:orientation "h"
-    (label :text "" :class "cpu-i")
-	  (label :class "temp-t" :unindent false :text "${system.cpu_usage}%")))
+    :class "cpu-t"
+    (circular-progress :class "cpu" :value {system.cpu_usage} :thickness 3 :start-at 25
+      (box :class "cpuico"
+        (label :text "")
+      )
+    )
+  )
+)

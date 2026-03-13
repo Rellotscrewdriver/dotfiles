@@ -1,6 +1,6 @@
-(deflisten cava :initial "cava here" `./bar/scripts/cava.sh`)
+(deflisten cava :initial "▁▁▁▁▁▁" `./bar/scripts/cava.sh`)
 
 (defwidget cava []
-	(eventbox :onclick "exe swayosd-client --playerctl play-pause "
+	(eventbox :onclick "exec swayosd-client --playerctl play-pause"
 (label :text "${cava}" :class "cava")
 ))

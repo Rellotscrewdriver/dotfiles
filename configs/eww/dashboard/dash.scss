@@ -348,12 +348,6 @@
 }
 
 /** Links ***************************************/
-.socials-box {
-}
-
-.socials {
-}
-
 .iconweb {
 	color: $foreground;
 	font-family: "RobotoMono Nerd Font";
@@ -366,6 +360,7 @@
 	color: $yellow;
 	font-family: "RobotoMono Nerd Font";
 	font-size : 48px;
+  margin: 0px 0px 0px 15px;
 	font-weight : normal;
 }
 
@@ -418,29 +413,17 @@
   border-radius: 16px;
 }
 
-.mailbox {
+.notiBox {
 	background-color: $background;
 	border-radius: 10px;
+  min-width: 125px;
 }
 
-.label_mails {
-	color: $foreground;
-	font-size: 16px;
-	font-weight: bold;
-	margin: 0px 8px 0px 8px;
-}
-
-.gitbox {
-	background-color: $background;
-	border-radius: 10px;
-}
-
-.label_git {
+.notiLabel {
 	color: $foreground;
 	font-size : 32px;
   font-weight : bold;
-  min-width: 60px;
-	margin: 0px 0px 0px 8px;
+	margin: 0px 0px 0px 10px;
 }
 
 /** Home folders ***************************************/
@@ -456,6 +439,7 @@
 	border-radius: 10px;
 	margin: 15px;
 }
+
 .hddicon {
 	color: $magenta;
 	font-family: "RobotoMono Nerd Font";
@@ -463,14 +447,16 @@
 	font-weight : normal;
 	margin : 25px 20px 25px 40px;
 }
+
 .hdd_label {
 	color: $foreground;
 	font-size : 48px;
 	font-weight : bold;
 	margin : 0px 0px 0px 15px;
 }
+
 .fs_sep {
-	color: $green;
+	color: $foreground;
 	font-size : 36px;
 	font-weight : bold;
 }

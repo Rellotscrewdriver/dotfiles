@@ -146,10 +146,10 @@
 (defwidget mail []
   (box :class "genwin"
     (box :orientation "h" :halign "center" :space-evenly false :vexpand false :hexpand false
-      (box :class "mailbox" :space-evenly false :vexpand false :hexpand false
+      (box :class "notiBox" :space-evenly false :vexpand false :hexpand false
         (button :class "iconmail" :onclick "./dashboard/scripts/open_links --mail" "󰊫")
-        (button :class "label_mails" :onclick "./dashboard/scripts/open_links --mail"
-          (label :class "label_git" :limit-width 30 :xalign 0 :text MAILS)
+        (button :class "notiLabel" :onclick "./dashboard/scripts/open_links --mail"
+          (label :class "notiLabel" :xalign 0 :text MAILS)
         )
       )
     )
@@ -160,10 +160,10 @@
 (defwidget github []
   (box :class "genwin"
     (box :orientation "h" :halign "center" :space-evenly false :vexpand false :hexpand false
-      (box :class "gitbox" :space-evenly false :vexpand false :hexpand false
+      (box :class "notiBox" :space-evenly false :vexpand false :hexpand false
         (button :class "icongit" :onclick "./dashboard/scripts/open_links --gh" "󰊤")
-        (button :class "label_git" :onclick "./dashboard/scripts/open_links --gh"
-          (label :class "label_git" :limit-width 30 :xalign 0 :text GITHUBN)
+        (button :class "notiLabel" :onclick "./dashboard/scripts/open_links --gh"
+          (label :class "notiLabel" :xalign 0 :text GITHUBN)
         )
       )
     )

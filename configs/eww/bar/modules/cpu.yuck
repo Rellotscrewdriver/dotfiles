@@ -3,6 +3,7 @@
 		:space-evenly false
 		:orientation "h"
     :class "cpu-t"
+    :tooltip "CPU usage: ${system.cpu_usage}%" 
     (circular-progress :class "cpu" :value {system.cpu_usage} :thickness 3 :start-at 25
       (box :class "cpuico"
         (label :text "")

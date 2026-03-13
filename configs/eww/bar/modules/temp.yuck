@@ -5,6 +5,7 @@
 		:space-evenly false
 		:orientation "h"
     :class "temp-t"
+    :tooltip "CPU Temp: ${cpuTemp.tempNo}°C" 
     (circular-progress :class "temp" :value {cpuTemp.tempNo} :thickness 3 :start-at 25
       (box :class "tempico"
        (label :text {cpuTemp.tempIcon})

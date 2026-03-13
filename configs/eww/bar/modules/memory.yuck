@@ -3,6 +3,7 @@
 		:space-evenly false
 		:orientation "h"
     :class "mem-t" 
+    :tooltip "RAM used ${system.meminfo}%"
     (circular-progress :class "ram" :value {system.meminfo} :thickness 3 :start-at 25
       (box :class "ramico"
        (label :text "")

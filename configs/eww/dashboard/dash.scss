@@ -125,6 +125,10 @@
 	font-weight : bold;
 }
 
+.upmin, .uphour {
+  min-width: 157px;
+}
+
 /** Weather ***************************************/
 .iconweather {
 	font-family: "RobotoMono Nerd Font";

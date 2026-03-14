@@ -88,8 +88,8 @@
     (box :orientation "h" :halign "start" :space-evenly false :vexpand false :hexpand true
       (label :class "icontimer" :valign "center" :text "")
       (box :orientation "v" :valign "center" :halign "start" :spacing 2 :space-evenly false :vexpand false :hexpand false
-        (label :class "uphour" :halign "start" :wrap true :limit-width 25 :text UPHOUR)
-        (label :class "upmin" :halign "start" :wrap true :limit-width 25 :text UPMIN)))))
+        (label :class "uphour" :halign "start" :limit-width 25 :text UPHOUR)
+        (label :class "upmin" :halign "start"  :limit-width 25 :text UPMIN)))))
 
 ;; archlinux
 (defwidget arch []

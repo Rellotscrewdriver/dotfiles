@@ -22,15 +22,44 @@
   border-radius: 10px 0 0 10px;
 }
 
-.cpu-i {
-  background-color: $red;
+.ram, .cpu, .temp, .bat {
+  border-radius: 100px;
+  background: $background;
+  color: $green;
 }
-.mem-i {
-  background-color: $green;
+
+.ramico,
+.tempico,
+.batico,
+.cpuico {
+  margin: 7px;
+  font-size: 15px;
 }
-.temp-i {
-  background-color: $yellow;
+
+.tempico {
+  margin: 10px;
 }
+
+.batico {
+  margin: 8px;
+}
+
+.cpu {
+  color: $red;
+}
+
+.ram {
+  color: $green;
+}
+
+.temp {
+  color: $yellow;
+}
+
+.bat {
+  color: $red;
+}
+
 .fan-i {
   background-color: $yellow;
 }
@@ -42,9 +71,6 @@
   color: $background;
   border-radius: 16px;
 }
-.bat-i {
-  background-color: $red;
-}
 .aud-i {
   background-color: $yellow;
 }
@@ -52,17 +78,17 @@
   background-color: $green;
 }
 
-.cpu-t1,
-.cpu-t2,
 .up-t,
 .fan-t,
 .temp-t,
-.mem-t,
 .net-t,
 .bat-t,
 .aud-t,
 .clk-t,
+.temp-t,
 .cava,
+.cpu-t, 
+.mem-t,
 .notif-hist {
   font-family: "Noto Sans CJK JP";
   background-color: $Lbackground;
@@ -70,6 +96,17 @@
   padding-right: 12px;
   padding-left: 12px;
   border-radius: 0 10px 10px 0;
+}
+
+.cpu-t, .mem-t, .temp-t, .bat-t{
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+.bat-t{
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 /************ WORKSPACES ****************/
@@ -174,22 +211,7 @@
 }
 
 .cava {
-  margin-left: 1.9rem; /* gotta center this bitch it hurts my eyes */
 }
-
-.cpu-t1 {
-  padding-right: 0px;
-  border-radius: 0;
-}
-
-.cpu-t2 {
-  background-color: $bar-bg;
-  color: #dadada;
-  padding: 0 12px;
-  padding-left: 0px;
-  border-radius: 0 10px 10px 0;
-}
-
 
 $borderRadius: 0.6em;
 

@@ -3,6 +3,13 @@
 (defwidget temp []
   (box 
 		:space-evenly false
-		:orientation "h" 
-    (label :text "${cpuTemp.tempIcon}" :class "temp-i")
-	(label :class "temp-t" :unindent false :text "${cpuTemp.tempNo}°C")))
+		:orientation "h"
+    :class "temp-t"
+    :tooltip "CPU Temp: ${cpuTemp.tempNo}°C" 
+    (circular-progress :class "temp" :value {cpuTemp.tempNo} :thickness 3 :start-at 25
+      (box :class "tempico"
+       (label :text {cpuTemp.tempIcon})
+      )
+    )
+  )
+)

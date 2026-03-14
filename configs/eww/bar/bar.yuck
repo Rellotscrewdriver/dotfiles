@@ -28,7 +28,7 @@
     (revealer
       :transition "slidedown"
       :reveal     barrev
-      :duration   "200ms"
+      :duration   "600ms"
       (bar)
     )
   )
@@ -51,20 +51,21 @@
 			:space-evenly false
          (logo)
          (workspaces)
-           (cpu)
-         (memory)
-         (temp)
 		)
 
        ;; CENTER MODULES
-       (box :class "module-center"
+      (box :class "module-center"
 			:halign "center"
 			:valign "center"
-			:hexpand true
+			:hexpand false 
 			:spacing 10
 			:space-evenly false
-	    (cava)
-)
+	      (cpu)
+        (memory)
+        (cava)
+        (temp)
+        (battery)
+      )
        ;; RIGHT MODULES
        (box :class "module-right"
 			:halign "end"
@@ -74,8 +75,6 @@
 			:space-evenly false
            (bluebar)
            (network)
-           (battery)
-           (audio)
            (clock)
            (tray)
 	         (notifications)

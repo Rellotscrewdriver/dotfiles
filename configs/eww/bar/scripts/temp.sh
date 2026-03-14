@@ -13,7 +13,7 @@ IFS=')' read -ra core_temp_arr <<< $(sensors | grep -m 14 Core  | awk '{print su
 
 
 ## b. find cpu usage
-total_cpu_temp=0
+total_cpu_temp=0.0
 index=0
 for i in "${core_temp_arr[@]}"; do :
     temp=$(echo $i | sed -n 's/°C.*//; s/.*[+-]//; p; q')
@@ -42,7 +42,7 @@ fi
 while true; do
   get_cpu_temp
 
-  echo "{\"tempIcon\": \"${tmpEcho}\", \"tempNo\": ${v1}, \"tempColor\": \"${tmpEcho}\"}"
+  echo "{\"tempIcon\": \"${tmpEcho}\", \"tempNo\": "${v1}.0" }"
 
   sleep 2
 done

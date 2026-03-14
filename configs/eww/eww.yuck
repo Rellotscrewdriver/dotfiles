@@ -3,6 +3,4 @@
 (include "./bar/popup-menus/calender/calender.yuck")
 (include "./bar/popup-menus/dashboard/dashboard.yuck")
 
-(include "./bar/popup-menus/utils/cpu-profile.yuck")
-(include "./bar/popup-menus/utils/wifi.yuck")
 (include "./dashboard/dash.yuck")

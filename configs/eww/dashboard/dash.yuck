@@ -88,8 +88,8 @@
     (box :orientation "h" :halign "start" :space-evenly false :vexpand false :hexpand true
       (label :class "icontimer" :valign "center" :text "")
       (box :orientation "v" :valign "center" :halign "start" :spacing 2 :space-evenly false :vexpand false :hexpand false
-        (label :class "uphour" :halign "start" :wrap true :limit-width 25 :text UPHOUR)
-        (label :class "upmin" :halign "start" :wrap true :limit-width 25 :text UPMIN)))))
+        (label :class "uphour" :halign "start" :limit-width 25 :text UPHOUR)
+        (label :class "upmin" :halign "start"  :limit-width 25 :text UPMIN)))))
 
 ;; archlinux
 (defwidget arch []
@@ -146,10 +146,10 @@
 (defwidget mail []
   (box :class "genwin"
     (box :orientation "h" :halign "center" :space-evenly false :vexpand false :hexpand false
-      (box :class "mailbox" :space-evenly false :vexpand false :hexpand false
+      (box :class "notiBox" :space-evenly false :vexpand false :hexpand false
         (button :class "iconmail" :onclick "./dashboard/scripts/open_links --mail" "󰊫")
-        (button :class "label_mails" :onclick "./dashboard/scripts/open_links --mail"
-          (label :class "label_git" :limit-width 30 :xalign 0 :text MAILS)
+        (button :class "notiLabel" :onclick "./dashboard/scripts/open_links --mail"
+          (label :class "notiLabel" :xalign 0 :text MAILS)
         )
       )
     )
@@ -160,10 +160,10 @@
 (defwidget github []
   (box :class "genwin"
     (box :orientation "h" :halign "center" :space-evenly false :vexpand false :hexpand false
-      (box :class "gitbox" :space-evenly false :vexpand false :hexpand false
+      (box :class "notiBox" :space-evenly false :vexpand false :hexpand false
         (button :class "icongit" :onclick "./dashboard/scripts/open_links --gh" "󰊤")
-        (button :class "label_git" :onclick "./dashboard/scripts/open_links --gh"
-          (label :class "label_git" :limit-width 30 :xalign 0 :text GITHUBN)
+        (button :class "notiLabel" :onclick "./dashboard/scripts/open_links --gh"
+          (label :class "notiLabel" :xalign 0 :text GITHUBN)
         )
       )
     )
@@ -357,7 +357,7 @@
 
 ;; ** SINGLE WINDOW DEFINITION **
 (defwindow dashboard
-  :geometry (geometry :x "0%" :y "0%" :width "0%" :height "60%" :anchor "center")
+  :geometry (geometry :x "0%" :y "0%" :width "0%" :height "50%" :anchor "center")
   :stacking "overlay"
   :exclusive false
   :windowtype "dialog"

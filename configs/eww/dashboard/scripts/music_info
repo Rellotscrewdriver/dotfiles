@@ -2,7 +2,7 @@
 
 # Configuration
 TMP_COVER="/tmp/eww_music_cover.png"
-DEFAULT_COVER="./dashboard/images/music.png" 
+DEFAULT_COVER="/home/Rellot/.config/eww/assets/cover.jpg" 
 CROPPED_COVER="/tmp/mpris_cropped_cover.png"
 CROP_SIZE="400:400"
 
@@ -63,7 +63,6 @@ get_cover() {
         source_img="${url#file://}"
     else
         source_img="$DEFAULT_COVER"  
-      echo "$DEFAULT_COVER"
     fi
 
     if [[ -n "$source_img" && -f "$source_img" ]]; then

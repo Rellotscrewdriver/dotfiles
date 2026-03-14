@@ -2,6 +2,11 @@
   (box
 		:space-evenly false
 		:orientation "h"
-    (label :text "" :class "mem-i")
-    (label :class "mem-t" :text "${system.meminfo}%" :tooltip "memory usage")
+    :class "mem-t" 
+    :tooltip "RAM used ${system.meminfo}%"
+    (circular-progress :class "ram" :value {system.meminfo} :thickness 3 :start-at 25
+      (box :class "ramico"
+       (label :text "")
+      )
+    )
 	))

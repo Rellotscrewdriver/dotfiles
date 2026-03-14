@@ -57,7 +57,7 @@ here are the screenshots as I believe people like to see previews of the repo be
 </details>
 
 <details>
-<summary>Code - OSS(alternative to VScode)</summary>
+<summary>Qt Creator</summary>
 <img src = "screenshots/3.png" />
 </details>
 
@@ -77,7 +77,7 @@ here are the screenshots as I believe people like to see previews of the repo be
 </details>
 
 <details>
-<summary>mpv(with modernZ config)</summary>
+<summary>Code - OSS(alternative of VScode) and mpv(with modernZ config)</summary>
 <img src = "screenshots/7.png" />
 </details>
 

@@ -1,7 +1,12 @@
 (deflisten baticon `./bar/scripts/baticon.sh`)
 
 (defwidget battery [] 
-	(box :space-evenly false :orientation "h"
-  (eventbox :cursor "pointer" :onclick "./bar/popup-menus/scripts/toggle-cpu-profile.sh"(label :text "${baticon}" :class "bat-i"))
-	(label :text "${EWW_BATTERY.BAT0.capacity}%" :class "bat-t"))
+	(box :space-evenly false :orientation "h" :class "bat-t" :tooltip "Battery Left: ${EWW_BATTERY.BAT0.capacity}%" 
+  (circular-progress :class "bat" :value {EWW_BATTERY.BAT0.capacity} :thickness 3 :start-at 25
+    (box :class "batico"
+      (label :text "${baticon}")
+    )
+  )
+
+  )
 )

@@ -27,4 +27,5 @@ print_bt_json
 # React to events
 bluetoothctl --monitor | while read -r _; do
     print_bt_json
+    sleep 10
 done

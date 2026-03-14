@@ -1,5 +1,5 @@
 (deflisten bluebar `./bar/scripts/bluetooth.sh`)
 
 (defwidget bluebar [] 
-  (eventbox :cursor "pointer" :onclick "exec foot bluetui &" :onrightclick "./bar/popup-menus/scripts/toggle-bt.sh" (label :text "${bluebar.icon}" :class "bt-i"))
+  (eventbox :cursor "pointer" :onclick "exec foot bluetui &" :tooltip "Connected to: ${bluetooth.name}" (label :text "${bluebar.icon}" :class "bt-i"))
 )

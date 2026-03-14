@@ -13,7 +13,8 @@ neovim
 fish
 wofi
 greetd-regreet
-kvantum
+qt5ct
+qt6ct
 nwg-look
 eww
 swaylock-effects
@@ -26,7 +27,6 @@ bluez
 bluez-utils
 jq
 brightnessctl
-auto-cpufreq
 playerctl
 swaybg
 acpi

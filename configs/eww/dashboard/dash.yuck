@@ -357,7 +357,7 @@
 
 ;; ** SINGLE WINDOW DEFINITION **
 (defwindow dashboard
-  :geometry (geometry :x "0%" :y "0%" :width "0%" :height "60%" :anchor "center")
+  :geometry (geometry :x "0%" :y "0%" :width "0%" :height "50%" :anchor "center")
   :stacking "overlay"
   :exclusive false
   :windowtype "dialog"

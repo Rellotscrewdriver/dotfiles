@@ -1,23 +1,8 @@
 #!/bin/sh
 
-# 1. Define your persistent workspaces
-STATIC_WS="[1, 2, 3, 4, 5, 6]"
+staticWS="[1, 2, 3, 4, 5, 6]"
 
-# 2. Define icons for each workspace ID
-#ICONS='{
-#    "1": "󰈹",
-#    "2": "",
-#    "3": "",
-#    "4": "󰙯",
-#    "5": "󰠮",
-#    "6": "󰡨",
-#    "7": "󰌱",
-#    "8": "󰍳",
-#    "9": "󰹞"
-#     "9": "󰈦"
-#}'
-
-ICONS='{
+icons='{
     "1": "I",
     "2": "II",
     "3": "III",
@@ -26,8 +11,8 @@ ICONS='{
     "6": "VI"
 }'
 
-print_workspaces() {
-    swaymsg -t get_workspaces -r | jq -c --argjson static "$STATIC_WS" --argjson icons "$ICONS" '
+printWorkspaces() {
+    swaymsg -t get_workspaces -r | jq -c --argjson static "$staticWS" --argjson icons "$icons" '
         # Store current sway workspaces
         . as $current_ws |
         
@@ -58,9 +43,9 @@ print_workspaces() {
 }
 
 # Initial print
-print_workspaces
+printWorkspaces
 
 # Subscribe to changes
 swaymsg -t subscribe -m '["workspace"]' | while read -r _; do
-    print_workspaces
+    printWorkspaces
 done

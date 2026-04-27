@@ -1,7 +1,7 @@
 (defvar sway_mode "default")
 
 (defwidget logo []
-	(eventbox :cursor "pointer" :tooltip "I use Arch btw" :onclick "./bar/popup-menus/scripts/toggle-dashboard.sh" :onrightclick "exec foot btop &" 
+	(eventbox :cursor "pointer" :tooltip "I use Arch btw" :onclick "./bar/popup-menus/scripts/toggleDashboard" :onrightclick "exec foot btop &" 
     (label :class "logo-${sway_mode}" :text "󰣇")
   )
 )

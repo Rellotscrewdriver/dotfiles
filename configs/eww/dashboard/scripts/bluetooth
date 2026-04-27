@@ -2,32 +2,32 @@
 # Function to fetch and output data as JSON
 get_data() {
     # Fetch raw values
-    DEVICE=$(bluetoothctl info | grep 'Alias:' | awk -F: '{print $2}' | xargs)
-    DEVICE_PATH=$(upower --dump | tr : _ | grep headset | awk 'FNR == 1' | awk '{print $2}')
-    BATTERY=$(upower -i "$DEVICE_PATH" 2>/dev/null | grep percentage | awk '{print $2}')
-    POWERED=$(bluetoothctl show | grep "Powered: yes" | wc -c)
-    CONNECTED=$(bluetoothctl info | grep 'Device' | wc -c)
+    device=$(bluetoothctl info | grep 'Alias:' | awk -F: '{print $2}' | xargs)
+    devicePath=$(upower --dump | tr : _ | grep headset | awk 'FNR == 1' | awk '{print $2}')
+    battery=$(upower -i "$devicePath" 2>/dev/null | grep percentage | awk '{print $2}')
+    powered=$(bluetoothctl show | grep "Powered: yes" | wc -c)
+    connected=$(bluetoothctl info | grep 'Device' | wc -c)
 
     # Logic for Icon
-    if [ "$POWERED" -eq 0 ]; then
-        ICON="󰂲" # Bluetooth Off
-        NAME="Bluetooth Off"
-        BATT="---"
-    elif [ "$CONNECTED" -eq 0 ]; then
-        ICON="󰂯" # Bluetooth Idle
-        NAME="Bluetooth Idle"
-        BATT="---"
+    if [ "$powered" -eq 0 ]; then
+        icon="󰂲" # Bluetooth Off
+        name="Bluetooth Off"
+        batt="---"
+    elif [ "$connected" -eq 0 ]; then
+        icon="󰂯" # Bluetooth Idle
+        name="Bluetooth Idle"
+        batt="---"
     else
-        ICON="󰋋" # Connected (Headphones)
-        NAME="${DEVICE}"
-        BATT="${BATTERY:----}"
+        icon="󰋋" # Connected (Headphones)
+        name="${device}"
+        batt="${battery:----}"
     fi
 
     # Output as single-line JSON
     jq -ncn \
-        --arg icon "$ICON" \
-        --arg name "$NAME" \
-        --arg batt "$BATT" \
+        --arg icon "$icon" \
+        --arg name "$name" \
+        --arg batt "$batt" \
         '{"icon": $icon, "name": $name, "battery": $batt}'
 }
 

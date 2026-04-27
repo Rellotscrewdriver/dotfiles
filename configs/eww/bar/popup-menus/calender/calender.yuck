@@ -1,19 +1,7 @@
-(defwindow calender
-  :namespace    "calender"
-  :monitor      0
-  :stacking     "fg"
-  :geometry     (geometry
-                  :anchor "top right"
-                  :width  "30%"
-                  :height "400px"
-                )
-  (box
-    :space-evenly false
-    :halign       "end"
-    (revealer
-      :transition "slideleft"
-      :reveal     calrev
-      :duration   "200ms"
+(defwindow calender :namespace "calender" :monitor 0 :stacking "fg"
+  :geometry (geometry :anchor "top right" :width "30%" :height "400px")
+  (box :space-evenly false :halign "end"
+    (revealer :transition "slideleft" :reveal calrev :duration "200ms"
       (calender)
     )
   )
@@ -21,47 +9,24 @@
 
 (defvar calrev false)
 
-(defpoll get_date
-  :interval "1m"
-  "date +'%d / %m / %Y, %A'"
-)
+(defpoll getDate :interval "1m" "date +'%d / %m / %Y, %A'")
 
-(defpoll get_time
-  :interval "1m"
-  "date +%I:%M%p"
-)
+(defpoll getTime :interval "1m" "date +%I:%M%p")
 
 (defwidget calender []
-  (eventbox
-	:onhoverlost "./bar/popup-menus/scripts/toggle-cal.sh"
-    (box
-      :class        "cal-container"
-      :space-evenly  false
-      :orientation   "v"
-
-      (box
-        :class        "time-box"
-        :orientation  "v"
-        :halign       "center"
-        :space-evenly false
-
-        (box
-          :class "time-inner"
-          (label :text "${get_time}")
+  (eventbox :onhoverlost "./bar/popup-menus/scripts/toggleCal"
+    (box :class "calContainer" :space-evenly false :orientation "v"
+      (box :class "timeBox" :orientation "v" :halign "center" :space-evenly false
+        (box :class "timeInner"
+          (label :text "${getTime}")
         )
-        (box
-          :class "date-inner"
-          (label :text "${get_date}")
+        (box :class "dateInner"
+          (label :text "${getDate}")
         )
       )
-
-      (box
-        :class "calendar-box"
-        :halign "center"
-
+      (box :class "calendarBox" :halign "center"
         (calendar :class "cal")
       )
-
     )
   )
 )

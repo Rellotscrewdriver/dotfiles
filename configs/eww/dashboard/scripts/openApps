@@ -1,29 +1,29 @@
 #!/bin/bash
 
 ## Open Applications
-close_dash() {
+closeDash() {
   eww update mdashrev=false && eww close dashboard &
 }
 
 if [[ "$1" == "--br" ]]; then
-	close_dash && brave &
+	closeDash && brave &
 
 elif [[ "$1" == "--of" ]]; then
-	close_dash && onlyoffice-desktopeditors &
+	closeDash && onlyoffice-desktopeditors &
 
 elif [[ "$1" == "--dc" ]]; then
-	close_dash && discord &
+	closeDash && discord &
 
 elif [[ "$1" == "--cd" ]]; then
-	close_dash && code &
+	closeDash && code &
 
 elif [[ "$1" == "--ob" ]]; then
-	close_dash && obsidian &
+	closeDash && obsidian &
 
 elif [[ "$1" == "--gde" ]]; then
-	close_dash && godot &
+	closeDash && godot &
 
 elif [[ "$1" == "--fm" ]]; then
-	close_dash && nautilus &
+	closeDash && nautilus &
 
 fi

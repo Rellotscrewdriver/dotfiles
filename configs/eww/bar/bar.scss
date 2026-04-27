@@ -5,16 +5,16 @@
   padding: 6.5px;
 }
 
-.cpu-i,
-.mem-i,
-.up-i,
-.temp-i,
-.net-i,
-.bat-i,
-.bt-i,
-.fan-i,
-.aud-i,
-.clk-i {
+.cpuI,
+.memI,
+.upI,
+.tempI,
+.netI,
+.batI,
+.btI,
+.fanI,
+.audI,
+.clkI {
   color: $background;
   padding: 0.3rem;
   padding-left: 1rem;
@@ -22,25 +22,19 @@
   border-radius: 10px 0 0 10px;
 }
 
-.ram, .cpu, .temp, .bat {
-  border-radius: 100px;
-  background: $background;
-  color: $green;
-}
-
-.ramico,
-.tempico,
-.batico,
-.cpuico {
+.ramIco,
+.tempIco,
+.batIco,
+.cpuIco {
   margin: 7px;
   font-size: 15px;
 }
 
-.tempico {
+.tempIco {
   margin: 10px;
 }
 
-.batico {
+.batIco {
   margin: 8px;
 }
 
@@ -60,36 +54,33 @@
   color: $red;
 }
 
-.fan-i {
-  background-color: $yellow;
-}
-.net-i {
+.netI {
   background-color: $magenta;
 }
-.bt-i {
+.btI {
   background-color: $cyan;
   color: $background;
   border-radius: 16px;
 }
-.aud-i {
+.audI {
   background-color: $yellow;
 }
-.clk-i {
+.clkI {
   background-color: $green;
 }
 
-.up-t,
-.fan-t,
-.temp-t,
-.net-t,
-.bat-t,
-.aud-t,
-.clk-t,
-.temp-t,
+.upT,
+.fanT,
+.tempT,
+.netT,
+.batT,
+.audT,
+.clkT,
+.tempT,
 .cava,
-.cpu-t, 
-.mem-t,
-.notif-hist {
+.cpuT, 
+.memT,
+.notifHist {
   font-family: "Noto Sans CJK JP";
   background-color: $Lbackground;
   color: $foreground;
@@ -98,25 +89,25 @@
   border-radius: 0 10px 10px 0;
 }
 
-.cpu-t, .mem-t, .temp-t, .bat-t{
+.cpuT, .memT, .tempT, .batT{
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
 }
 
-.bat-t{
+.batT{
   padding-top: 2px;
   padding-bottom: 2px;
 }
 
 /************ WORKSPACES ****************/
-.workspace-container {
+.workspaceContainer {
   background-color: $Lbackground;
   color: $foreground;
   border-radius: 10px;
 }
 
-.workspace-sway {
+.workspaceSway {
   background-color: $Lbackground;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
@@ -125,13 +116,13 @@
   border-radius: 0.5rem;
 }
 
-.workspaces-widget {
+.workspacesWidget {
   background-color: $Lbackground;
   padding: 5px;
   border-radius: 8px;
 }
 
-.workspace-btn {
+.workspaceBtn {
   color: $Lgrey;
   background-color: $Lbackground;
   
@@ -145,28 +136,31 @@
   padding-right: 0.4rem;
   padding-left: 0.4rem;
   border-radius: 0.5rem;
-
   border-radius: 4px;
   font-weight: bold;
 
-  /* 3. URGENT: Red/Alert color */
   &.urgent {
-    color: $Lbackground;          /* Dark text */
-    background-color: $red; /* yellow/Red background */
+    color: $Lbackground;
+    background-color: $red;
     animation-name: pulse;   
     animation-duration: 1s;
     animation-iteration-count: infinite;
   }
 
-  /* 4. FOCUSED (ACTIVE): Bright and distinct */
   &.focused {
-    color: $background;          /* Dark text for contrast */
-    background-color: $blue; /* Bright Blue background */
-    box-shadow: 0 0 3px $blue; /* Optional: Glow effect */
+    color: $background;          
+    background-color: $blue; 
+    box-shadow: 0 0 3px $blue;
   }
   
+  &.occupied {
+    color: $background;
+    background-color: rgba($blue, 0.5);
+    box-shadow: 0 0 3px rgba($blue, 0.5);
+  }
+
   &:hover {
-    box-shadow: inset 0 0 0 20px rgba($background, 0.5); /* Darken on hover */
+    box-shadow: inset 0 0 0 20px rgba($background, 0.5);
   }
 }
 
@@ -176,8 +170,8 @@
     box-shadow: 0 0 3px $red;
   }
   50% { 
-    background-color: $yellow; 
-    box-shadow: 0 0 3px $yellow;
+    background-color: rgba($red, 0.6); 
+    box-shadow: 0 0 3px rgba($red, 0.6);
   }
   100% { 
     background-color: $red; 
@@ -203,15 +197,13 @@
 }
 
 .cava,
-.notif-hist {
+.notifHist {
   color: $magenta;
   border-radius: 10px;
   padding-top: 0.4rem;
   padding-bottom: 0.3rem;
 }
 
-.cava {
-}
 
 $borderRadius: 0.6em;
 
@@ -289,7 +281,7 @@ $borderRadius: 0.6em;
   }
 
   separator {
-    background-color: $bg;
+    background-color: $background;
     padding-top: 0.06em;
 
     &:last-child {
@@ -298,9 +290,9 @@ $borderRadius: 0.6em;
   }
 }
 
-.tray_box {
+.trayBox {
   background-color: $Lbackground;
-  color: $bar-text;
+  color: $foreground;
   border-radius: 10px;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -331,7 +323,7 @@ menu>menuitem {
 }
 
 menu>menuitem:disabled {
-    color: #7c6f64;
+    color: $disabled;
     background-color: transparent;
 }
 
@@ -346,3 +338,4 @@ menu>menuitem arrow {
     min-width: 1em;
     min-height: 1em;
 }
+

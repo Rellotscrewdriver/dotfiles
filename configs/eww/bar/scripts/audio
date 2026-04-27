@@ -1,6 +1,6 @@
 #!/bin/bash
 
-print_json() {
+printJson() {
 	vol=$(pamixer --get-volume)
 	mute=$(pamixer --get-mute)
 
@@ -13,8 +13,8 @@ print_json() {
 		elif [ "$vol" -le 66 ]; then
 			icon=""
     elif [ "$vol" -ge 100 ]; then
-      setlock=$(pamixer --set-volume 100 && pamixer --get-volume)
-      vol=$setlock
+      setLock=$(pamixer --set-volume 100 && pamixer --get-volume)
+      vol=$setLock
       icon=""
 		else
 			icon=""
@@ -26,11 +26,11 @@ print_json() {
 }
 
 # Emit once on start
-print_json
+printJson
 
 # Watch for sink change events
 pactl subscribe | stdbuf -oL grep --line-buffered "Event 'change' on sink" | while read -r _; do
-	print_json
+	printJson
 done
 
 

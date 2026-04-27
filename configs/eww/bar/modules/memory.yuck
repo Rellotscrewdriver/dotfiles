@@ -1,12 +1,9 @@
 (defwidget memory []
-  (box
-		:space-evenly false
-		:orientation "h"
-    :class "mem-t" 
-    :tooltip "RAM used ${system.meminfo}%"
+  (box :space-evenly false :orientation "h" :class "memT" :tooltip "RAM used ${system.meminfo}%"
     (circular-progress :class "ram" :value {system.meminfo} :thickness 3 :start-at 25
-      (box :class "ramico"
+      (box :class "ramIco"
        (label :text "")
       )
     )
-	))
+	)
+)

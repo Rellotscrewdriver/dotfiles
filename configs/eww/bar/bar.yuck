@@ -13,69 +13,45 @@
 (include "./bar/modules/tray.yuck")
 (include "./bar/modules/notifications.yuck")
 
-(defwindow bar
-  :namespace	"bar"
-  :monitor      0
-  :stacking     "fg"
-  :geometry     (geometry
-                  :anchor "top center"
-                  :width  "98%"
-                  :height "3px"
-                )
-	:exclusive true
+(defwindow bar :namespace "bar" :monitor 0 :stacking "fg"
+  :geometry (geometry :anchor "top center" :width "98%" :height "3px") 
+  :exclusive true
 
   (box
-    (revealer
-      :transition "slidedown"
-      :reveal     barrev
-      :duration   "600ms"
+    (revealer :transition "slidedown" :reveal barrev :duration "600ms"
       (bar)
     )
   )
 )
 
 (defvar barrev true)
-(deflisten system :initial "" `./bar/scripts/system.sh`)
+(deflisten system :initial "" `./bar/scripts/system`)
 
 (defwidget bar []
-  (box :class "bar"
-       :orientation "h"
-		:space-evenly false
-       
-       ;; LEFT MODULES
-       (box :class "ontainer"
-			:halign "start"
-			:valign "center"
-			:width 750
-			:spacing 10
-			:space-evenly false
-         (logo)
-         (workspaces)
-		)
+  (box :class "bar" :orientation "h" :space-evenly false
 
-       ;; CENTER MODULES
-      (box :class "module-center"
-			:halign "center"
-			:valign "center"
-			:hexpand false 
-			:spacing 10
-			:space-evenly false
-	      (cpu)
-        (memory)
-        (cava)
-        (temp)
-        (battery)
-      )
-       ;; RIGHT MODULES
-       (box :class "module-right"
-			:halign "end"
-			:valign "center"
-			:hexpand true
-			:spacing 10
-			:space-evenly false
-           (bluebar)
-           (network)
-           (clock)
-           (tray)
-	         (notifications)
-)))
+    ;; LEFT MODULES
+    (box :class "moduleLeft" :halign "start" :valign "center" :width 750 :spacing 10 :space-evenly false
+      (logo)
+      (workspaces)
+	  )
+
+    ;; CENTER MODULES
+    (box :class "moduleCenter" :halign "center" :valign "center" :hexpand false :spacing 10 :space-evenly false
+	    (cpu)
+      (memory)
+      (cava)
+      (temp)
+      (battery)
+    )
+  
+    ;; RIGHT MODULES
+    (box :class "moduleRight" :halign "end" :valign "center" :hexpand true :spacing 10 :space-evenly false
+      (bluethbar)
+      (network)
+      (clock)
+      (tray)
+	    (notifications)
+    )
+  )
+)

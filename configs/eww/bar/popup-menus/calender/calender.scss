@@ -1,5 +1,5 @@
-.cal-container {
-  box-shadow: 0 2px 3px 2px $shadow-primary;
+.calContainer {
+  box-shadow: 0 2px 3px 2px $shadow;
   background-color: $Lbackground;
   border: 2px solid $Lgrey;
   margin: 5.5px;
@@ -8,7 +8,7 @@
   min-width: 330px;
 }
 
-.time-box {
+.timeBox {
   background-color: $Lbackground;
   border-radius: 15px;
   margin-top: 12px;
@@ -18,7 +18,7 @@
   padding-bottom: 20px;
 }
 
-.time-inner {
+.timeInner {
   background-color: $Lbackground;
   color: $red;
   font-size: 50px;
@@ -26,14 +26,14 @@
   margin-top: 10px;
 }
 
-.date-inner {
+.dateInner {
   margin-top: 20px;
   font-size: 18px;
   color: $red;
 }
 
-.calendar-box {
-  box-shadow: 0 2px 3px 2px $shadow-primary;
+.calendarBox {
+  box-shadow: 0 2px 3px 2px $shadow;
   background-color: $Lbackground;
   border-radius: 15px;
   padding-top: 10px;

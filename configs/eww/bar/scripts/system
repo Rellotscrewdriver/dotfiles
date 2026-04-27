@@ -8,8 +8,8 @@ while true; do
 	# Memory usage in form "used / total GB"
 	mem=$(printf "%.0f\n" $(free -m | grep Mem | awk '{print ($3/$2)*100}'))
 
-  # CPU fan in number
-  fan=$(sensors | grep "cpu_fan" | awk '{print $2}')
+  	# CPU fan in number
+  	fan=$(sensors | grep "cpu_fan" | awk '{print $2}')
 
 	# Output JSON
 	echo "{\"cpu_fan\": \"${fan}\", \"cpu_usage\": ${usage}, \"meminfo\": \"${mem}\"}"

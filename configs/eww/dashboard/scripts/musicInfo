@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Configuration
-TMP_COVER="/tmp/eww_music_cover.png"
-DEFAULT_COVER="/home/Rellot/.config/eww/assets/cover.jpg" 
-CROPPED_COVER="/tmp/mpris_cropped_cover.png"
-CROP_SIZE="400:400"
+tmpCover="/tmp/eww_music_cover.png"
+defaultCover="/home/Rellot/.config/eww/assets/cover.jpg" 
+croppedCover="/tmp/mpris_cropped_cover.png"
+cropSize="400:400"
 
 # Function to get metadata with fallbacks
 get_meta() {
@@ -57,22 +57,22 @@ get_cover() {
     local source_img=""
 
     if [[ "$url" == http* ]]; then
-        curl -s "$url" -o "$TMP_COVER" 
-        source_img="$TMP_COVER" 
+        curl -s "$url" -o "$tmpCover" 
+        source_img="$tmpCover" 
     elif [[ "$url" == file://* ]]; then
         source_img="${url#file://}"
     else
-        source_img="$DEFAULT_COVER"  
+        source_img="$defaultCover"  
     fi
 
     if [[ -n "$source_img" && -f "$source_img" ]]; then
         # Use FFmpeg to crop a perfect square from the center, then scale it
-        ffmpeg -y -v quiet -i "$source_img" -vf "crop='min(iw,ih)':'min(iw,ih)',scale=$CROP_SIZE" \
-            "$CROPPED_COVER" </dev/null
+        ffmpeg -y -v quiet -i "$source_img" -vf "crop='min(iw,ih)':'min(iw,ih)',scale=$cropSize" \
+            "$croppedCover" </dev/null
         
-        echo "$CROPPED_COVER"
+        echo "$croppedCover"
     else
-        echo "$DEFAULT_COVER"
+        echo "$defaultCover"
     fi
 }
 

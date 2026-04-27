@@ -1,13 +1,9 @@
-(deflisten cpuTemp "sh ./bar/scripts/temp.sh")
+(deflisten cpuTemp "sh ./bar/scripts/temp")
 
 (defwidget temp []
-  (box 
-		:space-evenly false
-		:orientation "h"
-    :class "temp-t"
-    :tooltip "CPU Temp: ${cpuTemp.tempNo}°C" 
+  (box :space-evenly false :orientation "h" :class "tempT" :tooltip "CPU Temp: ${cpuTemp.tempNo}°C" 
     (circular-progress :class "temp" :value {cpuTemp.tempNo} :thickness 3 :start-at 25
-      (box :class "tempico"
+      (box :class "tempIco"
        (label :text {cpuTemp.tempIcon})
       )
     )

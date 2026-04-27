@@ -1,6 +1,6 @@
 #!/bin/bash
 
-print_json() {
+printJson() {
 	vol=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}' | tr -d "%")
 	mute=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}')
 
@@ -16,10 +16,10 @@ print_json() {
 }
 
 # Emit once on start
-print_json
+printJson
 
 # Watch for sink change events
 while true; do
-	print_json
+	printJson
 	sleep 1
 done

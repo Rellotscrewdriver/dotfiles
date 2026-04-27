@@ -1,7 +1,9 @@
-(deflisten audio `./bar/scripts/audio.sh`)
+(deflisten audio `./bar/scripts/audio`)
 
 (defwidget audio [] 
 	(box :space-evenly false :orientation "h"
-  (eventbox :cursor "pointer" (label :text "${audio.icon}" :class "aud-i"))
-	(label :text "${audio.value}" :class "aud-t"))
+    (eventbox :cursor "pointer" (label :text "${audio.icon}" :class "audI")
+	    (label :text "${audio.value}" :class "audT")    
+    )
+  )
 )

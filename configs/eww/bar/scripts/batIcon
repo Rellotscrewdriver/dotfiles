@@ -1,9 +1,9 @@
 #!/bin/bash
 
-get_icon() {
-	upower_output=$(upower -i $(upower -e | grep 'BAT'))
-	state=$(echo "$upower_output" | grep "state" | awk '{print $2}')
-	percent=$(echo "$upower_output" | grep "percentage" | awk '{print $2}' | sed 's/%//')
+getIcon() {
+	upowerOutput=$(upower -i $(upower -e | grep 'BAT'))
+	state=$(echo "$upowerOutput" | grep "state" | awk '{print $2}')
+	percent=$(echo "$upowerOutput" | grep "percentage" | awk '{print $2}' | sed 's/%//')
 
 	if [[ "$state" == "charging" || "$state" == "fully-charged" ]]; then
 		if ((percent > 80)); then
@@ -26,8 +26,8 @@ get_icon() {
 	fi
 }
 
-get_icon # Output current state immediately
+getIcon # Output current state immediately
 
 upower --monitor | while read -r line; do
-	get_icon # Output on every change event
+	getIcon # Output on every change event
 done

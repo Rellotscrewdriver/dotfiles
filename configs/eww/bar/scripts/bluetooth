@@ -2,13 +2,13 @@
 
 print_bt_json() {
     powered=$(bluetoothctl show | grep "Powered:" | awk '{print $2}')
-    connected_any=$(bluetoothctl info 2>/dev/null | grep "Connected: yes")
+    connectedAny=$(bluetoothctl info 2>/dev/null | grep "Connected: yes")
 
     if [[ "$powered" != "yes" ]]; then
         icon="󰂲"
         status="off"
         connected=false
-    elif [[ -n "$connected_any" ]]; then
+    elif [[ -n "$connectedAny" ]]; then
         icon="󰂱"
         status="connected"
         connected=true

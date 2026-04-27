@@ -21,7 +21,7 @@
 }
 
 /** Generic window ***********************************/
-.genwin {
+.genWin {
 	background-color: $background;
   border-radius: 16px;
   padding-top: 1.3rem;
@@ -31,7 +31,7 @@
   box-shadow: 5px 10px 5px $Lbackground;
 }
 
-.genwin:hover {
+.genWin:hover {
   background-color: rgba($background, 0.95);
   border: 1px solid $green; /* Highlights tile on hover */
   transition: 300ms cubic-bezier(0.05, 0.7, 0.1, 1); 
@@ -61,7 +61,7 @@
 	border-radius: 100%;
 }
 
-.fullname {
+.fullName {
 	color: $magenta;
 	font-size : 30px;
 	font-weight : bold;
@@ -92,14 +92,14 @@
 
 /** Date ********************************************/
 
-.mdate {
+.mDate {
 	color: $foreground;
 	font-size : 40px;
 	font-weight : bold;
   margin-left: -100px;
 }
 
-.mdateicon {
+.mDateIcon {
 	color: $green;
 	font-size : 70px;
 	font-weight : bold;
@@ -107,55 +107,55 @@
 }
 
 /** Uptime ********************************************/
-.icontimer {
+.iconTimer {
 	color: $red;
 	font-size : 90px;
 	font-weight : normal;
 }
 
-.uphour {
+.upHour {
 	color: $foreground;
 	font-size : 30px;
 	font-weight : bold;
 }
 
-.upmin {
+.upMin {
 	color: $foreground;
 	font-size : 30px;
 	font-weight : bold;
 }
 
-.upmin, .uphour {
+.upMin, .upHour {
   min-width: 157px;
 }
 
 /** Weather ***************************************/
-.iconweather {
+.iconWeather {
 	font-family: "RobotoMono Nerd Font";
 	font-size : 120px;
 	font-weight : normal;
 	margin : 15px 0px 0px 30px;
 }
 
-.label_temp {
+.weatTemp {
 	color : $blue;
 	font-size : 30px;
 	font-weight : bold;
 	margin : 0px 0px 0px 0px;
 }
 
-.label_stat {
+.weatStat {
 	color : $foreground;
 	font-size : 38px;
 	font-weight : bold;
 }
 
 /** Applications ***************************************/
-.appbox {
+.appBox {
 	margin: 0rem 0rem 1.3rem 0rem;
 }
 
-.app_dash {
+.appDash {
   background-repeat: no-repeat;
 	background-size: 64px;
 	background-position: center;
@@ -165,52 +165,52 @@
 }
 
 /** Music Player **************************************/
-.music-box {
+.musicBox {
   margin-bottom: 0;
 }
 
-.music-cover {
+.musicCover {
   border-radius: 30rem;
   margin-left: -20px;
 }
 
-.music-title {
+.musicTitle {
   font-size: 1.3rem;
   font-weight: 900;
   color: $cyan;
 }
 
-.music-artist {
+.musicArtist {
   font-size: 1rem;
   color: $foreground; 
   opacity: 0.7;
 }
 
-.music-controls {
+.musicControls {
 	margin-left: 7.5rem;
 }
 
-.music-sep {
+.musicSep {
   background-color: $green; 
 }
 
-.music-btn-play {
+.musicBtnPlay {
   font-size: 2rem;
   color: $foreground; 
 }
 
-.music-btn {
+.musicBtn {
   font-size: 2rem;
   color: $foreground;
 }
 
-.music-bar-container {
+.musicBarContainer {
   padding: 0;
   margin-right: -5px;
   margin-left: 5px;
 }
 
-.music-bar {
+.musicBar {
   trough {
     background-color: rgba($foreground, 0.1); 
     border-radius: 10px;
@@ -224,7 +224,7 @@
   }
 }
 
-.music-bar slider {
+.musicBar slider {
   background-color: $green; 
   border-radius: 100%;
   border: 1px solid $background; 
@@ -233,30 +233,30 @@
 }
 
 /** Control Panel *******************************/
-.cp-i {
+.cpI {
   font-family: "RobotoMono Nerd Font";
   font-size: 1.3rem;
   font-weight: bold;
 }
 
-.sliderctl {
+.sliderCtl {
   box-shadow: 10px 10px 0px $blue;
   border-radius: 15px;
   background-color: $background;
 }
 
-.volume-slider {
+.volumeSlider {
   margin-top: 2px;
   margin-left: -15px;
   margin-bottom: 2px;
 }
 
-.light-slider {
+.lightSlider {
   margin-bottom: 10px;
   margin-left: -13px;
 }
 
-.mic-slider {
+.micSlider {
   margin-top: 10px;
   margin-left: -13px;
 }
@@ -285,8 +285,8 @@
   border-radius: 10px;
 }
 
-.volume-slider,
-.volume-short {
+.volumeSlider,
+.volumeShort {
   color: $green;
 }
 
@@ -300,51 +300,51 @@
   border-radius: 10px;
 }
 
-.light-slider {
+.lightSlider {
   color: $yellow;
 }
 
-.mic-icon {
+.micIcon {
   font-size: 1.2rem;
   color: $cyan;
   margin-left: 3px;
 }
 
-.vol-icon {
+.volIcon {
   font-size: 1.2rem;
   margin-left: 8px;
 }
 
-.lig-icon {
+.ligIcon {
   font-size: 1.2rem;
   margin-left: 3px;
   margin-right: -4px;
 }
 
 /** Bluetooth ***********************************/
-.bt-name {
-        color: $red;
-        font-weight: 900;
-        font-size: 18px;
-        min-width: 15.5rem;
+.btName {
+  color: $red;
+  font-weight: 900;
+  font-size: 18px;
+  min-width: 15.5rem;
 }
 
-.bt-icon {
-        font-size: 26px;
-        font-weight: bold;
-        border-radius: 20px;
-        background-color: $yellow;
-        color: $background;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        margin-bottom: 10px;
-        margin-left: 4rem;
-        margin-right: 4rem;
+.btIcon {
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: $yellow;
+  color: $background;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
-.bluetooth-box {
+.btBox {
   padding-top: 3rem;
   padding-bottom: 3rem;
   padding-left: 4rem;
@@ -352,14 +352,14 @@
 }
 
 /** Links ***************************************/
-.iconweb {
+.iconWeb {
 	color: $foreground;
 	font-family: "RobotoMono Nerd Font";
 	font-size : 70px;
 	font-weight : normal;
 }
 
-.iconmail, .icongit {
+.iconMail, .iconGit {
 	background-color: $background;
 	color: $yellow;
 	font-family: "RobotoMono Nerd Font";
@@ -368,7 +368,7 @@
 	font-weight : normal;
 }
 
-.icongit {
+.iconGit {
 	color: $green;
 }
 
@@ -431,20 +431,20 @@
 }
 
 /** Home folders ***************************************/
-.cfold {
+.cFold {
   background-color: $background;
 	border-radius: 16px;
   padding-bottom: 14.5rem;
   box-shadow: 5px 10px 5px $Lbackground;
 }
 
-.hddbox {
+.hddBox {
 	background-color: $background;
 	border-radius: 10px;
 	margin: 15px;
 }
 
-.hddicon {
+.hddIcon {
 	color: $magenta;
 	font-family: "RobotoMono Nerd Font";
 	font-size : 70px;
@@ -452,72 +452,72 @@
 	margin : 25px 20px 25px 40px;
 }
 
-.hdd_label {
+.hddLabel {
 	color: $foreground;
 	font-size : 48px;
 	font-weight : bold;
 	margin : 0px 0px 0px 15px;
 }
 
-.fs_sep {
+.fsSep {
 	color: $foreground;
 	font-size : 36px;
 	font-weight : bold;
 }
 
-.iconfolder1, .iconfolder2, .iconfolder3, .iconfolder4, .iconfolder5, .iconfolder6, .iconfolder7 {
+.iconFolder1, .iconFolder2, .iconFolder3, .iconFolder4, .iconFolder5, .iconFolder6, .iconFolder7 {
 	font-family: "RobotoMono Nerd Font";
 	font-size : 32px;
 	font-weight : normal;
 	margin : 0px 0px 0px 75px;
 }
 
-.iconfolder1 {
+.iconFolder1 {
 	color: $red;
 }
-.iconfolder2 {
+.iconFolder2 {
 	color: $blue;
 }
-.iconfolder3 {
+.iconFolder3 {
 	color: $green;
 }
-.iconfolder4 {
+.iconFolder4 {
 	color: $yellow;
 }
-.iconfolder5 {
+.iconFolder5 {
 	color: $magenta;
 }
-.iconfolder6 {
+.iconFolder6 {
 	color: $cyan;
 }
-.iconfolder7 {
+.iconFolder7 {
 	color: $Lgrey;
 }
 
-.label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5, .label_folder6, .label_folder7 {
+.labelFolder1, .labelFolder2, .labelFolder3, .labelFolder4, .labelFolder5, .labelFolder6, .labelFolder7 {
 	font-size : 22px;
 	font-weight : normal;
 	margin : 0px 0px 0px 30px;
 }
-.label_folder1 {
+.labelFolder1 {
 	color: $red;
 }
-.label_folder2 {
+.labelFolder2 {
 	color: $blue;
 }
-.label_folder3 {
+.labelFolder3 {
 	color: $green;
 }
-.label_folder4 {
+.labelFolder4 {
 	color: $yellow;
 }
-.label_folder5 {
+.labelFolder5 {
 	color: $magenta;
 }
-.label_folder6 {
+.labelFolder6 {
 	color: $cyan;
 }
-.label_folder7 {
+.labelFolder7 {
 	color: $Lgrey;
 }
 

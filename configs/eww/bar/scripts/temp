@@ -4,7 +4,7 @@
 
 ## a. split response
 ## Core 0:       +143.6°F  (high = +186.8°F, crit = +212.0°F)
-get_cpu_temp(){
+getCpuTemps(){
 degree="°C"
 temperatureValues=(40 50 60 70 80 90 100 110)
 temperatureIcons=(       ☢)
@@ -13,16 +13,16 @@ IFS=')' read -ra core_temp_arr <<< $(sensors | grep -m 14 Core  | awk '{print su
 
 
 ## b. find cpu usage
-total_cpu_temp=0.0
+totalcputemp=0.0
 index=0
 for i in "${core_temp_arr[@]}"; do :
     temp=$(echo $i | sed -n 's/°C.*//; s/.*[+-]//; p; q')
     let index++
-    total_cpu_temp=$(echo "$total_cpu_temp + $temp" | bc)
+    totalcputemp=$(echo "$totalcputemp + $temp" | bc)
 done
-avg_cpu_temp=$(echo "scale=2; $total_cpu_temp / $index" | bc)
+avgCpuTemp=$(echo "scale=2; $totalcputemp / $index" | bc)
 
-v=$(echo "$avg_cpu_temp" | tr -cd '[:digit:]')
+v=$(echo "$avgCpuTemp" | tr -cd '[:digit:]')
 let v1=$v/100
 
 if [ $v1 -lt 40 ];
@@ -39,8 +39,10 @@ else
 fi
 }
 
+getCpuTemps
+
 while true; do
-  get_cpu_temp
+  getCpuTemps
 
   echo "{\"tempIcon\": \"${tmpEcho}\", \"tempNo\": "${v1}.0" }"
 

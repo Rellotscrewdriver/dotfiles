@@ -7,23 +7,3 @@ else
   eww update mdashrev=false 
   (sleep 0.3 && eww close dashboard) &
 fi
-
-
-# Configuration
-#WINDOW="dashboard"
-#STATE_FILE="/tmp/eww_dash_active"
-
-# 1. Toggle the state
-#if [ -f "$STATE_FILE" ]; then
-    # START CLOSE PROCESS
-#    eww update mdashrev=false
-#    sleep 0.35 # Wait for revealer animation [cite: 18]
-#    eww close $WINDOW
-#    rm "$STATE_FILE"
-#else
-    # START OPEN PROCESS
-#    eww open $WINDOW
-#    eww update mdashrev=true
-#    touch "$STATE_FILE"
-#fi
-

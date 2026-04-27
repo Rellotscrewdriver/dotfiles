@@ -93,7 +93,6 @@ here are the screenshots as I believe people like to see previews of the repo be
 
 <br>
 
-
 the wallpaper of each screenshot can be found in **wallpapers** directory
 
 Before leaving out, don't forget to **STAR** this repository! Thanks for checking out. 

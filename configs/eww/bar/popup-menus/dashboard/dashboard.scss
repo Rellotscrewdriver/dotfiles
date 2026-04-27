@@ -1,14 +1,5 @@
 .container {
-  box-shadow: 0 2px 3px 2px $shadow-primary;
-  background-color: $background;
-  border: 2px solid $border-primary;
-  margin: 5.5px;
-  border-radius: 20px;
-  padding: 5px;
-  min-width: 385px;
-}
-
-.main-container {
+  box-shadow: 0 2px 3px 2px $shadow;
   background-color: $background;
   border: 2px solid $yellow;
   margin: 5.5px;
@@ -17,13 +8,22 @@
   min-width: 385px;
 }
 
-.main-title {
+.mainContainer {
+  background-color: $background;
+  border: 2px solid $yellow;
+  margin: 5.5px;
+  border-radius: 20px;
+  padding: 5px;
+  min-width: 385px;
+}
+
+.mainTitle {
   margin-top: 15px;
   margin-bottom: 12px;
   margin-left: 15px;
   font-size: 20px;
   font-weight: bolder;
-  color: $text-accent;
+  color: $red;
 }
 
 .profile {
@@ -35,7 +35,7 @@
   border-radius: 15px;
 }
 
-.graph-container {
+.graphContainer {
   background-color: $background;
   min-width: 370px;
   margin: 0px 7px;
@@ -48,14 +48,14 @@
   background-image: url('./assets/pfp.png');
   background-size: 100px;
   background-position: 50% 35%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   min-height: 90px;
   min-width: 100px;
   border-radius: 100%;
   margin-right: 20px;
 }
 
-.ctlpanel {
+.ctlPanel {
   min-width: 230px;
   margin-top: 10px;
   border-radius: 20px;
@@ -65,60 +65,60 @@
 }
 
 .shutdown {
-  color: #e06c75;
+  color: $red;
   transition: color 0.3s;
   &:hover {
-    color: #f38b91;
+    color: $Lgrey;
   }
 }
 
 .logout {
-  color: #d19a66;
+  color: $green;
   transition: color 0.3s;
   &:hover {
-    color: #e5b07b;
+    color: $Lgrey;
   }
 }
 
 .lockscr {
-  color: #61afef;
+  color: $blue;
   transition: color 0.3s;
   &:hover {
-    color: #79c0ff;
+    color: $Lgrey;
   }
 }
 
 .reboot {
-  color: #c678dd;
+  color: $yellow;
   transition: color 0.3s;
   &:hover {
-    color: #d896f0;
+    color: $Lgrey;
   }
 }
 
 .suspend {
-  color: #56b6c2;
+  color: $magenta;
   transition: color 0.3s;
   &:hover {
-    color: #6edddf;
+    color: $Lgrey;
   }
 }
 
 .hibernate {
-  color: #5fb3b3;
+  color: $cyan;
   transition: color 0.3s;
   &:hover {
-    color: #a1e3e3;
+    color: $Lgrey;
   }
 }
 
-.musername {
+.mUsername {
   color: $foreground;
   font-size: 1.5rem;
   font-weight: bolder;
 }
 
-.uptime {
+.upTime {
   color: $magenta;
 }
 

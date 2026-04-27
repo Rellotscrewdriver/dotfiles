@@ -1,6 +1,6 @@
 (defwidget fan []
-  (box
-		:space-evenly false
-		:orientation "h"
-    (label :text "󰈐" :class "fan-i")
-	  (label :class "fan-t" :unindent false :text "${system.cpu_fan} RPM")))
+  (box :space-evenly false :orientation "h"
+    (label :text "󰈐" :class "fanI")
+	  (label :class "fanT" :unindent false :text "${system.cpu_fan} RPM")
+  )
+)

@@ -1,4 +1,4 @@
-#Bashtop ReSynthwave theme
+#Bashtop Everblush theme
 #by RellotScrewdriver
 
 # Colors should be in 6 or 2 character hexadecimal or single spaced rgb decimal: "#RRGGBB", "#BW" or "0-255 0-255 0-255"
@@ -34,56 +34,48 @@ theme[inactive_fg]="#30"
 theme[proc_misc]="#e57474"
 
 # Cpu box outline color
-theme[cpu_box]="#67b0e8"
+theme[cpu_box]="#8cc7fe"
 
 # Memory/disks box outline color
 theme[mem_box]="#8cc7fe"
 
 # Net up/down box outline color
-theme[net_box]="#e5c76b"
+theme[net_box]="#8cc7fe"
 
 # Processes box outline color
-theme[proc_box]="#c47fd5"
+theme[proc_box]="#8cc7fe"
 
 # Box divider line and small boxes line color
-theme[div_line]="#b3b9b8"
+theme[div_line]="#8cc7fe"
 
 # Temperature graph colors
 theme[temp_start]="#67b0e8"
-theme[temp_mid]="#e57474"
 theme[temp_end]="#e57474"
 
 # CPU graph colors
 theme[cpu_start]="#67b0e8"
-theme[cpu_mid]="#e57474"
 theme[cpu_end]="#e57474"
 
 # Mem/Disk free meter
 theme[free_start]="#67b0e8"
-theme[free_mid]="#e57474"
 theme[free_end]="#e57474"
 
 # Mem/Disk cached meter
 theme[cached_start]="#67b0e8"
-theme[cached_mid]="#e57474"
 theme[cached_end]="#e57474"
 
 # Mem/Disk available meter
 theme[available_start]="#67b0e8"
-theme[available_mid]="#e57474"
 theme[available_end]="#e57474
 
 # Mem/Disk used meter
 theme[used_start]="#67b0e8"
-theme[used_mid]="#e57474"
 theme[used_end]="#e57474"
 
 # Download graph colors
 theme[download_start]="#67b0e8"
-theme[download_mid]="#e57474"
 theme[download_end]="#e57474"
 
 # Upload graph colors
 theme[upload_start]="#67b0e8"
-theme[upload_mid]="#e57474"
 theme[upload_end]="#e57474"

@@ -30,3 +30,4 @@ brightnessctl
 playerctl
 swaybg
 acpi
+python

@@ -1,6 +1,6 @@
-@define-color background #141b1e;
-@define-color Lbackground #232a2d;
-@define-color foreground #dadada;
+@define-color bg #141b1e;
+@define-color Lbg #232a2d;
+@define-color fg #dadada;
 
 @define-color red #e57474;
 @define-color blue #67b0e8;
@@ -11,207 +11,267 @@
 @define-color Lgrey #b3b9b8;
 
 * {
-  color:            @foreground;
-
-  all: unset;
-  font-size: 15px;
-  font-family: "RobotoMono Nerd Font";
-  transition: 200ms;
-
+	all: unset;
+  font-family: "RobotoMono Nerd Font Propo";
+	font-weight: 700;
+  outline-width: 0;
+  outline-style: none;
 }
 
-/* Avoid 'annoying' backgroud */
-.blank-window {  
+.background,
+.view {
   background: transparent;
 }
 
-.control-center {
-  background: @background;
-  border-radius: 24px;
-  border: 2px solid @yellow;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
-  padding: 10px;
-}
-
-/* Notifications Title */
-.widget-title {
-  font-size: 1.5em;
-  margin: 6px;
-}
-
-.widget-title > button {
-  background: @background;
-  border-radius: 6px;
-  border: 2px solid @yellow;
-  padding: 4px 16px;
-}
-
-.widget-title > button:hover {
-  background-color: @green;
-}
-
-.widget-title > button:active {
-  background-color: @green;
-}
-
-  /* Widget DND */
-.widget-dnd {
-  margin: 6px;
-  font-size: 1.2rem;
-}
-
-.widget-dnd > switch {
-  background: @Lbackground;
-  font-size: initial;
-  border-radius: 8px;
-  box-shadow: none;
-  padding: 2px;
-}
-
-.widget-dnd > switch:hover {
-  background: @blue;
-}
-
-.widget-dnd > switch:checked {
-  background: @red;
-}
-
-.widget-dnd > switch:checked:hover {
-  background: @blue;
-}
-
-.widget-dnd > switch slider {
-  background: @foreground;
-  border-radius: 6px;
-}
-
-/* Floating Notifications */
-
 .notification-row {
+  transition: all 200ms ease;
   outline: none;
-  margin: 0;
-  padding: 0px;
+  margin-bottom: 4px;
+  margin-right: 13px;
+  margin-top: 8px;
+  border-radius: 80px;
 }
 
-.floating-notifications.background .notification-row .notification-background {
-  background: @background;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,.6);
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+	opacity: 1;
+	background: transparent;
+}
+
+.notification-row:focus .notification,
+.notification-row:hover .notification {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+  background: @bg;
+}
+
+.control-center .notification {
+  box-shadow: none;
+}
+
+.control-center .notification-row {
+	opacity: 0.5;
+	margin: -5px;
+}
+
+.notification {
   border: 2px solid @yellow;
-  border-radius: 24px;
-  padding: 0;
-  margin-right: 16px;
-  margin-top: 6px;
-}
-
-.floating-notifications.background .notification-row .notification-background .notification {
-  padding: 6px;
-  border-radius: 12px;
-}
-
-.floating-notifications.background .notification-row .notification-background .notification.critical {
-  border: 2px solid @red;
-}
-
-.floating-notifications.background .notification-row .notification-background .notification .notification-content {
-  margin: 14px;
-}
-
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * {
-  min-height: 3.4em;
-}
-
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
+  background-color: @bg;
+  transition: all 200ms ease;
   border-radius: 8px;
-  background-color: @background;
-  margin: 6px;
-  border: 1px solid transparent;
+  margin: 12px 7px 0px 7px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+  padding: 0;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
-  background-color: @Lbackground;
-  border: 1px solid @blue;
+.notification-content {
+  border-radius: 8px;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
-  background-color: @blue;
-  color: @Lbackground;
+.close-button {
+  background-color: @bg;
+  color: @fg;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 100%;
+  margin-top: 17px;
+  margin-right: 10px;
+  box-shadow: none;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
 }
 
-.summary {
-  font-weight: 800;
-  font-size: 1.2rem;
+.close-button:hover {
+  box-shadow: none;
+  background-color: @red;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 9px;
+  margin: 0;
+  box-shadow: none;
+  background: @bg;
+  border-radius: 8px;
+  color: @fg;
+}
+
+.notification-action {
+  background: @Lbg;
+  margin: 10px;
+  margin-top: 2px;
+  margin-bottom: 7px;
+  transition: background 200ms ease-in-out;
+}
+
+.notification-default-action:hover {
+  background: @bg;
+}
+
+.notification-action:hover {
+  background: @blue;
+  color: @bg;
+}
+
+.notification-alt-actions {
+  background: @bg;
 }
 
 .image {
-  margin-right: 10px;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.body-image {
+  margin-top: 6px;
+  background-color: @fg;
+  border-radius: 8px;
+}
+
+.summary {
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: @fg;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: @fg;
+  text-shadow: none;
+  margin-right: 18px;
 }
 
 .body {
-  font-size: 1rem;
+  font-size: 15px;
+  font-weight: normal;
+  background: transparent;
+  color: @fg;
+  text-shadow: none;
 }
 
-.floating-notifications.background .notification-row .notification-background .close-button {
-  margin: 6px;
-  padding: 2px;
-  border-radius: 6px;
-  background-color: transparent;
-  border: 1px solid transparent;
+/* The "Notifications" and "Do Not Disturb" text widget */
+.top-action-title {
+  color: @fg;
+  text-shadow: none;
 }
 
-.floating-notifications.background .notification-row .notification-background .close-button:hover {
-  background-color: @blue;
+.control-center-clear-all {
+  color: @fg;
+  text-shadow: none;
+  background: @Lbg;
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid @blue;
+  box-shadow: none;
+  border-radius: 8px;
 }
 
-.floating-notifications.background .notification-row .notification-background .close-button:active {
-  background-color: @red;
-  color: @background;
+.control-center-clear-all:hover {
+  background: @bg;
 }
 
-.notification.critical progress {
-  background-color: @red;
-}
-
-.notification.low progress,
-.notification.normal progress {
-  background-color: @red;
-}
-
-/* Notifications in SwayNC */
-
-.control-center .notification-row .notification-background,
-.control-center .notification-row .notification-background .notification.critical {
-  background-color: @background;
-  border-radius: 16px;
+.control-center-dnd {
+  border-radius: 8px;
+  background: @bg;
   border: 1px solid @yellow;
-  margin: 4px 0px;
+  box-shadow: none;
+  min-width: 40px;
+  min-height: 20px;
+}
+
+.control-center-dnd:checked {
+  background: @yellow;
+}
+
+.control-center-dnd slider {
+  background: @Lbg;
+  border-radius: 18px;
+}
+
+.control-center {
+  background: @bg;
+  border-radius: 10px;
+  background-clip: border-box;
   padding: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
+  color: @fg;
+  border: 2px solid @yellow;
 }
 
-.control-center .notification-row .notification-background .notification.critical {
-  color: @red;
+.control-center-list {
+  background: transparent;
 }
 
-.control-center .notification-row .notification-background .notification .notification-content {
-  margin: 6px;
-  padding: 8px 6px 2px 2px;
+.floating-notifications {
+  background: transparent;
 }
 
-.control-center .notification-row .notification-background .notification > *:last-child > * {
-  min-height: 3.4em;
+/* Window behind control center and on all other monitors */
+.blank-window {
+  background: transparent;
 }
 
-.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
-  background: @background;
-  color: @cyan;
-  border-radius: 12px;
-  margin: 6px;
+/*** Widgets ***/
+
+/* Title widget */
+.widget-title {
+  margin: 8px;
+  font-size: 1.2rem;
 }
 
-.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
-  background: @cyan;
+.widget-title > button {
+  font-size: initial;
+  min-height: 30px;
+  min-width: 40px;
+  color: @fg;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  text-shadow: none;
+  background: @bg;
+  border: 2px solid @blue;
+  border-radius: 8px;
+  transition: all ease 200ms;
 }
 
-.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
-  background-color: @cyan;
+.widget-title > button:hover {
+  transition: all ease 200ms;
+  background: @Lbg;
+  color: @blue;
 }
 
+/* DND widget */
+.widget-dnd {
+  margin: 8px;
+  font-size: 1.2rem;
+}
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 18px;
+  background: @Lbg;
+  border: 1px solid @blue;
+  box-shadow: none;
+  padding: 1px;
+}
+.widget-dnd > switch:checked {
+  background: @blue;
+  border: 1px solid @blue;
+}
+.widget-dnd > switch slider {
+  background: @fg;
+  border-radius: 18px;
+  border: 1px solid @blue;
+}
+
+/* Label widget */
+.widget-label {
+  margin: 8px;
+}
+.widget-label > label {
+  font-size: 1.2rem;
+}

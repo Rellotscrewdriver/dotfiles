@@ -7,6 +7,7 @@
   "layer-shell": true,
   "layer-shell-cover-screen": true,
   "cssPriority": "application",
+  "ignore-gtk-theme": true,
   "control-center-margin-top": 5,
   "control-center-margin-bottom": 300,
   "control-center-margin-right": 15,
@@ -16,9 +17,9 @@
   "notification-icon-size": 64,
   "notification-body-image-height": 100,
   "notification-body-image-width": 200,
-  "timeout": 3,
-  "timeout-low": 5,
-  "timeout-critical": 0,
+  "timeout": 10,
+  "timeout-low": 10,
+  "timeout-critical": 30,
   "fit-to-screen": true,
   "relative-timestamps": true,
   "control-center-width": 500,
@@ -31,17 +32,6 @@
   "hide-on-action": true,
   "text-empty": "No Notifications",
   "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
-    "example-action-script": {
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
-    }
-  },
   "notification-visibility": {
     "example-name": {
       "state": "muted",
@@ -55,11 +45,6 @@
     "notifications"
   ],
   "widget-config": {
-    "inhibitors": {
-      "text": "Inhibitors",
-      "button-text": "Clear All",
-      "clear-all-button": true
-    },
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
@@ -69,11 +54,7 @@
       "text": "Do Not Disturb"
     },
     "label": {
-      "max-lines": 5
-    },
-    "buttons-grid": {
-      "buttons-per-row": 2,
-      "actions": []
+      "max-lines": 2
     }
   }
 }

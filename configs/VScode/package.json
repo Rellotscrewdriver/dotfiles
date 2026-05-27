@@ -1,0 +1,45 @@
+{
+	"name": "Everblush",
+	"displayName": "Everblush Theme",
+	"description": "A dark, vibrant and beautiful looking colorscheme. Contains a beta theme",
+	"publisher": "mangeshrex",	
+  "version": "0.1.1",
+	"license": "MIT",
+	"icon": "extension-marketplace-icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com"
+	},
+	"bugs": {
+		"url": "https://github.com"
+	},
+	"engines": {
+		"vscode": "^1.62.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Everblush New",
+				"uiTheme": "vs-dark",
+				"path": "./themes/new-everblush.json"
+			},
+      {
+				"label": "Everblush",
+				"uiTheme": "vs-dark",
+				"path": "./themes/everblush-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "3a8740af-c55d-4aa8-984d-463016244774",
+    "publisherDisplayName": "mangeshrex",
+    "publisherId": "30851b8a-af21-402c-a145-c2d51555d730",
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1765616831069,
+		"targetPlatform": "universal",
+		"size": 133419
+	}
+}

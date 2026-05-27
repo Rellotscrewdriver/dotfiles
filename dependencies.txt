@@ -31,3 +31,5 @@ playerctl
 swaybg
 acpi
 python
+starship
+code

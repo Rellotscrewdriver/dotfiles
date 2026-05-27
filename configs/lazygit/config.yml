@@ -5,16 +5,16 @@ gui:
       - "#76b0e8" # Green
       - bold
     inactiveBorderColor:
-      - "#dadada" # Text
+      - "#dadada"
     optionsTextColor:
-      - "#e5c76b" # Blue
+      - "#e5c76b"
     selectedLineBgColor:
-      - "#6cbfbf" # Surface0
+      - "#6cbfbf"
     selectedRangeBgColor:
-      - "#313244" # Surface0
+      - "#6cbfbf"
     cherryPickedCommitBgColor:
-      - "#c47fd5" # Teal
+      - "#c47fd5" 
     cherryPickedCommitFgColor:
-      - "#dadada" # Blue
+      - "#dadada"
     unstagedChangesColor:
-      - "#e57474"       # Red
+      - "#e57474"

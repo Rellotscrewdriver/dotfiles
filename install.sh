@@ -23,7 +23,7 @@ BGreen='\e[1;32m'
 
 installDependencies() {
   echo "Installing main Arch dependencies"
-  paru -Sy --needed $(cat dependencies.txt)
+  paru -Sy --noconfirm --needed $(cat dependencies.txt)
 }
 
 installConfig() {
@@ -32,6 +32,7 @@ installConfig() {
     rm -rf ~/.config/VScode
     code --install-extension "mangeshrex.everblush"
     cp -prfv $DIR/configs/VScode/ ~/.vscode-oss/extensions/mangeshrex.everblush-0.1.1-universal/
+    makepkg -si
     chsh -s $(which fish)
     echo "done"
 }
@@ -89,6 +90,9 @@ installFonts(){
 
 #TODO: make a script to install paru automatically!
 #TODO: make an uninstall script as well
+#TODO: install the VScode theme
+#TODO: install my custom eww repo
+
 installParu(){
     if ! pacman -Qm "paru" &>/dev/null ; then
         echo "Installing Paru"

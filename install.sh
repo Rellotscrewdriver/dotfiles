@@ -35,10 +35,10 @@ installConfig() {
 
 installTheme(){
     echo "installing icons, cursors theme and wallpapers... "
-	sudo mkdir -p /usr/share/themes/Everblush/ /usr/share/icons/ModernIce 
+	sudo mkdir -p /usr/share/icons/ModernIce ~/.themes
     sudo paru -S --noconfirm papirus-icon-theme 
 	paru -S --noconfirm bibata-cursor-theme-bin
-    sudo cp -r $DIR/theme/GTK/* /usr/share/themes/
+    sudo cp -r $DIR/theme/GTK/* ~/.themes
     echo "done"
 }
 
@@ -84,6 +84,34 @@ installFonts(){
     echo "font installed"
 }
 
+#TODO: make a script to install paru automatically!
+#TODO: make an uninstall script as well
+installParu(){
+    if ! pacman -Qm "paru" &>/dev/null ; then
+        git clone https://aur.archlinux.org/paru.git
+        cd paru
+        makpkg -si
+    fi
+}
+
+uninstall(){
+    rm -rf ~/.themes/Everblush*
+    rm -rf ~/wallpapers
+    sudo rm -rf /etc/greetd/* 
+    sudo rm -rf /usr/share/backgrounds/greeter.jpg
+    paru -Rnsc --needed $(cat dependencies.txt)
+
+	sudo rm -rf /usr/share/icons/ModernIce
+    sudo paru -Rnsc --noconfirm papirus-icon-theme 
+	sudo paru -Rnsc --noconfirm bibata-cursor-theme-bin
+    sudo rm -r $DIR/theme/GTK/*
+
+    echo "Removing done"
+
+}
+
+installParu
+
 clear
 
 echo -e "${BBlue}                        Welcome to my configuration! ${Reset}"
@@ -100,10 +128,12 @@ do
     echo -e  "${Red}[4] Install GRUB theme "
     echo -e  "${Green}[5] Install Wallpapers"
     echo -e  "${Blue}[6] Only Install Config Files(Sway, Swaylock, btop etc.)"
+    #echo -e  "${Red}[9] Uninstall the theme"
     echo -e  "${BRed}[0] Quit        ${Reset}"
     echo
     read -p "Enter your choice: " choice
     case $choice in
+    clear
     0)
         exit
     ;;
@@ -136,6 +166,10 @@ do
     ;;
     6)
         installConfig
+        break
+    ;;    
+    9)
+        #uninstall
         break
     ;;    
     *)

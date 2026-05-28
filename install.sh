@@ -88,9 +88,12 @@ installFonts(){
 #TODO: make an uninstall script as well
 installParu(){
     if ! pacman -Qm "paru" &>/dev/null ; then
-        git clone https://aur.archlinux.org/paru.git
-        cd paru
-        makpkg -si
+        echo "Installing Paru"
+        #git clone https://aur.archlinux.org/paru.git
+        #cd paru
+        #makpkg -si
+    else
+        echo "SKipping paru"
     fi
 }
 
@@ -132,8 +135,8 @@ do
     echo -e  "${BRed}[0] Quit        ${Reset}"
     echo
     read -p "Enter your choice: " choice
-    case $choice in
     clear
+    case $choice in    
     0)
         exit
     ;;
@@ -145,6 +148,7 @@ do
         installWallpapers
         installLogin
         installGRUB
+        clear
         echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
         break                
     ;;

@@ -29,6 +29,9 @@ installDependencies() {
 installConfig() {
     echo "Installing configs"
     ln -sfvr $DIR/configs/* ~/.config/
+    rm -rf ~/.config/VScode
+    code --install-extension "mangeshrex.everblush"
+    cp -prfv $DIR/configs/VScode/ ~/.vscode-oss/extensions/mangeshrex.everblush-0.1.1-universal/
     chsh -s $(which fish)
     echo "done"
 }

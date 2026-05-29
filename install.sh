@@ -5,7 +5,7 @@
 
 DIR=$(pwd)
 LOCAL_DIR=~/.local/share/fonts 
-NERD_FONT_DIR=~/RobotoMono.zip
+NERD_FONT_DIR=~/FontTemp/RobotoMono.zip
 
 # Reset
 Reset='\033[0m'
@@ -24,14 +24,20 @@ BGreen='\e[1;32m'
 installDependencies() {
   echo "Installing main Arch dependencies"
   paru -Sy --noconfirm --needed $(cat dependencies.txt)
+  #build my custom eww
+  makepkg -si
+
 }
 
 installConfig() {
     echo "Installing configs"
-    ln -sfvr $DIR/configs/* ~/.config/
-    rm -rf ~/.config/VScode
+    cp -r $DIR/configs/* ~/.config/
     code --install-extension "mangeshrex.everblush"
-    cp -prfv $DIR/configs/VScode/ ~/.vscode-oss/extensions/mangeshrex.everblush-0.1.1-universal/
+    # this rsync is only used for copying the VScode theme 
+    # cuz normal cp is being a smartass and fuck up the folder structure
+    rsync -av ./configs/VScode/* ~/.vscode-oss/extensions/mangeshrex.everblush*
+    rm -rf ~/.config/VScode
+    sudo pacman -R rsync
     makepkg -si
     chsh -s $(which fish)
     echo "done"
@@ -70,7 +76,7 @@ installWallpapers(){
 }
 
 installFonts(){
-    #font
+    # install font
     echo "installing fonts... "
     echo "Installing RobotMono nerd font in your local directory"
     mkdir -p $LOCAL_DIR
@@ -79,112 +85,174 @@ installFonts(){
     else
         echo "installing the required fonts from the internet, please wait if you do have internet connection"
         wget -v https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip -O $NERD_FONT_DIR
+        unzip -j $NERD_FONT_DIR -d $LOCAL_DIR
+        fc-cache -fv
+        rm -f $NERD_FONT_DIR
     fi
 
-    unzip -j $NERD_FONT_DIR -d $LOCAL_DIR
     cp $DIR/fonts/* $LOCAL_DIR/
-    fc-cache -fv
-    rm -f $NERD_FONT_DIR
     echo "font installed"
 }
 
-#TODO: make a script to install paru automatically!
 #TODO: make an uninstall script as well
-#TODO: install the VScode theme
 #TODO: install my custom eww repo
+#TODO: make an uninstall menu!
 
 installParu(){
     if ! pacman -Qm "paru" &>/dev/null ; then
-        echo "Installing Paru"
-        #git clone https://aur.archlinux.org/paru.git
-        #cd paru
-        #makpkg -si
+        echo "Installing Paru my boi"
+        git clone https://aur.archlinux.org/paru.git
+        cd paru
+        makpkg -si
     else
-        echo "SKipping paru"
+        echo "Skipping paru"
     fi
+}
+
+uninstallMenu(){
+echo -e "${BBlue}                        Welcome to my configuration! ${Reset}"
+echo "Select anything you want to remove"
+echo "some options might break your system! remove what you don't need"
+echo " "
+echo -e  "${BRed}[1] Uninstall Everything(May Break your system!)"
+echo -e  "${BRed}[2] Uninstall Theme "
+echo -e  "${BRed}[3] Uninstall Dependencies "
+echo -e  "${Red}[4] Uninstall GRUB theme "
+echo -e  "${Green}[5] Uninstall Wallpapers"
+echo -e  "${Blue}[6] Uninstall Config Files"
+echo -e  "${Red}[7] Uninstall the GTK/Qt theme"
+echo -e  "${BRed}[0] Quit        ${Reset}"
+echo
+read -p "Enter your choice: " choice
+clear
+case $choice in    
+0)
+    exit
+;;
+1)
+    installDependencies
+    installConfig
+    installTheme
+    installFonts
+    installWallpapers
+    installLogin
+    installGRUB
+    clear
+    echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
+    break                
+;;
+2)	    
+    installTheme
+    break
+;;
+3)
+    installDependencies
+    break
+;;
+4)
+    installGRUB
+    break
+;;
+5)
+    installWallpapers
+    break
+;;
+6)
+    installConfig
+    break
+;;    
+9)
+    clear
+    uninstall
+    break
+;;    
+*)
+    echo "Sorry, choice understand"
+    break
+;;
+esac
 }
 
 uninstall(){
     rm -rf ~/.themes/Everblush*
     rm -rf ~/wallpapers
-    sudo rm -rf /etc/greetd/* 
+    #sudo rm -rf /etc/greetd/* 
     sudo rm -rf /usr/share/backgrounds/greeter.jpg
-    paru -Rnsc --needed $(cat dependencies.txt)
+    #paru -Rnsc --needed $(cat dependencies.txt)
 
 	sudo rm -rf /usr/share/icons/ModernIce
-    sudo paru -Rnsc --noconfirm papirus-icon-theme 
-	sudo paru -Rnsc --noconfirm bibata-cursor-theme-bin
-    sudo rm -r $DIR/theme/GTK/*
+    #sudo paru -Rnsc --noconfirm papirus-icon-theme 
+	#sudo paru -Rnsc --noconfirm bibata-cursor-theme-bin
+    sudo rm -r /usr/share/themes/Everblush*
 
-    echo "Removing done"
-
+    echo "${BRed}Partial Removal is done, remove uneeded configs and packages at your desicion"
 }
 
 installParu
 
 clear
 
-echo -e "${BBlue}                        Welcome to my configuration! ${Reset}"
+printf "%*s%s\n" $(( ( $(tput cols) - ${#text} ) / 2 )) "" "Welcome to my configuration! ${Reset}"   
+echo -e "${BBlue} Welcome to my configuration! ${Reset}"
 echo "Select anything you want but this script won't install everything"
 echo "so you need to setup some stuff yourself"
 echo "after installing do not delete this folder the configs are in, else it won't work properly"
 echo -e "${BRed}before you install my config in any of these steps you need to have 'paru' installed"
-while :
-do
-	echo " "
-    echo -e  "${BRed}[1] Install Everything"
-    echo -e  "${Green}[2] Install Theme "
-    echo -e  "${Blue}[3] Install Dependencies "
-    echo -e  "${Red}[4] Install GRUB theme "
-    echo -e  "${Green}[5] Install Wallpapers"
-    echo -e  "${Blue}[6] Only Install Config Files(Sway, Swaylock, btop etc.)"
-    #echo -e  "${Red}[9] Uninstall the theme"
-    echo -e  "${BRed}[0] Quit        ${Reset}"
-    echo
-    read -p "Enter your choice: " choice
+echo " "
+echo -e  "${BRed}[1] Install Everything"
+echo -e  "${Green}[2] Install Theme "
+echo -e  "${Blue}[3] Install Dependencies "
+echo -e  "${Red}[4] Install GRUB theme "
+echo -e  "${Green}[5] Install Wallpapers"
+echo -e  "${Blue}[6] Only Install Config Files(Sway, Swaylock, btop etc.)"
+echo -e  "${Red}[9] Uninstall the theme"
+echo -e  "${BRed}[0] Quit        ${Reset}"
+echo
+read -p "Enter your choice: " choice
+clear
+case $choice in    
+0)
+    exit
+;;
+1)
+    installDependencies
+    installConfig
+    installTheme
+    installFonts
+    installWallpapers
+    installLogin
+    installGRUB
     clear
-    case $choice in    
-    0)
-        exit
-    ;;
-    1)
-        installDependencies
-        installConfig
-        installTheme
-        installFonts
-        installWallpapers
-        installLogin
-        installGRUB
-        clear
-        echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
-        break                
-    ;;
-    2)	    
-        installTheme
-        break
-    ;;
-    3)
-        installDependencies
-        break
-    ;;
-    4)
-        installGRUB
-        break
-    ;;
-    5)
-        installWallpapers
-        break
-    ;;
-    6)
-        installConfig
-        break
-    ;;    
-    9)
-        #uninstall
-        break
-    ;;    
-    *)
-        echo "Sorry, choice understand"
-    ;;
-    esac
-done
+    echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
+    break                
+;;
+2)	    
+    installTheme
+    break
+;;
+3)
+    installDependencies
+    break
+;;
+4)
+    installGRUB
+    break
+;;
+5)
+    installWallpapers
+    break
+;;
+6)
+    installConfig
+    break
+;;    
+9)
+    clear
+    uninstallMenu
+    break
+;;    
+*)
+    echo "Sorry, choice understand"
+    break
+;;
+esac

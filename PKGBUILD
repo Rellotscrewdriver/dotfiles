@@ -1,6 +1,6 @@
 # Maintainer: Rellot
 # This is my personal eww build for my dotfiles
-# this will replace/update your current eww!
+# this will replace/update your current eww! use it at your risk!
 
 _pkgname=CustomEww
 pkgname="eww-git"

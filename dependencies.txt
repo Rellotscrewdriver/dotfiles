@@ -16,7 +16,6 @@ greetd-regreet
 qt5ct
 qt6ct
 nwg-look
-eww
 swaylock-effects
 swaync 
 greetd
@@ -33,3 +32,6 @@ acpi
 python
 starship
 code
+bluetui
+impala
+rsync

@@ -45,8 +45,7 @@ installConfig() {
 installTheme(){
     echo "installing icons, cursors theme and wallpapers... "
 	sudo mkdir -p /usr/share/icons/ModernIce ~/.themes
-    sudo paru -S --noconfirm papirus-icon-theme 
-	paru -S --noconfirm bibata-cursor-theme-bin
+    sudo paru -S --noconfirm papirus-icon-theme bibata-cursor-theme-bin 
     sudo cp -r $DIR/theme/GTK/* ~/.themes
     echo "done"
 }
@@ -101,74 +100,10 @@ installParu(){
     if ! pacman -Qm "paru" &>/dev/null ; then
         echo "Installing Paru my boi"
         git clone https://aur.archlinux.org/paru.git
-        cd paru && makepkg -si
+        cd paru && makepkg -si && cd ..
     else
         echo "Skipping paru"
     fi
-}
-
-uninstallMenu(){
-echo -e "${BBlue}                        Welcome to my configuration! ${Reset}"
-echo "Select anything you want to remove"
-echo "some options might break your system! remove what you don't need"
-echo " "
-echo -e  "${BRed}[1] Uninstall Everything(May Break your system!)"
-echo -e  "${BRed}[2] Uninstall Theme "
-echo -e  "${BRed}[3] Uninstall Dependencies "
-echo -e  "${Red}[4] Uninstall GRUB theme "
-echo -e  "${Green}[5] Uninstall Wallpapers"
-echo -e  "${Blue}[6] Uninstall Config Files"
-echo -e  "${Red}[7] Uninstall the GTK/Qt theme"
-echo -e  "${BRed}[0] Quit        ${Reset}"
-echo
-read -p "Enter your choice: " choice
-clear
-case $choice in    
-0)
-    exit
-;;
-1)
-    installDependencies
-    installConfig
-    installTheme
-    installFonts
-    installWallpapers
-    installLogin
-    installGRUB
-    clear
-    echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
-    break                
-;;
-2)	    
-    installTheme
-    break
-;;
-3)
-    installDependencies
-    break
-;;
-4)
-    installGRUB
-    break
-;;
-5)
-    installWallpapers
-    break
-;;
-6)
-    installConfig
-    break
-;;    
-9)
-    clear
-    uninstall
-    break
-;;    
-*)
-    echo "Sorry, choice understand"
-    break
-;;
-esac
 }
 
 uninstall(){
@@ -179,14 +114,69 @@ uninstall(){
     #paru -Rnsc --needed $(cat dependencies.txt)
 
 	sudo rm -rf /usr/share/icons/ModernIce
-    #sudo paru -Rnsc --noconfirm papirus-icon-theme 
-	#sudo paru -Rnsc --noconfirm bibata-cursor-theme-bin
+    sudo paru -Rnsc --noconfirm papirus-icon-theme 
+	sudo paru -Rnsc --noconfirm bibata-cursor-theme-bin
     sudo rm -r /usr/share/themes/Everblush*
 
     echo "${BRed}Partial Removal is done, remove uneeded configs and packages at your desicion"
 }
 
-printf "%*s%s\n" $(( ( $(tput cols) - ${#text} ) / 2 )) "" "Welcome to my configuration! ${Reset}"   
+uninstallMenu(){
+    echo -e "${BRed} Welcome to my Uninstall Menu! ${Reset}"
+    echo "Select anything you want to remove"
+    echo "some options might break your system! remove what you don't need"
+    echo " "
+    echo -e "${BRed}[1] Uninstall Everything(This May Break your system!)"
+    echo -e "${BRed}[2] Uninstall Dependencies(This May Break your system!)"    
+    echo -e "${BRed}[3] Uninstall GRUB theme "
+    echo -e "${Red}[4] Uninstall Wallpapers"
+    echo -e "${BRed}[5] Uninstall the GTK/Qt theme"
+    echo -e "${Green}[0] Quit        ${Reset}"
+    echo
+    read -p "Enter your choice: " choice
+    clear
+    case $choice in    
+    0)
+        exit
+    ;;
+    1)
+        uninstall
+        echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
+        break                
+    ;;
+    2)	    
+        paru -Rns --needed $(cat dependencies.txt)
+        break
+    ;;
+    3)
+        echo "removing GRUB theme... "
+	    sudo rm -rf /boot/grub/themes/stylish
+        sudo sed -i 's/^GRUB_THEME=/#GRUB_THEME=/' /etc/default/grub
+        sudo grub-mkconfig -o /boot/grub/grub.cfg
+        break
+    ;;
+    4)
+        rm -rf ~/wallpapers
+        sudo rm -rf /usr/share/backgrounds/greeter.jpg
+        break
+    ;;
+    5)
+        rm -rf ~/.themes/Everblush*
+	    sudo rm -rf /usr/share/icons/ModernIce
+        paru -Rnsc --noconfirm papirus-icon-theme bibata-cursor-theme-bin
+        sudo rm -r /usr/share/themes/Everblush*
+
+        break
+    ;;
+    *)
+        echo "Sorry, choice understand"
+        break
+    ;;
+    esac
+}
+
+
+
 echo -e "${BBlue} Welcome to my configuration! ${Reset}"
 echo "Select anything you want but this script won't install everything"
 echo "so you need to setup some stuff yourself"
@@ -218,11 +208,12 @@ case $choice in
     installLogin
     installGRUB
     clear
-    echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
+    echo -e "${Red} now disable your login manager with greetd"
+    echo -e "${BRed} then do a system reboot to see the changes ${Reset}"
     break                
 ;;
 2)	
-    installParu    
+    installParu
     installTheme
     break
 ;;

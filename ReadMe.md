@@ -15,10 +15,16 @@ This repository contains my personal dotfiles. They are stored here for convenie
 
 my install script isn't perfect so only execute this if you know what you're doing,
 this script only works if you're on arch linux!
-- install dependencies from `dependencies.txt` file
-- Clone this repository
+- before cloning, install `git` and `base-devel`(for cloning and compiling AUR packages) if you haven't  
+- Clone this repository 
+```
+git clone --depth=1 https://www.github.com/rellotscrewdriver/dotfiles.git && cd dotfiles
+```
 - run `sh install.sh`
-- disable your current login manager and then enable greetd by ```sudo systemctl enable greetd.service```
+- disable your current login manager and then enable greetd by 
+```
+sudo systemctl enable greetd.service
+```
 - restart and enjoy!
 
 ## 🎹 Shortcut keys

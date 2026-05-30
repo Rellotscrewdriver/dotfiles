@@ -26,7 +26,6 @@ installDependencies() {
   paru -Sy --noconfirm --needed $(cat dependencies.txt)
   #build my custom eww
   makepkg -si
-
 }
 
 installConfig() {
@@ -102,8 +101,7 @@ installParu(){
     if ! pacman -Qm "paru" &>/dev/null ; then
         echo "Installing Paru my boi"
         git clone https://aur.archlinux.org/paru.git
-        cd paru
-        makpkg -si
+        cd paru && makepkg -si
     else
         echo "Skipping paru"
     fi
@@ -188,10 +186,6 @@ uninstall(){
     echo "${BRed}Partial Removal is done, remove uneeded configs and packages at your desicion"
 }
 
-installParu
-
-clear
-
 printf "%*s%s\n" $(( ( $(tput cols) - ${#text} ) / 2 )) "" "Welcome to my configuration! ${Reset}"   
 echo -e "${BBlue} Welcome to my configuration! ${Reset}"
 echo "Select anything you want but this script won't install everything"
@@ -215,6 +209,7 @@ case $choice in
     exit
 ;;
 1)
+    installParu
     installDependencies
     installConfig
     installTheme
@@ -226,11 +221,13 @@ case $choice in
     echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
     break                
 ;;
-2)	    
+2)	
+    installParu    
     installTheme
     break
 ;;
 3)
+    installParu
     installDependencies
     break
 ;;

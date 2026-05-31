@@ -37,7 +37,7 @@ installConfig() {
     rsync -av ./configs/VScode/* ~/.vscode-oss/extensions/mangeshrex.everblush*
     rm -rf ~/.config/VScode
     sudo pacman -R --noconfirm rsync
-    makepkg -si
+    cd packages/CustomEww && makepkg -si && cd ../..
     chsh -s $(which fish)
     echo "done"
 }
@@ -99,8 +99,8 @@ installFonts(){
 installParu(){
     if ! pacman -Qm "paru" &>/dev/null ; then
         echo "Installing Paru my boi"
-        git clone https://aur.archlinux.org/paru.git
-        cd paru && makepkg -si && cd ..
+        git clone https://aur.archlinux.org/paru.git packages/paru
+        cd packages/paru && makepkg -si && cd ../..
     else
         echo "Skipping paru"
     fi

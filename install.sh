@@ -78,6 +78,7 @@ installFonts(){
     echo "installing fonts... "
     echo "Installing RobotoMono nerd font in your local directory"
     mkdir -p $LOCAL_DIR
+    mkdir -p ~/FontTemp/
     if [ -f $NERD_FONT_DIR ]; then
         echo "RobotoMono's font's already there, skip installing it"
     else
@@ -91,10 +92,6 @@ installFonts(){
     cp $DIR/fonts/* $LOCAL_DIR/
     echo "font installed"
 }
-
-#TODO: make an uninstall script as well
-#TODO: install my custom eww repo
-#TODO: make an uninstall menu!
 
 installParu(){
     if ! pacman -Qm "paru" &>/dev/null ; then
@@ -115,7 +112,6 @@ uninstall(){
 
 	sudo rm -rf /usr/share/icons/ModernIce
     sudo paru -Rnsc --noconfirm papirus-icon-theme bibata-cursor-theme-bin
-    sudo rm -r /usr/share/themes/Everblush*
 
 	sudo rm -rf /boot/grub/themes/stylish
     sudo sed -i 's/^GRUB_THEME=/#GRUB_THEME=/' /etc/default/grub
@@ -131,10 +127,9 @@ uninstallMenu(){
     echo "this menu won't delete everything so as to slightly protect your system"
     echo " "
     echo -e "${BRed}[1] Uninstall Everything(This May Break your system!)"
-    echo -e "${BRed}[2] Uninstall Dependencies(This May Break your system!)"    
-    echo -e "${Red}[3] Uninstall GRUB theme"
-    echo -e "${Red}[4] Uninstall Wallpapers"
-    echo -e "${Red}[5] Uninstall the GTK/Qt theme"
+    echo -e "${Red}[2] Uninstall GRUB theme"
+    echo -e "${Red}[3] Uninstall Wallpapers"
+    echo -e "${Red}[4] Uninstall the GTK/Qt theme"
     echo -e "${Green}[0] Quit        ${Reset}"
     echo
     read -p "Enter your choice: " choice
@@ -148,22 +143,18 @@ uninstallMenu(){
         echo -e "${BRed} now do a system reboot to see the changes ${Reset}"
         break                
     ;;
-    2)	    
-        paru -Rns --needed $(cat dependencies.txt)
-        break
-    ;;
-    3)
+    2)
 	    sudo rm -rf /boot/grub/themes/stylish
         sudo sed -i 's/^GRUB_THEME=/#GRUB_THEME=/' /etc/default/grub
         sudo grub-mkconfig -o /boot/grub/grub.cfg
         break
     ;;
-    4)
+    3)
         rm -rf ~/wallpapers
         sudo rm -rf /usr/share/backgrounds/greeter.jpg
         break
     ;;
-    5)
+    4)
         rm -rf ~/.themes/Everblush*
 	    sudo rm -rf /usr/share/icons/ModernIce
         paru -Rnsc --noconfirm papirus-icon-theme bibata-cursor-theme-bin

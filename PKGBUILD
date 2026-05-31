@@ -3,7 +3,7 @@
 # this will replace/update your current eww! use it at your risk!
 
 _pkgname=CustomEww
-pkgname="eww-git"
+pkgname="$_pkgname-git"
 pkgver=0.7.0
 pkgrel=1
 pkgdesc="ElKowar's wacky widgets by rellot"

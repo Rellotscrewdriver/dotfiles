@@ -36,7 +36,7 @@ installConfig() {
     # cuz normal cp is being a smartass and fuck up the folder structure
     rsync -av ./configs/VScode/* ~/.vscode-oss/extensions/mangeshrex.everblush*
     rm -rf ~/.config/VScode
-    sudo pacman -R rsync
+    sudo pacman -R --noconfirm rsync
     makepkg -si
     chsh -s $(which fish)
     echo "done"
@@ -76,7 +76,7 @@ installWallpapers(){
 installFonts(){
     # install font
     echo "installing fonts... "
-    echo "Installing RobotMono nerd font in your local directory"
+    echo "Installing RobotoMono nerd font in your local directory"
     mkdir -p $LOCAL_DIR
     if [ -f $NERD_FONT_DIR ]; then
         echo "RobotoMono's font's already there, skip installing it"
@@ -114,9 +114,12 @@ uninstall(){
     #paru -Rnsc --needed $(cat dependencies.txt)
 
 	sudo rm -rf /usr/share/icons/ModernIce
-    sudo paru -Rnsc --noconfirm papirus-icon-theme 
-	sudo paru -Rnsc --noconfirm bibata-cursor-theme-bin
+    sudo paru -Rnsc --noconfirm papirus-icon-theme bibata-cursor-theme-bin
     sudo rm -r /usr/share/themes/Everblush*
+
+	sudo rm -rf /boot/grub/themes/stylish
+    sudo sed -i 's/^GRUB_THEME=/#GRUB_THEME=/' /etc/default/grub
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
 
     echo "${BRed}Partial Removal is done, remove uneeded configs and packages at your desicion"
 }
@@ -125,12 +128,13 @@ uninstallMenu(){
     echo -e "${BRed} Welcome to my Uninstall Menu! ${Reset}"
     echo "Select anything you want to remove"
     echo "some options might break your system! remove what you don't need"
+    echo "this menu won't delete everything so as to slightly protect your system"
     echo " "
     echo -e "${BRed}[1] Uninstall Everything(This May Break your system!)"
     echo -e "${BRed}[2] Uninstall Dependencies(This May Break your system!)"    
-    echo -e "${BRed}[3] Uninstall GRUB theme "
+    echo -e "${Red}[3] Uninstall GRUB theme"
     echo -e "${Red}[4] Uninstall Wallpapers"
-    echo -e "${BRed}[5] Uninstall the GTK/Qt theme"
+    echo -e "${Red}[5] Uninstall the GTK/Qt theme"
     echo -e "${Green}[0] Quit        ${Reset}"
     echo
     read -p "Enter your choice: " choice
@@ -149,7 +153,6 @@ uninstallMenu(){
         break
     ;;
     3)
-        echo "removing GRUB theme... "
 	    sudo rm -rf /boot/grub/themes/stylish
         sudo sed -i 's/^GRUB_THEME=/#GRUB_THEME=/' /etc/default/grub
         sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -165,7 +168,6 @@ uninstallMenu(){
 	    sudo rm -rf /usr/share/icons/ModernIce
         paru -Rnsc --noconfirm papirus-icon-theme bibata-cursor-theme-bin
         sudo rm -r /usr/share/themes/Everblush*
-
         break
     ;;
     *)

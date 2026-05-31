@@ -12,8 +12,8 @@ url="https://github.com/Rellotscrewdriver/$_pkgname"
 license=(MIT)
 depends=(gtk3 gtk-layer-shell libdbusmenu-glib libdbusmenu-gtk3)
 makedepends=(cargo git)
-provides=("$_pkgname")
-conflicts=("$_pkgname")
+provides=("$_pkgname" "eww")
+conflicts=("$_pkgname" "eww" "eww-git")
 source=("git+$url.git")
 b2sums=('SKIP')
 
@@ -32,8 +32,8 @@ build() {
 
 package() {
 	cd $_pkgname
-	install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
-	install -d "$pkgdir/etc/xdg/$_pkgname/"
-	cp -r examples/eww-bar "$pkgdir/etc/xdg/$_pkgname/"
-	install -Dm755 target/release/$_pkgname -t "$pkgdir/usr/bin/"
+	install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/eww/"
+	install -d "$pkgdir/etc/xdg/eww/"
+	cp -r examples/eww-bar "$pkgdir/etc/xdg/eww/"
+	install -Dm755 target/release/eww -t "$pkgdir/usr/bin/"
 }

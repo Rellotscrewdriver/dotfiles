@@ -1,0 +1,82 @@
+[gd_resource type="EditorSettings" format=3]
+
+[resource]
+interface/editor/display_scale = 3
+interface/editor/main_font = "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Regular.ttf"
+interface/editor/main_font_bold = "/usr/share/fonts/TTF/JetBrainsMonoNLNerdFontMono-Bold.ttf"
+interface/theme/color_preset = "Custom"
+interface/theme/base_color = Color(0.078431375, 0.105882354, 0.11764706, 1)
+interface/theme/accent_color = Color(0.40392157, 0.6901961, 0.9098039, 1)
+interface/theme/contrast = 0.3
+interface/multi_window/enable = false
+filesystem/on_save/warn_on_saving_large_text_resources = false
+filesystem/file_dialog/show_hidden_files = true
+text_editor/theme/highlighting/symbol_color = Color(0.67, 0.79, 1, 1)
+text_editor/theme/highlighting/keyword_color = Color(1, 0.44, 0.52, 1)
+text_editor/theme/highlighting/control_flow_keyword_color = Color(1, 0.55, 0.8, 1)
+text_editor/theme/highlighting/base_type_color = Color(0.26, 1, 0.76, 1)
+text_editor/theme/highlighting/engine_type_color = Color(0.56, 1, 0.86, 1)
+text_editor/theme/highlighting/user_type_color = Color(0.78, 1, 0.93, 1)
+text_editor/theme/highlighting/comment_color = Color(1, 1, 1, 0.5)
+text_editor/theme/highlighting/doc_comment_color = Color(0.6, 0.7, 0.8, 0.8)
+text_editor/theme/highlighting/string_color = Color(1, 0.93, 0.63, 1)
+text_editor/theme/highlighting/background_color = Color(0.05019608, 0.06776471, 0.075294115, 1)
+text_editor/theme/highlighting/completion_background_color = Color(0.07137255, 0.09635294, 0.10705882, 1)
+text_editor/theme/highlighting/completion_selected_color = Color(1, 1, 1, 0.07)
+text_editor/theme/highlighting/completion_existing_color = Color(1, 1, 1, 0.14)
+text_editor/theme/highlighting/completion_font_color = Color(1, 1, 1, 0.75)
+text_editor/theme/highlighting/text_color = Color(1, 1, 1, 0.75)
+text_editor/theme/highlighting/line_number_color = Color(1, 1, 1, 0.5)
+text_editor/theme/highlighting/safe_line_number_color = Color(1, 1.2, 1, 0.75)
+text_editor/theme/highlighting/caret_color = Color(1, 1, 1, 1)
+text_editor/theme/highlighting/selection_color = Color(0.40392157, 0.6901961, 0.9098039, 0.4)
+text_editor/theme/highlighting/brace_mismatch_color = Color(1, 0.47, 0.42, 1)
+text_editor/theme/highlighting/current_line_color = Color(1, 1, 1, 0.07)
+text_editor/theme/highlighting/line_length_guideline_color = Color(0.078431375, 0.105882354, 0.11764706, 1)
+text_editor/theme/highlighting/word_highlighted_color = Color(1, 1, 1, 0.07)
+text_editor/theme/highlighting/number_color = Color(0.63, 1, 0.88, 1)
+text_editor/theme/highlighting/function_color = Color(0.34, 0.7, 1, 1)
+text_editor/theme/highlighting/member_variable_color = Color(0.736, 0.88, 1, 1)
+text_editor/theme/highlighting/mark_color = Color(1, 0.47, 0.42, 0.3)
+text_editor/theme/highlighting/warning_color = Color(0.83, 0.78, 0.62, 0.15)
+text_editor/theme/highlighting/breakpoint_color = Color(1, 0.47, 0.42, 1)
+text_editor/theme/highlighting/code_folding_color = Color(1, 1, 1, 0.27)
+text_editor/theme/highlighting/search_result_color = Color(1, 1, 1, 0.07)
+text_editor/external/exec_path = "/bin/code"
+text_editor/external/exec_flags = "{project} --goto {file}:{line}:{col}"
+text_editor/external/use_external_editor = true
+editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
+editors/animation/default_animation_step = 0.033333335
+run/platforms/linuxbsd/prefer_wayland = true
+network/connection/network_mode = 1
+network/http_proxy/host = "127.0.0.1"
+project_manager/directory_naming_convention = 3
+project_manager/default_renderer = "gl_compatibility"
+export/android/debug_keystore = "/home/Rellot/.local/share/godot/keystores/debug.keystore"
+export/android/debug_keystore_pass = "android"
+export/android/java_sdk_path = "/usr/lib/jvm/java-21-openjdk"
+export/android/android_sdk_path = "/home/Rellot/andorid/sdk"
+export/macos/rcodesign = ""
+export/web/http_port = 8060
+export/web/tls_key = ""
+export/web/tls_certificate = ""
+export/windows/osslsigncode = ""
+_editor_settings_advanced_mode = true
+_project_settings_advanced_mode = false
+_export_template_download_directory = "/home/Rellot/Desktop"
+_default_feature_profile = "2D dev"
+_script_setup_templates_dictionary = {
+"Area2D": "0NodeDefault",
+"CharacterBody2D": "0CharacterBody2DBasic Movement",
+"Control": "0NodeDefault",
+"EditorScript": "0EditorScriptBasic Editor Script",
+"Node": "0NodeDefault",
+"Node2D": "0NodeDefault"
+}
+_script_setup_use_script_templates = false
+_use_favorites_root_selection = false
+_export_preset_advanced_mode = true
+export/android/scrcpy/screen_size = "1920x1080/120"
+export/macos/actool = ""
+network/language_server/remote_port = 8080
+network/language_server/show_native_symbols_in_editor = true

@@ -23,9 +23,9 @@ BGreen='\e[1;32m'
 
 installDependencies() {
   echo "Installing main Arch dependencies"
+  paru -R --noconfirm swaylock
   paru -Sy --noconfirm --needed $(cat dependencies.txt)
-  #build my custom eww
-  makepkg -si
+  cd packages/CustomEww && makepkg -si && cd ../..
 }
 
 installConfig() {
@@ -33,11 +33,10 @@ installConfig() {
     cp -r $DIR/configs/* ~/.config/
     code --install-extension "mangeshrex.everblush"
     # this rsync is only used for copying the VScode theme 
-    # cuz normal cp is being a smartass and fuck up the folder structure
+    # cuz normal cp is being a smartass and fuck up the extension folder structure
     rsync -av ./configs/VScode/* ~/.vscode-oss/extensions/mangeshrex.everblush*
     rm -rf ~/.config/VScode
     sudo pacman -R --noconfirm rsync
-    cd packages/CustomEww && makepkg -si && cd ../..
     chsh -s $(which fish)
     echo "done"
 }
@@ -106,8 +105,11 @@ installParu(){
 uninstall(){
     rm -rf ~/.themes/Everblush*
     rm -rf ~/wallpapers
+    #this command might fuckup the login greeter and make arch unusable
     #sudo rm -rf /etc/greetd/* 
     sudo rm -rf /usr/share/backgrounds/greeter.jpg
+    #this command might arch unusable so I commented this out
+    #if you wanna be a sling shooter, go ahead uncomment this out
     #paru -Rnsc --needed $(cat dependencies.txt)
 
 	sudo rm -rf /usr/share/icons/ModernIce
@@ -117,7 +119,7 @@ uninstall(){
     sudo sed -i 's/^GRUB_THEME=/#GRUB_THEME=/' /etc/default/grub
     sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-    echo "${BRed}Partial Removal is done, remove uneeded configs and packages at your desicion"
+    echo "${BRed}Partial Removal is done, remove uneeded configs and packages at your desicion ${Reset}"
 }
 
 uninstallMenu(){

@@ -2,7 +2,7 @@
 This is my personal dotfiles repository. The theme name is everblush.
 
 this will my final rice before I change it for multi-monitor setup, 
-small incremental changes will be done
+small incremental changes will be done or maybe migarate to ewwii
 
 ## ❓ What are dotfiles?
 
@@ -16,16 +16,19 @@ This repository contains my personal dotfiles. They are stored here for convenie
 my install script isn't perfect so only execute this if you know what you're doing,
 this script only works if you're on arch linux!
 - before cloning, install `git` and `base-devel`(for cloning and compiling AUR packages) if you haven't  
-- Clone this repository 
+- Clone this repository with this command to avoid downloading history which has a big size 
 ```
 git clone --depth=1 https://www.github.com/rellotscrewdriver/dotfiles.git && cd dotfiles
 ```
 - run `sh install.sh`
-- disable your current login manager and then enable greetd by 
+- in the menu, select your choice
+- disable your current login manager and then enable greetd to see the new login manager
 ```
 sudo systemctl enable greetd.service
 ```
-- restart and enjoy!
+- restart and enjoy the fresh theme!
+
+(optional) if you 
 
 ## 🎹 Shortcut keys
 
@@ -46,56 +49,7 @@ since sway mostly uses shortcut keys from i3(which I love it's ease of use and k
 
 ## 📸 Screenshots
 here are the screenshots as I believe people like to see previews of the repo before downloading it
-
-<details>
-<summary>Greeter in Regreet</summary>
-<img src = "screenshots/10.png" />
-</details>
-
-<details>
-<summary>eww</summary>
-<img src = "screenshots/1.png" />
-</details>
-
-<details>
-<summary>fastfetch & btop & ranger</summary>
-<img src = "screenshots/2.png" />
-</details>
-
-<details>
-<summary>Qt Creator</summary>
-<img src = "screenshots/3.png" />
-</details>
-
-<details>
-<summary>Nemo & Neovim(no rhyme intended)</summary>
-<img src = "screenshots/4.png" />
-</details>
-
-<details>
-<summary>Godot</summary>
-<img src = "screenshots/5.png" />
-</details>
-
-<details>
-<summary>obsidian</summary>
-<img src = "screenshots/6.png" />
-</details>
-
-<details>
-<summary>Code - OSS(alternative of VScode) and mpv(with modernZ config)</summary>
-<img src = "screenshots/7.png" />
-</details>
-
-<details>
-<summary>eww powermenu</summary>
-<img src = "screenshots/8.png" />
-</details>
-
-<details>
-<summary>swaync</summary>
-<img src = "screenshots/9.png" />
-</details>
+(Include a short video of showcaseing this theme)
 
 <br>
 
@@ -112,3 +66,4 @@ Before leaving out, don't forget to **STAR** this repository! Thanks for checkin
 - https://github.com/syndrizzle/hotfiles/tree/worm
 - https://github.com/AlphaTechnolog/dotfiles/tree/openbox
 - https://github.com/zDyant/HyprNova
+and many more!

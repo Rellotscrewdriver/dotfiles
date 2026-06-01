@@ -170,7 +170,7 @@ uninstallMenu(){
     esac
 }
 
-
+clear
 
 echo -e "${BBlue} Welcome to my configuration! ${Reset}"
 echo "Select anything you want but this script won't install everything"

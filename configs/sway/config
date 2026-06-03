@@ -247,7 +247,7 @@ assign [title="^Discord$"] 4
 assign [app_id="brave"] workspace number 2
 assign [app_id="obsidian"] workspace number 5
 assign [app_id="anki"] workspace number 1
-assign [instance="code-oss"] workspace number 1
+assign [app_id="code-oss"] workspace number 1
 assign [class="ONLYOFFICE"] workspace number 6
 assign [instance="zoom"] workspace number 3
 # SK Launcher
@@ -259,23 +259,24 @@ assign [class="java"] workspace number 6
 # Utilities:
 #
 
-    # Sink volume toggle mute
-    bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
-    # Source volume toggle mute
-    bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
+# Sink volume toggle mute
+bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+# Source volume toggle mute
+bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
 
-    # Volume raise with custom value
-    bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 5
-    # Volume lower with custom value
-    bindsym XF86AudioLowerVolume exec swayosd-client --output-volume -5
+# Volume raise with custom value
+bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 5
+# Volume lower with custom value
+bindsym XF86AudioLowerVolume exec swayosd-client --output-volume -5
 
-    # Brightness raise with custom value('+' sign needed)
-    bindsym XF86MonBrightnessUp exec swayosd-client --brightness +5
-    # Brightness lower with custom value('-' sign needed)
-    bindsym XF86MonBrightnessDown exec swayosd-client --brightness -5
+# Brightness raise with custom value('+' sign needed)
+bindsym XF86MonBrightnessUp exec swayosd-client --brightness +5
+# Brightness lower with custom value('-' sign needed)
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness -5
 
-    # Play/Pause current player(available only on ASUS vivobook laptops)
-    bindsym XF86Launch1 exec swayosd-client --playerctl play-pause 
+# Play/Pause current player(available only on ASUS vivobook laptops)
+bindsym XF86Launch1 exec swayosd-client --playerctl play-pause 
+
 #
 # Status Bar:
 #
@@ -294,7 +295,7 @@ default_border pixel 2
 default_floating_border pixel 3
 
 # colors the border
-client.focused "#67b0e8" "#8cc7fe" "#141b1e" "#e5e76b"
+client.focused "#67b0e8" "#8cc7fe" "#232a2d" "#e5e76b"
 
 #title bar
 titlebar_border_thickness 2
@@ -307,11 +308,11 @@ gaps outer 3
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Everblush'
+    gsettings set $gnome-schema gtk-theme 'Colloid-Everblush'
     gsettings set $gnome-schema gtk-application-prefer-dark-theme true
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Ice'
-    gsettings set $gnome-schema font-name 'RobotoMono Nerd Font Propo'
+    gsettings set $gnome-schema font-name 'JetbrainsMonoNL Nerd Font Propo'
 }
 
 include /etc/sway/config.d/*

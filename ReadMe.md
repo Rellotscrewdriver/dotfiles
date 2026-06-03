@@ -1,6 +1,10 @@
 # ✨ My workstation ✨
 This is my personal dotfiles repository. The theme name is everblush.
 
+https://github.com/user-attachments/assets/90444bc6-ae1f-4b51-9f51-5396e4caa6d1
+
+the wallpaper of each screenshot can be found in **wallpapers** directory
+
 this will my final rice before I change it for multi-monitor setup, 
 small incremental changes will be done or maybe migarate to ewwii
 
@@ -8,7 +12,7 @@ small incremental changes will be done or maybe migarate to ewwii
 
 Dotfiles are the customization files that are used to personalize your Linux or other Unix-based system. they are configurations for various applications. 
 
-This repository contains my personal dotfiles. They are stored here for convenience so that I may quickly access them on new machines or new installs. Also, others may find some of my configurations helpful in customizing their own dotfiles. This config uses `sway` window manager.
+This repository contains my personal dotfiles. They are stored here for convenience so that I may quickly access them on new machines or new installs. Also, others may find some of my configurations helpful in customizing their own dotfiles. This config uses `sway` window manager as the source of it's configuration.
 
 
 ## 📦 How to install and set up my dotfiles?
@@ -28,7 +32,7 @@ sudo systemctl enable greetd.service
 ```
 - restart and enjoy the fresh theme!
 
-(optional) if you 
+(optional) if you want the everblush theme in onlyoffice, make sure to install both GTK & Qt theme and enable system default in the theme settings 
 
 ## 🎹 Shortcut keys
 
@@ -47,15 +51,7 @@ since sway mostly uses shortcut keys from i3(which I love it's ease of use and k
 
 `$mod + n` opens obsidian
 
-## 📸 Screenshots
-here are the screenshots as I believe people like to see previews of the repo before downloading it
-(Include a short video of showcaseing this theme)
-
-<br>
-
-the wallpaper of each screenshot can be found in **wallpapers** directory
-
-Before leaving out, don't forget to **STAR** this repository! Thanks for checking out. 
+Before leaving out and trying out my dotfiles, don't forget to **STAR** this repository! Thanks for checking out. 
 
 ***credits rolling***
 

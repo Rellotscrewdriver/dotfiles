@@ -67,4 +67,6 @@ Before leaving out and trying out my dotfiles, don't forget to **STAR** this rep
 - https://github.com/syndrizzle/hotfiles/tree/worm
 - https://github.com/AlphaTechnolog/dotfiles/tree/openbox
 - https://github.com/zDyant/HyprNova
+- https://github.com/vinceliuice/Colloid-gtk-theme - the new GTK theme!
+- https://github.com/starship/starship
 and many more!

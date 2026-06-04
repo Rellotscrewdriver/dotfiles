@@ -1,0 +1,1 @@
+notify-send --app-icon=discord --action="ban him" --action="de-alpha him" --action="send him to gulag" --action="derizz him" "Server Owner" "What should I do with this guy? Select your quadnary choice :P"

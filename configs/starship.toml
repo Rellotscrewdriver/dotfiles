@@ -1,0 +1,55 @@
+# Get editor completions based on the config schema
+"$schema" = 'starship.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+format = "$os $directory$all"
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
+
+[package]
+disabled = true
+
+[os]
+disabled = false
+style = "fg:blue"
+
+[os.symbols]
+Windows = ""
+Macos = "󰀵"
+Linux = "󰌽"
+Fedora = "󰣛"
+Arch = "󰣇"
+Debian = "󰣚"
+
+[directory]
+truncation_length = 3
+truncation_symbol = '…/'
+style = "bold green"
+
+[c]
+symbol = " "
+style = "bold blue"
+format = 'via [$symbol$name $version]($style)'
+
+[cpp]
+symbol = " "
+style = "bold red"
+format = 'via [$symbol$name $version]($style)'
+
+[cmake]
+symbol = " "
+style = "bold blue"
+format = 'via [$symbol$version]($style)'
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[battery]
+disabled = true

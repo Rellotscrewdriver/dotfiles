@@ -7,5 +7,4 @@ input "2362:8204:ASUP1204:00_093A:200C_Touchpad" {
 }
 
 exec "regreet; swaymsg exit"
-include /etc/sway/config.d/*
 include /home/Rellot/.config/sway/*

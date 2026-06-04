@@ -14,14 +14,14 @@ $Lgrey: #b3b9b8;
 */ 
 
 window#osd {
-  border-radius: 10px;
+  border-radius: 20px;
   border: 2px solid #e5c78b;
-  background: alpha(#141b1e, 0.4);
+  background: #141b1e;
 }
 
 window#osd #container {
   margin: 0px;
-  padding: 10px;
+  padding: 20px;
   background: #141b1e;
 }
 
@@ -57,5 +57,5 @@ window#osd progress {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: #6cbfbf;
+  background: #8ccf7e;
 }

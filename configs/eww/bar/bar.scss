@@ -54,6 +54,10 @@
   color: $red;
 }
 
+.cpu, .ram, .temp, .bat {
+  background-color: $background;
+}
+
 .netI {
   background-color: $magenta;
 }

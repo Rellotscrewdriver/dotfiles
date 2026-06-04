@@ -44,7 +44,7 @@
 
 .cal {
   padding: 5px;
-  color: $blue;
+  color: $foreground;
   &.header {
     color: $yellow;
   }
@@ -62,6 +62,8 @@
   }
   &:selected {
     color: $green;
+    font-size: 2em;
+    font-weight: bolder;
   }
   font-size: 1em;
   padding: 0.2em;
